@@ -8,10 +8,18 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
+#include <allegro5/keyboard.h> // Changed to keyboard.h based on directory listing
 
 #define SCREEN_WIDTH    800
 #define SCREEN_HEIGHT   600
 #define FPS            60.0
+#define PLATFORM_JUMP_TOLERANCE 5 // Pixels tolerance for standing on a platform
+#define PORTAL_WIDTH 50
+#define PORTAL_HEIGHT 80
+
+#define GRAVITY 0.5
+#define JUMP_SPEED -10.0
+#define MOVE_SPEED 5.0
 
 // Game states
 typedef enum {
@@ -21,7 +29,9 @@ typedef enum {
     SETTINGS,
     PLAYING,
     PAUSED,
-    GAME_OVER
+    GAME_OVER,
+    LEVEL_COMPLETE, // Added new state
+    VICTORY
 } GameState;
 
 // Entity types
@@ -52,6 +62,13 @@ typedef enum {
     BEHAVIOR_BOSS       // Complex boss behavior
 } EntityBehavior;
 
+// Portal structure
+typedef struct {
+    float x, y;
+    float width, height;
+    bool is_active; // Might be useful later
+} Portal;
+
 // Structure for game entities (player and enemies)
 typedef struct {
     float x, y;           // Position
@@ -70,6 +87,7 @@ typedef struct {
     ALLEGRO_BITMAP* sprite_sheet; // For animations
     int current_frame;   // Current animation frame
     float frame_timer;   // Animation timer
+    bool is_on_ground;    // True if the entity is on a platform
 } Entity;
 
 // Structure for game state
@@ -108,6 +126,7 @@ typedef struct {
     float level_width;   // Total level width
     char* level_name;
     char* level_description;
+    Portal portal;       // Added portal to level structure
 } Level;
 
 // Game settings
@@ -146,6 +165,7 @@ typedef struct {
 bool init_game(Game* game);
 void init_menus(Game* game);
 void init_levels(Game* game);
+void init_level(Level* level, const char* name, const char* description, float width); // Changed from create_level
 void init_level_content(Level* level, int level_number);
 void update_game(Game* game);
 void update_enemy(Entity* enemy, Game* game);
