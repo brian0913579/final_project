@@ -5,7 +5,7 @@
 #include <math.h>
 
 #define GRAVITY 0.5
-#define JUMP_SPEED -10.0
+#define JUMP_SPEED 10.0
 #define MOVE_SPEED 5.0
 
 bool init_game(Game* game) {
