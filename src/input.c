@@ -211,12 +211,17 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
         al_get_keyboard_state(&keyState);
         
         // Horizontal movement with A and D
+        // Reset dx at the beginning of each input check if no movement key is pressed.
+        // This allows jump to not interfere with horizontal movement intentions.
+        game->player.dx = 0; 
         if (al_key_down(&keyState, ALLEGRO_KEY_A)) {
             game->player.dx = -MOVE_SPEED;
-        } else if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
+        }
+        if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
+            // If A is also held, D takes precedence or they cancel out.
+            // For simplicity, D overrides A if both are pressed.
+            // If A should cancel D, then: if (game->player.dx == -MOVE_SPEED) game->player.dx = 0; else game->player.dx = MOVE_SPEED;
             game->player.dx = MOVE_SPEED;
-        } else {
-            game->player.dx = 0;
         }
 
         // Allow jump with W (pressed event) or SPACE (pressed event)

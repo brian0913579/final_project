@@ -7,6 +7,7 @@
 #include <stdio.h>               // For fprintf, sprintf
 #include <stdlib.h>              // For malloc, free
 #include <allegro5/allegro.h>
+#include <allegro5/path.h> // For ALLEGRO_PATH, al_get_standard_path, al_set_path_filename, al_path_cstr, al_change_directory, al_destroy_path
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
@@ -19,22 +20,65 @@ bool init_game(Game* game) {
         fprintf(stderr, "Failed to initialize Allegro!\n");
         return false;
     }
-    if (!al_install_keyboard()) {
-        fprintf(stderr, "Failed to initialize keyboard!\n");
-        return false;
-    }
-    if (!al_init_primitives_addon()) {
-        fprintf(stderr, "Failed to initialize primitives addon!\n");
-        return false;
-    }
-    if (!al_init_font_addon() || !al_init_ttf_addon()) {
-        fprintf(stderr, "Failed to initialize font addons!\n");
+
+    // Initialize other Allegro addons and game components as before
+    al_init_primitives_addon();
+    al_install_keyboard();
+    al_install_mouse();
+    al_init_image_addon();
+    al_init_font_addon();
+    al_init_ttf_addon();
+    al_install_audio();
+    al_init_acodec_addon();
+    al_reserve_samples(10); // Reserve some samples
+
+    game->timer = al_create_timer(1.0 / FPS);
+    if (!game->timer) {
+        fprintf(stderr, "Failed to create timer!\n");
         return false;
     }
 
-    // TODO: Make font paths configurable or use relative paths
-    game->font = al_load_ttf_font("/System/Library/Fonts/Helvetica.ttc", 24, 0);
-    game->title_font = al_load_ttf_font("/System/Library/Fonts/Helvetica.ttc", 48, 0);
+    game->event_queue = al_create_event_queue();
+    if (!game->event_queue) {
+        fprintf(stderr, "Failed to create event_queue!\n");
+        al_destroy_timer(game->timer);
+        return false;
+    }
+
+    game->display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
+    if (!game->display) {
+        fprintf(stderr, "Failed to create display!\n");
+        al_destroy_timer(game->timer);
+        al_destroy_event_queue(game->event_queue);
+        return false;
+    }
+
+    // Try to set the working directory to the resources directory
+    ALLEGRO_PATH* resources_path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
+    if (resources_path) {
+        const char* dir_cstr = al_path_cstr(resources_path, ALLEGRO_NATIVE_PATH_SEP);
+        if (al_change_directory(dir_cstr)) {
+        } else {
+            fprintf(stderr, "Failed to change working directory to: %s\nAttempting to use executable's directory as fallback.\n", dir_cstr);
+            // Fallback: try to set CWD to executable's directory
+            ALLEGRO_PATH* exe_path = al_get_standard_path(ALLEGRO_EXENAME_PATH);
+            if (exe_path) {
+                al_drop_path_tail(exe_path); // Remove filename to get directory
+                const char* exe_dir_cstr = al_path_cstr(exe_path, ALLEGRO_NATIVE_PATH_SEP);
+                if (al_change_directory(exe_dir_cstr)) {
+                } else {
+                    fprintf(stderr, "Failed to change working directory to exe path: %s\n", exe_dir_cstr);
+                }
+                al_destroy_path(exe_path);
+            }
+        }
+        al_destroy_path(resources_path);
+    } else {
+        fprintf(stderr, "Failed to get standard resources path.\n");
+    }
+
+    game->font = al_load_ttf_font(DEFAULT_FONT_PATH, FONT_SIZE_NORMAL, 0);
+    game->title_font = al_load_ttf_font(DEFAULT_FONT_PATH, FONT_SIZE_TITLE, 0);
     if (!game->font || !game->title_font) {
         fprintf(stderr, "Failed to load fonts!\n");
         // al_shutdown_font_addon(); // Consider cleanup on failure
@@ -68,13 +112,13 @@ bool init_game(Game* game) {
 
     if (!al_install_audio()) {
         fprintf(stderr, "Failed to initialize audio!\n");
-        return false; // Or handle gracefully (e.g., disable sound)
+        return false;
     }
     if (!al_init_acodec_addon()) {
         fprintf(stderr, "Failed to initialize audio codecs!\n");
         return false;
     }
-    if (!al_reserve_samples(8)) {
+    if (!al_reserve_samples(AUDIO_RESERVE_SAMPLES)) {
         fprintf(stderr, "Failed to reserve audio samples!\n");
         return false;
     }
@@ -84,20 +128,20 @@ bool init_game(Game* game) {
     // game->music_instance = al_load_sample_instance("resources/sounds/music.ogg");
     // if (game->music_instance) al_attach_sample_instance_to_mixer(game->music_instance, al_get_default_mixer());
 
-    game->player.x = SCREEN_WIDTH / 4.0f;
-    game->player.y = SCREEN_HEIGHT / 2.0f;
-    game->player.width = 30;
-    game->player.height = 30;
+    game->player.x = SCREEN_WIDTH * PLAYER_INITIAL_X_FACTOR;
+    game->player.y = SCREEN_HEIGHT * PLAYER_INITIAL_Y_FACTOR;
+    game->player.width = PLAYER_WIDTH;
+    game->player.height = PLAYER_HEIGHT;
     game->player.dx = 0;
     game->player.dy = 0;
     game->player.active = true;
     game->player.type = CANCER_CELL;
     game->player.state = IDLE;
     game->player.behavior = BEHAVIOR_NONE;
-    game->player.health = 100;
-    game->player.max_health = 100;
-    game->player.attack_power = 10;
-    game->player.attack_speed = 1.0;
+    game->player.health = PLAYER_INITIAL_HEALTH;
+    game->player.max_health = PLAYER_INITIAL_MAX_HEALTH;
+    game->player.attack_power = PLAYER_INITIAL_ATTACK_POWER;
+    game->player.attack_speed = PLAYER_ATTACK_SPEED;
     game->player.last_attack = 0;
     game->player.sprite = NULL;
     game->player.sprite_sheet = NULL;
@@ -108,7 +152,7 @@ bool init_game(Game* game) {
     game->state = WELCOME_SCREEN;
     game->running = true;
     game->score = 0;
-    game->current_level = 1; // Start at level 1
+    game->current_level = INITIAL_LEVEL; // Start at level 1
 
     init_menus(game);
     init_levels(game); // This will set game->current_level_data
@@ -158,7 +202,7 @@ void init_menus(Game* game) {
         game->settings_menu.num_items = 0;
     }
 
-    game->settings.difficulty = 2;
+    game->settings.difficulty = DIFFICULTY_NORMAL;
     game->settings.sound_enabled = true;
     game->settings.music_enabled = true;
 }
@@ -183,7 +227,7 @@ void update_game(Game* game) {
             game->player.y + game->player.height > platform->y) {
             
             if (platform->is_deadly) {
-                game->player.health -= 1; // Reduced damage for testing, make constant later
+                game->player.health -= DEADLY_PLATFORM_DAMAGE; 
                 if (game->player.health <= 0) {
                     game->state = GAME_OVER;
                 }
@@ -192,22 +236,71 @@ void update_game(Game* game) {
                 game->player.dy = 0;
                 game->player.is_on_ground = true;
             } else {
-                if (game->player.dy >= 0 &&
-                    game->player.y + game->player.height - game->player.dy <= platform->y + PLATFORM_JUMP_TOLERANCE &&
-                    game->player.y + game->player.height > platform->y) {
+                // Check vertical collision (landing on top or hitting bottom)
+                if (game->player.dy >= 0 && // Moving downwards or still
+                    game->player.y + game->player.height - game->player.dy <= platform->y + PLATFORM_JUMP_TOLERANCE && // Previous position was above or at platform top
+                    game->player.y + game->player.height > platform->y) { // Current position is intersecting or below platform top
                     game->player.dy = 0;
                     game->player.y = platform->y - game->player.height;
                     game->player.is_on_ground = true;
-                } else if (game->player.dx > 0 && game->player.x + game->player.width - game->player.dx <= platform->x) {
-                    game->player.x = platform->x - game->player.width;
-                    game->player.dx = 0;
-                } else if (game->player.dx < 0 && game->player.x - game->player.dx >= platform->x + platform->width) {
-                    game->player.x = platform->x + platform->width;
-                    game->player.dx = 0;
-                } else if (game->player.dy < 0 && game->player.y - game->player.dy >= platform->y + platform->height) {
+                } else if (game->player.dy < 0 && // Moving upwards
+                           game->player.y - game->player.dy >= platform->y + platform->height && // Previous position was below platform bottom
+                           game->player.y < platform->y + platform->height) { // Current position is intersecting or above platform bottom
                     game->player.y = platform->y + platform->height;
-                    game->player.dy = 0;
+                    game->player.dy = 0; // Stop upward movement
                 }
+
+                // Check horizontal collision (hitting sides), including step-up logic
+                bool vertically_aligned_for_horizontal_check =
+                    (game->player.y < platform->y + platform->height) &&
+                    (game->player.y + game->player.height > platform->y);
+
+                if (vertically_aligned_for_horizontal_check) {
+                    // Moving right
+                    if (game->player.dx > 0 && // Player is moving right
+                        game->player.x + game->player.width - game->player.dx <= platform->x && // Previous right edge was left of or at platform's left edge
+                        game->player.x + game->player.width > platform->x) { // Current right edge is past platform's left edge
+
+                        float player_current_foot_y = game->player.y + game->player.height;
+                        float step_height = player_current_foot_y - platform->y; // Height of the step relative to player's feet
+
+                        // Condition for step-up:
+                        // 1. Platform top is above player's current foot level (step_height > 0).
+                        // 2. The step height is not too large (step_height <= MAX_STEP_UP_HEIGHT).
+                        // 3. Player is on the ground (meaning they have support).
+                        if (step_height > 0 && step_height <= MAX_STEP_UP_HEIGHT && game->player.is_on_ground) {
+                            // Perform step-up
+                            game->player.y = platform->y - game->player.height;
+                            game->player.dy = 0; // Stop any residual vertical movement
+                            game->player.is_on_ground = true; // Ensure player is considered on ground after step
+                            // Player's x position is already advanced by player.dx.
+                            // player.dx is not zeroed, allowing continued movement if key is held.
+                        } else {
+                            // Normal wall collision: stop and align
+                            game->player.x = platform->x - game->player.width;
+                            game->player.dx = 0;
+                        }
+                    }
+                    // Moving left
+                    else if (game->player.dx < 0 && // Player is moving left
+                               game->player.x - game->player.dx >= platform->x + platform->width && // Previous left edge was right of or at platform's right edge
+                               game->player.x < platform->x + platform->width) { // Current left edge is past platform's right edge
+
+                        float player_current_foot_y = game->player.y + game->player.height;
+                        float step_height = player_current_foot_y - platform->y;
+
+                        if (step_height > 0 && step_height <= MAX_STEP_UP_HEIGHT && game->player.is_on_ground) {
+                            // Perform step-up
+                            game->player.y = platform->y - game->player.height;
+                            game->player.dy = 0;
+                            game->player.is_on_ground = true;
+                        } else {
+                            // Normal wall collision: stop and align
+                            game->player.x = platform->x + platform->width;
+                            game->player.dx = 0;
+                        }
+                    }
+                } // End of horizontal collision check
             }
         }
     }
@@ -233,7 +326,7 @@ void update_game(Game* game) {
         game->player.dy = 0;
     }
     
-    game->current_level_data->scroll_x = game->player.x - SCREEN_WIDTH / 3.0f;
+    game->current_level_data->scroll_x = game->player.x - SCREEN_WIDTH * SCROLL_X_PLAYER_OFFSET_FACTOR;
     if (game->current_level_data->scroll_x < 0) {
         game->current_level_data->scroll_x = 0;
     }
@@ -252,18 +345,27 @@ void update_game(Game* game) {
         game->player.y < portal->y + portal->height &&
         game->player.y + game->player.height > portal->y) {
         game->state = LEVEL_COMPLETE;
-        game->score += 1000; // Bonus for completing level
+        game->score += LEVEL_COMPLETE_SCORE_BONUS; // Bonus for completing level
     }
 }
 
 // Original cleanup_menus function from main.c
 void cleanup_menus(Game* game) {
-    if (game->main_menu.items) free(game->main_menu.items);
-    game->main_menu.items = NULL;
-    if (game->level_menu.items) free(game->level_menu.items);
-    game->level_menu.items = NULL;
-    if (game->settings_menu.items) free(game->settings_menu.items);
-    game->settings_menu.items = NULL;
+    if (game->main_menu.items) {
+        free(game->main_menu.items);
+        game->main_menu.items = NULL;
+        game->main_menu.num_items = 0; // Reset num_items to prevent use after free
+    }
+    if (game->level_menu.items) {
+        free(game->level_menu.items);
+        game->level_menu.items = NULL;
+        game->level_menu.num_items = 0; // Reset num_items
+    }
+    if (game->settings_menu.items) {
+        free(game->settings_menu.items);
+        game->settings_menu.items = NULL;
+        game->settings_menu.num_items = 0; // Reset num_items
+    }
 }
 
 // Original cleanup_game function from main.c
