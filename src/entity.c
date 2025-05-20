@@ -74,14 +74,6 @@ void handle_collisions(Game* game) {
                 game->player.health -= enemy->attack_power;
                 game->player.last_attack = PLAYER_INVINCIBILITY_FRAMES; // Invincibility frames
                 
-                float dx = game->player.x - enemy->x;
-                float dy = game->player.y - enemy->y;
-                float distance = sqrt(dx * dx + dy * dy);
-                if (distance > 0) {
-                    game->player.dx = (dx / distance) * PLAYER_KNOCKBACK_FORCE;
-                    game->player.dy = (dy / distance) * PLAYER_KNOCKBACK_FORCE;
-                }
-                
                 if (game->player.health <= 0) {
                     game->state = GAME_OVER;
                 }

@@ -70,6 +70,7 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                                     game->player.dy = 0;
                                     game->player.health = game->player.max_health;
                                     game->player.is_on_ground = false;
+                                    game->player.jump_requested = false; // Reset on new level
                                     game->score = 0;
                                     game->levels[0].scroll_x = 0;
                                     break;
@@ -90,6 +91,7 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                                 game->player.dy = 0;
                                 game->player.health = game->player.max_health;
                                 game->player.is_on_ground = false;
+                                game->player.jump_requested = false; // Reset on level select
                                 game->current_level_data->scroll_x = 0;
                                 game->state = PLAYING;
                             }
@@ -138,11 +140,10 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
 
     if (event->type == ALLEGRO_EVENT_KEY_DOWN) {
         switch (event->keyboard.keycode) {
-            case ALLEGRO_KEY_W: // Added W for jump
+            case ALLEGRO_KEY_W:
             case ALLEGRO_KEY_SPACE:
-                if (game->state == PLAYING && game->player.is_on_ground) {
-                    game->player.dy = JUMP_SPEED;
-                    game->player.is_on_ground = false;
+                if (game->state == PLAYING) { // Removed is_on_ground check here
+                    game->player.jump_requested = true;
                 }
                 break;
             case ALLEGRO_KEY_ESCAPE:
@@ -167,6 +168,7 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                         game->player.dy = 0;
                         game->player.health = game->player.max_health;
                         game->player.is_on_ground = false;
+                        game->player.jump_requested = false; // Reset on next level
                         game->current_level_data->scroll_x = 0;
                         game->state = PLAYING;
                     } else {
@@ -187,6 +189,7 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                     game->player.dy = 0;
                     game->player.health = game->player.max_health;
                     game->player.last_attack = 0;
+                    game->player.jump_requested = false; // Reset on retry
                     game->current_level_data->scroll_x = 0;
                     for (int i = 0; i < game->current_level_data->num_enemies; i++) {
                         Entity* enemy = &game->current_level_data->enemies[i];
@@ -206,30 +209,24 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
         }
     }
 
-    if (game->state == PLAYING) { // Continuous movement only when playing
+    // Only update dx from key states on timer events when playing
+    if (game->state == PLAYING && event->type == ALLEGRO_EVENT_TIMER) {
         ALLEGRO_KEYBOARD_STATE keyState;
-        al_get_keyboard_state(&keyState);
+        al_get_keyboard_state(&keyState); // Get fresh state on timer
         
-        // Horizontal movement with A and D
-        // Reset dx at the beginning of each input check if no movement key is pressed.
-        // This allows jump to not interfere with horizontal movement intentions.
         game->player.dx = 0; 
         if (al_key_down(&keyState, ALLEGRO_KEY_A)) {
             game->player.dx = -MOVE_SPEED;
         }
         if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
-            // If A is also held, D takes precedence or they cancel out.
-            // For simplicity, D overrides A if both are pressed.
-            // If A should cancel D, then: if (game->player.dx == -MOVE_SPEED) game->player.dx = 0; else game->player.dx = MOVE_SPEED;
             game->player.dx = MOVE_SPEED;
         }
 
-        // Allow jump with W (pressed event) or SPACE (pressed event)
-        // The event-based jump is already handled above. 
-        // If continuous jump while holding W is desired, it would be: 
-        // if (al_key_down(&keyState, ALLEGRO_KEY_W) && game->player.is_on_ground) {
-        //     game->player.dy = JUMP_SPEED;
-        //     game->player.is_on_ground = false;
-        // }
+        // Handle continuous jump if jump key is held
+        if (al_key_down(&keyState, ALLEGRO_KEY_W) || al_key_down(&keyState, ALLEGRO_KEY_SPACE)) {
+            if (game->player.is_on_ground) { // Only request another jump if currently on the ground
+                game->player.jump_requested = true;
+            }
+        }
     }
 }

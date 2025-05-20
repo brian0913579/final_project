@@ -148,6 +148,7 @@ bool init_game(Game* game) {
     game->player.current_frame = 0;
     game->player.frame_timer = 0;
     game->player.is_on_ground = false;
+    game->player.jump_requested = false; // Initialize jump_requested
 
     game->state = WELCOME_SCREEN;
     game->running = true;
@@ -212,6 +213,13 @@ void update_game(Game* game) {
     if (game->state != PLAYING) {
         return;
     }
+
+    // Process jump request
+    if (game->player.jump_requested && game->player.is_on_ground) {
+        game->player.dy = JUMP_SPEED;
+        game->player.is_on_ground = false; // Prevent double jump in same frame
+    }
+    game->player.jump_requested = false; // Consume the jump request
     
     game->player.x += game->player.dx;
     game->player.y += game->player.dy;

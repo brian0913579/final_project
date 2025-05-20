@@ -13,7 +13,7 @@
 #define SCREEN_WIDTH    800
 #define SCREEN_HEIGHT   600
 #define FPS            60.0
-#define PLATFORM_JUMP_TOLERANCE 5 // Pixels tolerance for standing on a platform
+#define PLATFORM_JUMP_TOLERANCE 8.0f // Pixels tolerance for standing on a platform, increased and made float
 #define PORTAL_WIDTH 50
 #define PORTAL_HEIGHT 80
 
@@ -196,6 +196,7 @@ typedef struct {
     int current_frame;   // Current animation frame
     float frame_timer;   // Animation timer
     bool is_on_ground;    // True if the entity is on a platform
+    bool jump_requested;  // True if jump input was made
 } Entity;
 
 // Structure for game state
