@@ -163,20 +163,15 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                 break;
             case ALLEGRO_KEY_N: 
                 if (game->state == LEVEL_COMPLETE) {
-                    if (game->current_level < game->num_levels) {
-                        // game->current_level++; // Handled by reset
-                        // game->current_level_data = &game->levels[game->current_level - 1]; // Handled by reset
-                        // game->player.x = SCREEN_WIDTH / 4.0f;
-                        // game->player.y = SCREEN_HEIGHT / 2.0f;
-                        // game->player.dx = 0;
-                        // game->player.dy = 0;
-                        // game->player.health = game->player.max_health;
-                        // game->player.is_on_ground = false;
-                        // game->player.jump_requested = false; // Reset on next level
-                        // game->current_level_data->scroll_x = 0; // Handled by reset
-                        reset_player_and_level(game, game->current_level); // game->current_level is 1-based, reset wants 0-based index for next level
+                    // game->current_level is 0-indexed (e.g., 0 for Level 1, 1 for Level 2)
+                    // game->num_levels is the total count (e.g., 3)
+                    // To go to the next level, we need to check if current_level < max_level_index (num_levels - 1)
+                    if (game->current_level < game->num_levels - 1) {
+                        // Load the next level: current_level + 1
+                        reset_player_and_level(game, game->current_level + 1);
                         game->state = PLAYING;
                     } else {
+                        // Player has completed the last level
                         game->state = VICTORY;
                     }
                 }
