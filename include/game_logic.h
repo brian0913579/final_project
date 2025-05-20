@@ -10,5 +10,6 @@ void init_menus(Game* game); // For initializing menu structures
 void update_game(Game* game);
 void cleanup_menus(Game* game);
 void cleanup_game(Game* game);
+void reset_player_and_level(Game* game, int level_idx); // Declaration for reset function
 
 #endif /* GAME_LOGIC_H */

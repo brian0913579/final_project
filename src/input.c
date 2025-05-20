@@ -1,8 +1,8 @@
 #include "../include/input.h"
 #include "../include/game.h" // For Game, Level, Menu, Entity, GameState, constants
+#include "../include/game_logic.h" // Added for reset_player_and_level
 #include <allegro5/keyboard.h> // Changed from allegro_keyboard.h
-#include <allegro5/keycodes.h> // For ALLEGRO_KEY_*
-#include <stdio.h> // For sprintf (used in settings menu)
+#include <allegro5/keycodes.h> // For
 
 // Original handle_menu_input function from main.c
 void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
@@ -61,18 +61,21 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                         case MAIN_MENU:
                             switch (current_menu->selected_index) {
                                 case 0: // Start Game
+                                    // game->state = PLAYING; // State will be set by reset
+                                    // game->current_level = 1; // Handled by reset
+                                    // game->current_level_data = &game->levels[0]; // Handled by reset
+                                    // game->player.x = SCREEN_WIDTH / 4.0f;
+                                    // game->player.y = SCREEN_HEIGHT / 2.0f;
+                                    // game->player.dx = 0;
+                                    // game->player.dy = 0;
+                                    // game->player.health = game->player.max_health;
+                                    // game->player.is_on_ground = false;
+                                    // game->player.jump_requested = false; // Reset on new level
+                                    // game->score = 0; // Score should be reset here if it's per-game
+                                    // game->levels[0].scroll_x = 0; // Handled by reset
+                                    reset_player_and_level(game, INITIAL_LEVEL -1); // Reset for level 1 (index 0)
+                                    game->score = 0; // Reset global score when starting a new game
                                     game->state = PLAYING;
-                                    game->current_level = 1;
-                                    game->current_level_data = &game->levels[0];
-                                    game->player.x = SCREEN_WIDTH / 4.0f;
-                                    game->player.y = SCREEN_HEIGHT / 2.0f;
-                                    game->player.dx = 0;
-                                    game->player.dy = 0;
-                                    game->player.health = game->player.max_health;
-                                    game->player.is_on_ground = false;
-                                    game->player.jump_requested = false; // Reset on new level
-                                    game->score = 0;
-                                    game->levels[0].scroll_x = 0;
                                     break;
                                 case 1: game->state = LEVEL_SELECT; break;
                                 case 2: game->state = SETTINGS; break;
@@ -83,16 +86,17 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                             if (current_menu->selected_index == current_menu->num_items - 1) {
                                 game->state = MAIN_MENU;
                             } else if (current_menu->items[current_menu->selected_index].enabled) {
-                                game->current_level = current_menu->selected_index + 1;
-                                game->current_level_data = &game->levels[game->current_level - 1];
-                                game->player.x = SCREEN_WIDTH / 4.0f;
-                                game->player.y = SCREEN_HEIGHT / 2.0f;
-                                game->player.dx = 0;
-                                game->player.dy = 0;
-                                game->player.health = game->player.max_health;
-                                game->player.is_on_ground = false;
-                                game->player.jump_requested = false; // Reset on level select
-                                game->current_level_data->scroll_x = 0;
+                                // game->current_level = current_menu->selected_index + 1; // Handled by reset
+                                // game->current_level_data = &game->levels[game->current_level - 1]; // Handled by reset
+                                // game->player.x = SCREEN_WIDTH / 4.0f;
+                                // game->player.y = SCREEN_HEIGHT / 2.0f;
+                                // game->player.dx = 0;
+                                // game->player.dy = 0;
+                                // game->player.health = game->player.max_health;
+                                // game->player.is_on_ground = false;
+                                // game->player.jump_requested = false; // Reset on level select
+                                // game->current_level_data->scroll_x = 0; // Handled by reset
+                                reset_player_and_level(game, current_menu->selected_index); // Pass level index
                                 game->state = PLAYING;
                             }
                             break;
@@ -160,16 +164,17 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
             case ALLEGRO_KEY_N: 
                 if (game->state == LEVEL_COMPLETE) {
                     if (game->current_level < game->num_levels) {
-                        game->current_level++;
-                        game->current_level_data = &game->levels[game->current_level - 1];
-                        game->player.x = SCREEN_WIDTH / 4.0f;
-                        game->player.y = SCREEN_HEIGHT / 2.0f;
-                        game->player.dx = 0;
-                        game->player.dy = 0;
-                        game->player.health = game->player.max_health;
-                        game->player.is_on_ground = false;
-                        game->player.jump_requested = false; // Reset on next level
-                        game->current_level_data->scroll_x = 0;
+                        // game->current_level++; // Handled by reset
+                        // game->current_level_data = &game->levels[game->current_level - 1]; // Handled by reset
+                        // game->player.x = SCREEN_WIDTH / 4.0f;
+                        // game->player.y = SCREEN_HEIGHT / 2.0f;
+                        // game->player.dx = 0;
+                        // game->player.dy = 0;
+                        // game->player.health = game->player.max_health;
+                        // game->player.is_on_ground = false;
+                        // game->player.jump_requested = false; // Reset on next level
+                        // game->current_level_data->scroll_x = 0; // Handled by reset
+                        reset_player_and_level(game, game->current_level); // game->current_level is 1-based, reset wants 0-based index for next level
                         game->state = PLAYING;
                     } else {
                         game->state = VICTORY;
@@ -178,31 +183,34 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                 break;
             case ALLEGRO_KEY_ENTER:
                 if (game->state == GAME_OVER) {
+                    // Game state is reset to main menu, no need to call reset_player_and_level here
+                    // as starting a new game from main menu will call it.
                     game->state = MAIN_MENU;
                 }
                 break;
             case ALLEGRO_KEY_R:
                 if (game->state == GAME_OVER) {
-                    game->player.x = SCREEN_WIDTH / 4.0f;
-                    game->player.y = SCREEN_HEIGHT / 2.0f;
-                    game->player.dx = 0;
-                    game->player.dy = 0;
-                    game->player.health = game->player.max_health;
-                    game->player.last_attack = 0;
-                    game->player.jump_requested = false; // Reset on retry
-                    game->current_level_data->scroll_x = 0;
-                    for (int i = 0; i < game->current_level_data->num_enemies; i++) {
-                        Entity* enemy = &game->current_level_data->enemies[i];
-                        // Re-initialize enemy positions based on their initial setup if possible
-                        // For now, using a generic reset. This might need to be level specific.
-                        enemy->x = 400.0f + i * 300.0f; // Example reset position
-                        enemy->y = SCREEN_HEIGHT/2.0f;
-                        enemy->dx = 2.0f;
-                        enemy->dy = 0;
-                        enemy->health = enemy->max_health;
-                        enemy->behavior = BEHAVIOR_PATROL; // Reset behavior
-                        enemy->active = true; // Ensure enemy is active
-                    }
+                    // game->player.x = SCREEN_WIDTH / 4.0f;
+                    // game->player.y = SCREEN_HEIGHT / 2.0f;
+                    // game->player.dx = 0;
+                    // game->player.dy = 0;
+                    // game->player.health = game->player.max_health;
+                    // game->player.last_attack = 0;
+                    // game->player.jump_requested = false; // Reset on retry
+                    // game->current_level_data->scroll_x = 0;
+                    // for (int i = 0; i < game->current_level_data->num_enemies; i++) {
+                    //     Entity* enemy = &game->current_level_data->enemies[i];
+                    //     // Re-initialize enemy positions based on their initial setup if possible
+                    //     // For now, using a generic reset. This might need to be level specific.
+                    //     enemy->x = 400.0f + i * 300.0f; // Example reset position
+                    //     enemy->y = SCREEN_HEIGHT/2.0f;
+                    //     enemy->dx = 2.0f;
+                    //     enemy->dy = 0;
+                    //     enemy->health = enemy->max_health;
+                    //     enemy->behavior = BEHAVIOR_PATROL; // Reset behavior
+                    //     enemy->active = true; // Ensure enemy is active
+                    // }
+                    reset_player_and_level(game, game->current_level - 1); // Reset current level (current_level is 1-based)
                     game->state = PLAYING;
                 }
                 break;

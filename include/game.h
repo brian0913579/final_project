@@ -99,6 +99,12 @@
 #define PLAYER_INVINCIBILITY_FRAMES 30 // Frames of invincibility after taking damage
 #define PLAYER_KNOCKBACK_FORCE 10.0f
 
+// Glucose Item Constants
+#define GLUCOSE_WIDTH 20
+#define GLUCOSE_HEIGHT 20
+#define GLUCOSE_HEALTH_RECOVERY 25
+#define COLOR_GLUCOSE al_map_rgb(255, 105, 180) // A pinkish color for glucose
+
 #define MAX_STEP_UP_HEIGHT 8.0f    // Maximum height the player can automatically step up
 
 // Game Progression
@@ -177,6 +183,13 @@ typedef struct {
     bool is_active; // Might be useful later
 } Portal;
 
+// Glucose Item structure
+typedef struct {
+    float x, y;
+    float width, height;
+    bool active;
+} GlucoseItem;
+
 // Structure for game entities (player and enemies)
 typedef struct {
     float x, y;           // Position
@@ -228,14 +241,17 @@ typedef struct {
 typedef struct {
     Platform* platforms;
     Entity* enemies;
+    GlucoseItem* glucose_items; // Added for glucose items
     int num_platforms;
     int num_enemies;
+    int num_glucose_items; // Added for glucose items
     ALLEGRO_BITMAP* background;
-    float scroll_x;      // For scrolling levels
-    float level_width;   // Total level width
+    float scroll_x;
+    float level_width;
     char* level_name;
     char* level_description;
-    Portal portal;       // Added portal to level structure
+    Portal portal;
+    int id; // Added to store the level number (e.g., 1, 2, 3)
 } Level;
 
 // Game settings

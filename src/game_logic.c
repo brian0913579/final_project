@@ -155,8 +155,13 @@ bool init_game(Game* game) {
     game->score = 0;
     game->current_level = INITIAL_LEVEL; // Start at level 1
 
+    // It's important that init_levels is called *before* reset_player_and_level
+    // so that all level data (including original glucose states) is loaded first.
     init_menus(game);
-    init_levels(game); // This will set game->current_level_data
+    init_levels(game); 
+
+    // Now, reset player and the current level to its initial state (including glucose items)
+    reset_player_and_level(game, game->current_level); 
 
     al_start_timer(game->timer);
     return true;
@@ -206,6 +211,67 @@ void init_menus(Game* game) {
     game->settings.difficulty = DIFFICULTY_NORMAL;
     game->settings.sound_enabled = true;
     game->settings.music_enabled = true;
+}
+
+// New reset_player_and_level function
+void reset_player_and_level(Game* game, int level_idx) {
+    // Reset player state
+    game->player.x = SCREEN_WIDTH * PLAYER_INITIAL_X_FACTOR;
+    game->player.y = SCREEN_HEIGHT * PLAYER_INITIAL_Y_FACTOR;
+    game->player.dx = 0;
+    game->player.dy = 0;
+    game->player.health = PLAYER_INITIAL_HEALTH;
+    game->player.is_on_ground = false;
+    game->player.jump_requested = false;
+    // Reset other player attributes as needed (e.g., score for the level if not global)
+
+    // Ensure the level index is valid
+    if (level_idx < 0 || level_idx >= game->num_levels) {
+        fprintf(stderr, "Invalid level index for reset: %d\n", level_idx);
+        level_idx = 0; // Default to first level
+    }
+    game->current_level = level_idx;
+    game->current_level_data = &game->levels[level_idx];
+
+    // Reload or reset the content of the current level to its original state
+    // This includes reactivating all glucose items for that level.
+    // We need to be careful if init_level_content reallocates memory.
+    // A safer approach might be to have a separate reset_level_items function
+    // or ensure init_level_content can be called multiple times safely.
+
+    // For now, let's re-initialize the specific content for the current level.
+    // This assumes init_level_content correctly sets up glucose items to active.
+    // If init_level_content frees and reallocates, this is fine.
+    // If it modifies in place, we need a dedicated reset for items.
+
+    // Let's try re-running init_level_content for the specific level.
+    // We need the original level_number (1, 2, or 3) not the index (0, 1, 2).
+    // We added 'id' to the Level struct for this purpose.
+    if (game->current_level_data) {
+        // Before re-initializing content, free existing dynamic content within the level
+        // to prevent memory leaks if init_level_content reallocates.
+        if (game->current_level_data->platforms) free(game->current_level_data->platforms);
+        game->current_level_data->platforms = NULL;
+        game->current_level_data->num_platforms = 0;
+
+        if (game->current_level_data->enemies) free(game->current_level_data->enemies);
+        game->current_level_data->enemies = NULL;
+        game->current_level_data->num_enemies = 0;
+
+        if (game->current_level_data->glucose_items) free(game->current_level_data->glucose_items);
+        game->current_level_data->glucose_items = NULL;
+        game->current_level_data->num_glucose_items = 0;
+        
+        // Portal and background are handled by init_levels and init_level_content, 
+        // but backgrounds are loaded once in init_levels. Portal is part of level struct.
+
+        init_level_content(game->current_level_data, game->current_level_data->id);
+    } else {
+        fprintf(stderr, "Error: current_level_data is NULL during reset_player_and_level\n");
+    }
+
+    // Reset scroll position
+    game->current_level_data->scroll_x = 0;
 }
 
 // Original update_game function from main.c
@@ -320,6 +386,25 @@ void update_game(Game* game) {
     }
     
     handle_collisions(game);
+    
+    // Check for collision with glucose items
+    for (int i = 0; i < game->current_level_data->num_glucose_items; i++) {
+        GlucoseItem* item = &game->current_level_data->glucose_items[i];
+        if (item->active &&
+            game->player.x < item->x + GLUCOSE_WIDTH &&
+            game->player.x + game->player.width > item->x &&
+            game->player.y < item->y + GLUCOSE_HEIGHT &&
+            game->player.y + game->player.height > item->y) {
+            
+            item->active = false; // Deactivate the item
+            game->player.health += GLUCOSE_HEALTH_RECOVERY;
+            if (game->player.health > game->player.max_health) {
+                game->player.health = game->player.max_health;
+            }
+            // Potentially add a sound effect for item collection here
+            // if (game->collect_sound) al_play_sample(game->collect_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        }
+    }
     
     if (game->player.x < 0) game->player.x = 0;
     if (game->player.x > game->current_level_data->level_width - game->player.width) {

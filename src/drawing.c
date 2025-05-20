@@ -192,6 +192,20 @@ void draw_game(Game* game) {
                     }
                 }
             }
+
+            // Draw Glucose Items
+            for (int i = 0; i < current->num_glucose_items; i++) {
+                GlucoseItem* g = &current->glucose_items[i];
+                if (!g->active) continue;
+                float screen_x = g->x - current->scroll_x;
+                // Check if the glucose item is on screen before drawing
+                if (screen_x + g->width >= 0 && screen_x <= SCREEN_WIDTH) {
+                    al_draw_filled_rectangle(screen_x, g->y, 
+                                             screen_x + g->width, g->y + g->height, 
+                                             COLOR_GLUCOSE);
+                }
+            }
+
             float player_screen_x = game->player.x - current->scroll_x;
             al_draw_filled_circle(player_screen_x + game->player.width/2, 
                                 game->player.y + game->player.height/2, 

@@ -6,16 +6,19 @@
 #include <math.h>     // For sin in level generation
 
 // Original init_level function from main.c
-void init_level(Level* level, const char* name, const char* description, float width) {
+void init_level(Level* level, const char* name, const char* description, float width, int id) { // Added id parameter
     level->platforms = NULL;
     level->enemies = NULL;
+    level->glucose_items = NULL; // Initialize glucose_items
     level->num_platforms = 0;
     level->num_enemies = 0;
+    level->num_glucose_items = 0; // Initialize num_glucose_items
     level->background = NULL;
     level->scroll_x = 0;
     level->level_width = width;
     level->level_name = strdup(name);
     level->level_description = strdup(description);
+    level->id = id; // Store the level id
     // Portal is initialized in init_level_content
 }
 
@@ -29,15 +32,15 @@ void init_levels(Game* game) {
     }
     
     init_level(&game->levels[0], "The Blood Stream", 
-        "Navigate through blood vessels while avoiding patrolling T-cells", 1600);
+        "Navigate through blood vessels while avoiding patrolling T-cells", 1600, 1); // Pass id 1
     init_level_content(&game->levels[0], 1);
     
     init_level(&game->levels[1], "The Lymph Node",
-        "Survive the immune system's fortress", 2400);
+        "Survive the immune system\'s fortress", 2400, 2); // Pass id 2
     init_level_content(&game->levels[1], 2);
     
     init_level(&game->levels[2], "The Final Battle",
-        "Face off against specialized killer cells", 3200);
+        "Face off against specialized killer cells", 3200, 3); // Pass id 3
     init_level_content(&game->levels[2], 3);
 
     game->current_level_data = &game->levels[0];
@@ -62,7 +65,7 @@ void init_level_content(Level* level, int level_number) {
             if (!level->platforms) {
                 fprintf(stderr, "Failed to allocate memory for platforms in level %d\n", level_number);
                 level->num_platforms = 0;
-                return;
+                // Do not return immediately, try to load other things like glucose
             }
             
             for (int i = 0; i < 8; i++) {
@@ -106,7 +109,7 @@ void init_level_content(Level* level, int level_number) {
              if (!level->enemies) {
                 fprintf(stderr, "Failed to allocate memory for enemies in level %d\n", level_number);
                 level->num_enemies = 0;
-                return;
+                // Do not return immediately
             }
             for (int i = 0; i < level->num_enemies; i++) {
                 level->enemies[i] = (Entity){
@@ -129,7 +132,38 @@ void init_level_content(Level* level, int level_number) {
                     .sprite_sheet = NULL,
                     .current_frame = 0,
                     .frame_timer = 0,
-                    .is_on_ground = false // Initialize is_on_ground for enemies
+                    .is_on_ground = false,
+                    .jump_requested = false
+                };
+            }
+
+            // Initialize glucose items for level 1
+            level->num_glucose_items = 3;
+            level->glucose_items = malloc(sizeof(GlucoseItem) * level->num_glucose_items);
+            if (!level->glucose_items) {
+                fprintf(stderr, "Failed to allocate memory for glucose items in level %d\n", level_number);
+                level->num_glucose_items = 0;
+            } else {
+                level->glucose_items[0] = (GlucoseItem){
+                    .x = 250.0f,
+                    .y = SCREEN_HEIGHT - 150.0f,
+                    .width = GLUCOSE_WIDTH,
+                    .height = GLUCOSE_HEIGHT,
+                    .active = true
+                };
+                level->glucose_items[1] = (GlucoseItem){
+                    .x = 750.0f,
+                    .y = 150.0f,
+                    .width = GLUCOSE_WIDTH,
+                    .height = GLUCOSE_HEIGHT,
+                    .active = true
+                };
+                level->glucose_items[2] = (GlucoseItem){
+                    .x = 1250.0f,
+                    .y = SCREEN_HEIGHT - 150.0f,
+                    .width = GLUCOSE_WIDTH,
+                    .height = GLUCOSE_HEIGHT,
+                    .active = true
                 };
             }
             break;
@@ -168,12 +202,14 @@ void init_level_content(Level* level, int level_number) {
 void cleanup_level(Level* level) {
     if (level->platforms) free(level->platforms);
     if (level->enemies) free(level->enemies);
+    if (level->glucose_items) free(level->glucose_items); // Free glucose_items
     if (level->background) al_destroy_bitmap(level->background);
     if (level->level_name) free(level->level_name);
     if (level->level_description) free(level->level_description);
     // Set pointers to NULL after freeing to prevent double free issues
     level->platforms = NULL;
     level->enemies = NULL;
+    level->glucose_items = NULL; // Set glucose_items to NULL
     level->background = NULL;
     level->level_name = NULL;
     level->level_description = NULL;

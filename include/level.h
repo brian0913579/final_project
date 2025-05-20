@@ -9,7 +9,7 @@
 #include <math.h>   // For sin (used in level 1 platform generation)
 
 // Function declarations for level management
-void init_level(Level* level, const char* name, const char* description, float width);
+void init_level(Level* level, const char* name, const char* description, float width, int id); // Added id parameter
 void init_levels(Game* game);
 void init_level_content(Level* level, int level_number);
 void cleanup_level(Level* level);
