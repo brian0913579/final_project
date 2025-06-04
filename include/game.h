@@ -98,6 +98,14 @@
 #define PLAYER_ATTACK_SPEED 0.5f // Attacks per second (lower is faster if used as a cooldown)
 #define PLAYER_INVINCIBILITY_FRAMES 30 // Frames of invincibility after taking damage
 #define PLAYER_KNOCKBACK_FORCE 10.0f
+#define PLAYER_ATTACK_RANGE 50.0f        // Range for player attacks
+#define PLAYER_ATTACK_COOLDOWN 30        // Frames between attacks (0.5 seconds at 60 FPS)
+
+// Player Projectile System
+#define PLAYER_PROJECTILE_SPEED 8.0f     // Player projectiles are faster than enemy ones
+#define PLAYER_PROJECTILE_DAMAGE 20      // Player projectiles do more damage than melee
+#define PLAYER_PROJECTILE_COOLDOWN 20    // Frames between shots (1/3 second at 60 FPS)
+#define PLAYER_PROJECTILE_RANGE 400.0f   // Maximum range for player projectiles
 
 // Glucose Item Constants
 #define GLUCOSE_WIDTH 20
@@ -119,6 +127,27 @@
 #define ENEMY_CHASE_SPEED 3.0f
 #define ENEMY_CHASE_BREAK_RANGE 300.0f // Distance at which enemy stops chasing
 #define ENEMY_PATROL_SPEED 2.0f
+#define ENEMY_SHOOT_RANGE 250.0f       // Range for shooting behavior
+#define ENEMY_SHOOT_COOLDOWN 90        // Frames between shots (1.5 seconds at 60 FPS)
+#define ENEMY_BOSS_PHASE_HEALTH 0.5f   // Health percentage for boss phase change
+
+// Projectile System
+#define MAX_PROJECTILES 50             // Maximum projectiles on screen
+#define PROJECTILE_SPEED 5.0f          // Projectile movement speed
+#define PROJECTILE_DAMAGE 15           // Damage dealt by projectiles
+#define PROJECTILE_LIFETIME 300        // Frames before projectile expires (5 seconds at 60 FPS)
+#define PROJECTILE_WIDTH 8.0f          // Projectile size
+#define PROJECTILE_HEIGHT 8.0f
+
+// Particle System
+#define MAX_PARTICLES 100              // Maximum particles on screen
+#define PARTICLE_LIFETIME_SHORT 30     // Short particle effect (0.5 seconds)
+#define PARTICLE_LIFETIME_MEDIUM 60    // Medium particle effect (1 second)
+
+// Enhanced particle effects constants
+#define PARTICLE_LIFETIME_LONG 120         // Long particle effect (2 seconds)
+#define ENEMY_DEATH_PARTICLES 15           // Number of particles when enemy dies
+#define PROJECTILE_TRAIL_PARTICLES 2       // Particles per frame for projectile trails
 
 // Camera/Scrolling
 #define SCROLL_X_PLAYER_OFFSET_FACTOR (1.0f / 3.0f) // Player position on screen before scrolling starts
@@ -190,6 +219,27 @@ typedef struct {
     bool active;
 } GlucoseItem;
 
+// Projectile structure
+typedef struct {
+    float x, y;           // Position
+    float dx, dy;         // Velocity
+    float width, height;  // Size
+    bool active;          // Is projectile active?
+    int lifetime;         // Frames remaining before expiration
+    int damage;           // Damage dealt by projectile
+    EntityType source;    // Who fired the projectile
+} Projectile;
+
+// Particle structure for visual effects
+typedef struct {
+    float x, y;           // Position
+    float dx, dy;         // Velocity
+    ALLEGRO_COLOR color;  // Particle color
+    int lifetime;         // Frames remaining
+    int max_lifetime;     // For fading effect
+    bool active;          // Is particle active?
+} Particle;
+
 // Structure for game entities (player and enemies)
 typedef struct {
     float x, y;           // Position
@@ -203,7 +253,8 @@ typedef struct {
     float max_health;    // Maximum health
     float attack_power;  // Damage dealt
     float attack_speed;  // Attack rate
-    float last_attack;   // Time since last attack
+    float last_attack;   // Time since last attack (also used for invincibility)
+    float last_shot;     // Time since last projectile shot
     ALLEGRO_BITMAP* sprite;
     ALLEGRO_BITMAP* sprite_sheet; // For animations
     int current_frame;   // Current animation frame
@@ -242,9 +293,13 @@ typedef struct {
     Platform* platforms;
     Entity* enemies;
     GlucoseItem* glucose_items; // Added for glucose items
+    Projectile* projectiles;    // Array of projectiles
+    Particle* particles;        // Array of particles for visual effects
     int num_platforms;
     int num_enemies;
     int num_glucose_items; // Added for glucose items
+    int num_projectiles;   // Active projectile count
+    int num_particles;     // Active particle count
     ALLEGRO_BITMAP* background;
     float scroll_x;
     float level_width;
@@ -261,6 +316,14 @@ typedef struct {
     bool music_enabled;
 } GameSettings;
 
+// Screen shake effect
+typedef struct {
+    float intensity;     // Current shake intensity
+    int duration;        // Frames remaining
+    float offset_x;      // Current screen offset
+    float offset_y;
+} ScreenShake;
+
 // Game structure
 typedef struct {
     GameState state;
@@ -276,6 +339,8 @@ typedef struct {
     ALLEGRO_SAMPLE* jump_sound;
     ALLEGRO_SAMPLE* hit_sound;
     ALLEGRO_SAMPLE* death_sound;
+    ALLEGRO_SAMPLE* collect_sound;
+    ALLEGRO_SAMPLE* shoot_sound;
     ALLEGRO_SAMPLE_INSTANCE* music_instance;
     bool running;
     int score;
@@ -284,6 +349,7 @@ typedef struct {
     Menu level_menu;
     Menu settings_menu;
     GameSettings settings;
+    ScreenShake screen_shake;    // Screen shake effect
 } Game;
 
 // Function declarations for core game setup and cleanup, if not in game_logic.h
@@ -292,5 +358,21 @@ typedef struct {
 
 // Declarations for other modules are now in their respective .h files
 // e.g., drawing.h, entity.h, input.h, level.h, game_logic.h
+
+// Projectile system function declarations
+void create_projectile(Level* level, float x, float y, float target_x, float target_y, EntityType source);
+void create_player_projectile(Level* level, float x, float y, float dx, float dy);
+void update_projectiles(Level* level, Game* game);
+void check_projectile_collisions(Level* level, Game* game);
+
+// Particle system function declarations
+void create_particle_burst(Level* level, float x, float y, ALLEGRO_COLOR color, int count);
+void create_enemy_death_effect(Level* level, float x, float y, EntityType enemy_type);
+void create_projectile_trail(Level* level, float x, float y, EntityType source);
+void update_particles(Level* level);
+
+// Screen shake effect function declarations
+void create_screen_shake(Game* game, float intensity, int duration);
+void update_screen_shake(Game* game);
 
 #endif /* GAME_H */

@@ -149,31 +149,39 @@ void draw_game(Game* game) {
         case PLAYING:
             al_clear_to_color(COLOR_SKY_BLUE);
             Level* current = game->current_level_data;
+            
+            // Apply screen shake offset to camera
+            float shake_offset_x = game->screen_shake.offset_x;
+            float shake_offset_y = game->screen_shake.offset_y;
+            
             if (current->background) {
-                al_draw_bitmap(current->background, -current->scroll_x, 0, 0);
+                al_draw_bitmap(current->background, -current->scroll_x + shake_offset_x, shake_offset_y, 0);
             }
             for (int i = 0; i < current->num_platforms; i++) {
                 Platform* p = &current->platforms[i];
-                float screen_x = p->x - current->scroll_x;
+                float screen_x = p->x - current->scroll_x + shake_offset_x;
+                float screen_y = p->y + shake_offset_y;
                 if (screen_x + p->width >= 0 && screen_x <= SCREEN_WIDTH) {
-                    al_draw_filled_rectangle(screen_x, p->y, screen_x + p->width, p->y + p->height, p->color);
+                    al_draw_filled_rectangle(screen_x, screen_y, screen_x + p->width, screen_y + p->height, p->color);
                 }
             }
             if (current->portal.is_active) {
-                float portal_screen_x = current->portal.x - current->scroll_x;
+                float portal_screen_x = current->portal.x - current->scroll_x + shake_offset_x;
+                float portal_screen_y = current->portal.y + shake_offset_y;
                 if (portal_screen_x + current->portal.width >= 0 && portal_screen_x <= SCREEN_WIDTH) {
-                    al_draw_filled_rectangle(portal_screen_x, current->portal.y,
-                        portal_screen_x + current->portal.width, current->portal.y + current->portal.height,
+                    al_draw_filled_rectangle(portal_screen_x, portal_screen_y,
+                        portal_screen_x + current->portal.width, portal_screen_y + current->portal.height,
                         COLOR_PURPLE);
-                    al_draw_rectangle(portal_screen_x, current->portal.y,
-                        portal_screen_x + current->portal.width, current->portal.y + current->portal.height,
+                    al_draw_rectangle(portal_screen_x, portal_screen_y,
+                        portal_screen_x + current->portal.width, portal_screen_y + current->portal.height,
                         COLOR_WHITE, PORTAL_BORDER_THICKNESS);
                 }
             }
             for (int i = 0; i < current->num_enemies; i++) {
                 Entity* e = &current->enemies[i];
                 if (!e->active) continue;
-                float screen_x = e->x - current->scroll_x;
+                float screen_x = e->x - current->scroll_x + shake_offset_x;
+                float screen_y = e->y + shake_offset_y;
                 if (screen_x + e->width >= 0 && screen_x <= SCREEN_WIDTH) {
                     ALLEGRO_COLOR enemy_color;
                     switch (e->type) {
@@ -183,33 +191,123 @@ void draw_game(Game* game) {
                         case NK_CELL: enemy_color = COLOR_RED; break; // Bright Red
                         default: enemy_color = COLOR_WHITE;
                     }
-                    al_draw_filled_circle(screen_x + e->width/2, e->y + e->height/2, e->width/2, enemy_color);
+                    al_draw_filled_circle(screen_x + e->width/2, screen_y + e->height/2, e->width/2, enemy_color);
                     if (e->health < e->max_health) {
                         float health_percent = e->health / e->max_health;
-                        al_draw_filled_rectangle(screen_x, e->y - ENEMY_HEALTH_BAR_OFFSET_Y, 
-                            screen_x + e->width * health_percent, e->y - ENEMY_HEALTH_BAR_OFFSET_Y + ENEMY_HEALTH_BAR_HEIGHT,
+                        al_draw_filled_rectangle(screen_x, screen_y - ENEMY_HEALTH_BAR_OFFSET_Y, 
+                            screen_x + e->width * health_percent, screen_y - ENEMY_HEALTH_BAR_OFFSET_Y + ENEMY_HEALTH_BAR_HEIGHT,
                             al_map_rgb((unsigned char)(255 * (1-health_percent)), (unsigned char)(255 * health_percent), 0)); // Green to Red gradient
                     }
                 }
             }
 
-            // Draw Glucose Items
-            for (int i = 0; i < current->num_glucose_items; i++) {
-                GlucoseItem* g = &current->glucose_items[i];
-                if (!g->active) continue;
-                float screen_x = g->x - current->scroll_x;
-                // Check if the glucose item is on screen before drawing
-                if (screen_x + g->width >= 0 && screen_x <= SCREEN_WIDTH) {
-                    al_draw_filled_rectangle(screen_x, g->y, 
-                                             screen_x + g->width, g->y + g->height, 
-                                             COLOR_GLUCOSE);
+            // Draw Projectiles
+            for (int i = 0; i < MAX_PROJECTILES; i++) {
+                Projectile* p = &current->projectiles[i];
+                if (!p->active) continue;
+                float screen_x = p->x - current->scroll_x + shake_offset_x;
+                float screen_y = p->y + shake_offset_y;
+                // Check if the projectile is on screen before drawing
+                if (screen_x + p->width >= 0 && screen_x <= SCREEN_WIDTH) {
+                    // Choose color based on source
+                    ALLEGRO_COLOR projectile_color;
+                    switch (p->source) {
+                        case T_CELL: 
+                        case MACROPHAGE: 
+                        case B_CELL: 
+                        case NK_CELL: 
+                            projectile_color = al_map_rgb(255, 100, 100); // Red-ish for enemy projectiles
+                            break;
+                        case CANCER_CELL: 
+                            projectile_color = al_map_rgb(0, 255, 255); // Cyan for player projectiles
+                            break;
+                        default: 
+                            projectile_color = COLOR_WHITE;
+                    }
+                    
+                    // Draw projectile as a small filled circle
+                    al_draw_filled_circle(screen_x + p->width/2, screen_y + p->height/2, p->width/2, projectile_color);
+                    
+                    // Add different border colors for better distinction
+                    ALLEGRO_COLOR border_color = (p->source == CANCER_CELL) ? al_map_rgb(255, 255, 255) : al_map_rgb(255, 0, 0);
+                    al_draw_circle(screen_x + p->width/2, screen_y + p->height/2, p->width/2, border_color, 1.5f);
                 }
             }
 
-            float player_screen_x = game->player.x - current->scroll_x;
+            // Draw Particles
+            for (int i = 0; i < MAX_PARTICLES; i++) {
+                Particle* p = &current->particles[i];
+                if (!p->active) continue;
+                float screen_x = p->x - current->scroll_x + shake_offset_x;
+                float screen_y = p->y + shake_offset_y;
+                // Check if the particle is on screen before drawing
+                if (screen_x >= -10 && screen_x <= SCREEN_WIDTH + 10) {
+                    // Draw particle as a small filled circle with fading alpha
+                    al_draw_filled_circle(screen_x, screen_y, 2.0f, p->color);
+                }
+            }
+
+            // Draw Glucose Items with pulsing effect
+            for (int i = 0; i < current->num_glucose_items; i++) {
+                GlucoseItem* g = &current->glucose_items[i];
+                if (!g->active) continue;
+                float screen_x = g->x - current->scroll_x + shake_offset_x;
+                float screen_y = g->y + shake_offset_y;
+                // Check if the glucose item is on screen before drawing
+                if (screen_x + g->width >= 0 && screen_x <= SCREEN_WIDTH) {
+                    // Create pulsing effect
+                    float pulse = (1 + sin(al_get_time() * 4)) * 0.3f + 0.7f; // Pulse between 0.7 and 1.0
+                    ALLEGRO_COLOR glucose_color = al_map_rgb(
+                        (unsigned char)(255 * pulse), 
+                        (unsigned char)(105 * pulse), 
+                        (unsigned char)(180 * pulse)
+                    );
+                    
+                    // Draw with slight size variation for pulsing effect
+                    float size_mod = pulse * 2.0f;
+                    al_draw_filled_rectangle(screen_x - size_mod, screen_y - size_mod, 
+                                             screen_x + g->width + size_mod, screen_y + g->height + size_mod, 
+                                             glucose_color);
+                    
+                    // Add a bright border for visibility
+                    al_draw_rectangle(screen_x - size_mod, screen_y - size_mod,
+                                     screen_x + g->width + size_mod, screen_y + g->height + size_mod,
+                                     COLOR_WHITE, 1.0f);
+                }
+            }
+
+            float player_screen_x = game->player.x - current->scroll_x + shake_offset_x;
+            float player_screen_y = game->player.y + shake_offset_y;
+            
+            // Draw attack range indicator when attacking
+            if (game->player.state == ATTACKING) {
+                al_draw_circle(player_screen_x + game->player.width/2, 
+                              player_screen_y + game->player.height/2,
+                              PLAYER_ATTACK_RANGE, COLOR_RED, 2.0f);
+            }
+            
+            // Draw shooting readiness indicator
+            if (game->player.last_shot <= 0) {
+                // Small green circle above player when ready to shoot
+                al_draw_filled_circle(player_screen_x + game->player.width/2, 
+                                    player_screen_y - 8, 3.0f, al_map_rgb(0, 255, 0));
+            } else {
+                // Red circle showing cooldown
+                float cooldown_ratio = (float)game->player.last_shot / PLAYER_PROJECTILE_COOLDOWN;
+                al_draw_filled_circle(player_screen_x + game->player.width/2, 
+                                    player_screen_y - 8, 3.0f * cooldown_ratio, al_map_rgb(255, 0, 0));
+            }
+            
+            // Draw player with state-based coloring
+            ALLEGRO_COLOR player_color = COLOR_PINKISH_RED;
+            if (game->player.last_attack > 0 && ((int)game->player.last_attack % 6) < 3) {
+                // Invincibility flashing effect
+                player_color = al_map_rgb(255, 150, 150);
+            }
+            
             al_draw_filled_circle(player_screen_x + game->player.width/2, 
-                                game->player.y + game->player.height/2, 
-                                game->player.width/2, COLOR_PINKISH_RED); // Player color
+                                player_screen_y + game->player.height/2, 
+                                game->player.width/2, player_color);
             // Player Health Bar
             float health_percent = game->player.health / game->player.max_health;
             al_draw_filled_rectangle(PLAYER_HUD_HEALTH_X, PLAYER_HUD_HEALTH_Y, 

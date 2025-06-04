@@ -12,7 +12,8 @@ SRCS = $(SRC_DIR)/main.c \
        $(SRC_DIR)/level.c \
        $(SRC_DIR)/drawing.c \
        $(SRC_DIR)/input.c \
-       $(SRC_DIR)/game_logic.c
+       $(SRC_DIR)/game_logic.c \
+       $(SRC_DIR)/projectile.c
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

@@ -1,8 +1,8 @@
 #include "../include/input.h"
-#include "../include/game.h" // For Game, Level, Menu, Entity, GameState, constants
-#include "../include/game_logic.h" // Added for reset_player_and_level
-#include <allegro5/keyboard.h> // Changed from allegro_keyboard.h
-#include <allegro5/keycodes.h> // For
+#include "../include/game.h"
+#include "../include/game_logic.h"
+#include <allegro5/keyboard.h>
+#include <allegro5/keycodes.h>
 
 // Original handle_menu_input function from main.c
 void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
@@ -148,6 +148,37 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
             case ALLEGRO_KEY_SPACE:
                 if (game->state == PLAYING) { // Removed is_on_ground check here
                     game->player.jump_requested = true;
+                }
+                break;
+            case ALLEGRO_KEY_J:
+            case ALLEGRO_KEY_X:
+                if (game->state == PLAYING && game->player.last_attack <= 0) {
+                    game->player.state = ATTACKING;
+                    game->player.last_attack = PLAYER_ATTACK_COOLDOWN;
+                }
+                break;
+            case ALLEGRO_KEY_Q:
+                if (game->state == PLAYING && game->player.last_shot <= 0) {
+                    // Player shoots projectile in the direction they're facing
+                    float shot_dx = (game->player.dx >= 0) ? PLAYER_PROJECTILE_SPEED : -PLAYER_PROJECTILE_SPEED;
+                    if (game->player.dx == 0) {
+                        // If not moving, shoot right by default
+                        shot_dx = PLAYER_PROJECTILE_SPEED;
+                    }
+                    
+                    create_player_projectile(game->current_level_data,
+                                           game->player.x + game->player.width/2,
+                                           game->player.y + game->player.height/2,
+                                           shot_dx, 0); // Shoot horizontally
+                    
+                    game->player.last_shot = PLAYER_PROJECTILE_COOLDOWN;
+                    
+                    // Play shooting sound if enabled
+                    if (game->settings.sound_enabled && game->shoot_sound) {
+                        al_play_sample(game->shoot_sound, 0.6, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+                    }
+                    
+                    printf("Player shoots projectile!\n");
                 }
                 break;
             case ALLEGRO_KEY_ESCAPE:

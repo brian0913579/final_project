@@ -47,10 +47,110 @@ void update_enemy(Entity* enemy, Game* game) {
             }
             break;
         case BEHAVIOR_SHOOT:
-            // TODO: Implement shooting behavior
+            {
+                // Stationary shooting enemy - aims and shoots at player
+                float dx_shoot = game->player.x - enemy->x;
+                float dy_shoot = game->player.y - enemy->y;
+                float distance_to_player = sqrt(dx_shoot * dx_shoot + dy_shoot * dy_shoot);
+                
+                if (distance_to_player <= ENEMY_SHOOT_RANGE) {
+                    // Face the player
+                    enemy->dx = (dx_shoot > 0) ? 1.0f : -1.0f;
+                    
+                    // Shoot if cooldown is ready
+                    if (enemy->last_attack <= 0) {
+                        // Create a projectile aimed at the player
+                        create_projectile(game->current_level_data, 
+                                        enemy->x + enemy->width/2, 
+                                        enemy->y + enemy->height/2,
+                                        game->player.x + game->player.width/2, 
+                                        game->player.y + game->player.height/2,
+                                        enemy->type);
+                        enemy->last_attack = ENEMY_SHOOT_COOLDOWN;
+                        
+                        // Play enemy shooting sound if enabled
+                        if (game->settings.sound_enabled && game->shoot_sound) {
+                            al_play_sample(game->shoot_sound, 0.4, 0.0, 1.2, ALLEGRO_PLAYMODE_ONCE, NULL);
+                        }
+                    }
+                } else {
+                    // Move slowly towards player if out of range
+                    if (distance_to_player > 0) {
+                        enemy->dx = (dx_shoot / distance_to_player) * 1.0f; // Slower than chase
+                        enemy->x += enemy->dx;
+                    }
+                }
+                
+                // Decrease shoot cooldown
+                if (enemy->last_attack > 0) {
+                    enemy->last_attack--;
+                }
+            }
             break;
+            
         case BEHAVIOR_BOSS:
-            // TODO: Implement boss behavior
+            {
+                // Complex boss behavior with multiple phases
+                float dx_boss = game->player.x - enemy->x;
+                float dy_boss = game->player.y - enemy->y;
+                float distance_to_player = sqrt(dx_boss * dx_boss + dy_boss * dy_boss);
+                float health_percentage = enemy->health / enemy->max_health;
+                
+                if (health_percentage > ENEMY_BOSS_PHASE_HEALTH) {
+                    // Phase 1: Aggressive chase with occasional pauses
+                    if (enemy->frame_timer <= 0) {
+                        // Chase phase
+                        if (distance_to_player > 0) {
+                            enemy->dx = (dx_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 1.0f);
+                            enemy->dy = (dy_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 1.0f);
+                        }
+                        enemy->x += enemy->dx;
+                        enemy->y += enemy->dy;
+                        
+                        enemy->frame_timer = 120; // Chase for 2 seconds
+                    } else if (enemy->frame_timer == 60) {
+                        // Brief pause in the middle
+                        enemy->dx = 0;
+                        enemy->dy = 0;
+                    }
+                } else {
+                    // Phase 2: Desperate behavior - faster movement and shooting
+                    if (distance_to_player > 100.0f) {
+                        // Fast approach
+                        if (distance_to_player > 0) {
+                            enemy->dx = (dx_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 2.0f);
+                            enemy->dy = (dy_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 2.0f);
+                        }
+                        enemy->x += enemy->dx;
+                        enemy->y += enemy->dy;
+                    } else {
+                        // Close combat - circular movement
+                        float angle = enemy->frame_timer * 0.1f;
+                        enemy->dx = cos(angle) * 3.0f;
+                        enemy->dy = sin(angle) * 2.0f;
+                        enemy->x += enemy->dx;
+                        enemy->y += enemy->dy;
+                    }
+                    
+                    // Rapid fire in phase 2
+                    if (enemy->last_attack <= 0 && distance_to_player <= ENEMY_SHOOT_RANGE) {
+                        create_projectile(game->current_level_data, 
+                                        enemy->x + enemy->width/2, 
+                                        enemy->y + enemy->height/2,
+                                        game->player.x + game->player.width/2, 
+                                        game->player.y + game->player.height/2,
+                                        enemy->type);
+                        // Play enemy shooting sound with higher pitch for rapid fire
+                        al_play_sample(game->shoot_sound, 0.7, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, NULL);
+                        enemy->last_attack = ENEMY_SHOOT_COOLDOWN / 2; // Faster shooting
+                        printf("Boss rapid fire!\n"); // Debug output
+                    }
+                }
+                
+                // Update timers
+                if (enemy->frame_timer > 0) enemy->frame_timer--;
+                if (enemy->last_attack > 0) enemy->last_attack--;
+            }
             break;
         case BEHAVIOR_NONE:
             break;
@@ -72,9 +172,22 @@ void handle_collisions(Game* game) {
         if (enemy->active && check_collision(&game->player, enemy)) {
             if (game->player.last_attack == 0) {
                 game->player.health -= enemy->attack_power;
+                
+                // Create screen shake effect for enemy damage
+                create_screen_shake(game, 2.0f, 10);
+                
+                // Play hit sound if enabled
+                if (game->settings.sound_enabled && game->hit_sound) {
+                    al_play_sample(game->hit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                
                 game->player.last_attack = PLAYER_INVINCIBILITY_FRAMES; // Invincibility frames
                 
                 if (game->player.health <= 0) {
+                    // Play death sound if enabled
+                    if (game->settings.sound_enabled && game->death_sound) {
+                        al_play_sample(game->death_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+                    }
                     game->state = GAME_OVER;
                 }
             }

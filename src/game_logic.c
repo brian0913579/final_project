@@ -122,11 +122,31 @@ bool init_game(Game* game) {
         fprintf(stderr, "Failed to reserve audio samples!\n");
         return false;
     }
-    // game->jump_sound = al_load_sample("resources/sounds/jump.wav"); // Example
-    // game->hit_sound = al_load_sample("resources/sounds/hit.wav");
-    // game->death_sound = al_load_sample("resources/sounds/death.wav");
-    // game->music_instance = al_load_sample_instance("resources/sounds/music.ogg");
-    // if (game->music_instance) al_attach_sample_instance_to_mixer(game->music_instance, al_get_default_mixer());
+    // Load sound effects
+    game->jump_sound = al_load_sample("resources/sounds/jump.wav");
+    game->hit_sound = al_load_sample("resources/sounds/hit.wav");
+    game->death_sound = al_load_sample("resources/sounds/death.wav");
+    game->collect_sound = al_load_sample("resources/sounds/collect.wav");
+    game->shoot_sound = al_load_sample("resources/sounds/shoot.wav");
+    
+    // For now, no background music to keep it simple
+    game->music_instance = NULL;
+    
+    if (!game->jump_sound) {
+        fprintf(stderr, "Warning: Failed to load jump.wav\n");
+    }
+    if (!game->hit_sound) {
+        fprintf(stderr, "Warning: Failed to load hit.wav\n"); 
+    }
+    if (!game->death_sound) {
+        fprintf(stderr, "Warning: Failed to load death.wav\n");
+    }
+    if (!game->collect_sound) {
+        fprintf(stderr, "Warning: Failed to load collect.wav\n");
+    }
+    if (!game->shoot_sound) {
+        fprintf(stderr, "Warning: Failed to load shoot.wav\n");
+    }
 
     game->player.x = SCREEN_WIDTH * PLAYER_INITIAL_X_FACTOR;
     game->player.y = SCREEN_HEIGHT * PLAYER_INITIAL_Y_FACTOR;
@@ -138,11 +158,29 @@ bool init_game(Game* game) {
     game->player.type = CANCER_CELL;
     game->player.state = IDLE;
     game->player.behavior = BEHAVIOR_NONE;
-    game->player.health = PLAYER_INITIAL_HEALTH;
-    game->player.max_health = PLAYER_INITIAL_MAX_HEALTH;
-    game->player.attack_power = PLAYER_INITIAL_ATTACK_POWER;
+    
+    // Adjust player stats based on difficulty
+    switch (game->settings.difficulty) {
+        case DIFFICULTY_EASY:
+            game->player.health = PLAYER_INITIAL_HEALTH + 50;
+            game->player.max_health = PLAYER_INITIAL_MAX_HEALTH + 50;
+            game->player.attack_power = PLAYER_INITIAL_ATTACK_POWER + 5;
+            break;
+        case DIFFICULTY_HARD:
+            game->player.health = PLAYER_INITIAL_HEALTH - 25;
+            game->player.max_health = PLAYER_INITIAL_MAX_HEALTH - 25;
+            game->player.attack_power = PLAYER_INITIAL_ATTACK_POWER - 2;
+            break;
+        default: // DIFFICULTY_NORMAL
+            game->player.health = PLAYER_INITIAL_HEALTH;
+            game->player.max_health = PLAYER_INITIAL_MAX_HEALTH;
+            game->player.attack_power = PLAYER_INITIAL_ATTACK_POWER;
+            break;
+    }
+    
     game->player.attack_speed = PLAYER_ATTACK_SPEED;
     game->player.last_attack = 0;
+    game->player.last_shot = 0; // Initialize shooting cooldown
     game->player.sprite = NULL;
     game->player.sprite_sheet = NULL;
     game->player.current_frame = 0;
@@ -154,6 +192,12 @@ bool init_game(Game* game) {
     game->running = true;
     game->score = 0;
     game->current_level = INITIAL_LEVEL; // Start at level 1
+
+    // Initialize screen shake
+    game->screen_shake.intensity = 0;
+    game->screen_shake.duration = 0;
+    game->screen_shake.offset_x = 0;
+    game->screen_shake.offset_y = 0;
 
     // It's important that init_levels is called *before* reset_player_and_level
     // so that all level data (including original glucose states) is loaded first.
@@ -261,6 +305,22 @@ void reset_player_and_level(Game* game, int level_idx) {
         if (game->current_level_data->glucose_items) free(game->current_level_data->glucose_items);
         game->current_level_data->glucose_items = NULL;
         game->current_level_data->num_glucose_items = 0;
+
+        // Reset projectiles
+        if (game->current_level_data->projectiles) {
+            for (int i = 0; i < MAX_PROJECTILES; i++) {
+                game->current_level_data->projectiles[i].active = false;
+            }
+        }
+        game->current_level_data->num_projectiles = 0;
+        
+        // Reset particles
+        if (game->current_level_data->particles) {
+            for (int i = 0; i < MAX_PARTICLES; i++) {
+                game->current_level_data->particles[i].active = false;
+            }
+        }
+        game->current_level_data->num_particles = 0;
         
         // Portal and background are handled by init_levels and init_level_content, 
         // but backgrounds are loaded once in init_levels. Portal is part of level struct.
@@ -284,6 +344,11 @@ void update_game(Game* game) {
     if (game->player.jump_requested && game->player.is_on_ground) {
         game->player.dy = JUMP_SPEED;
         game->player.is_on_ground = false; // Prevent double jump in same frame
+        
+        // Play jump sound if enabled
+        if (game->settings.sound_enabled && game->jump_sound) {
+            al_play_sample(game->jump_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        }
     }
     game->player.jump_requested = false; // Consume the jump request
     
@@ -302,7 +367,17 @@ void update_game(Game* game) {
             
             if (platform->is_deadly) {
                 game->player.health -= DEADLY_PLATFORM_DAMAGE; 
+                
+                // Play hit sound if enabled
+                if (game->settings.sound_enabled && game->hit_sound) {
+                    al_play_sample(game->hit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                
                 if (game->player.health <= 0) {
+                    // Play death sound if enabled
+                    if (game->settings.sound_enabled && game->death_sound) {
+                        al_play_sample(game->death_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+                    }
                     game->state = GAME_OVER;
                 }
                 // Land on deadly platform too
@@ -385,6 +460,61 @@ void update_game(Game* game) {
         }
     }
     
+    // Update projectiles
+    update_projectiles(game->current_level_data, game);
+    check_projectile_collisions(game->current_level_data, game);
+    
+    // Update particles
+    update_particles(game->current_level_data);
+    
+    // Update screen shake
+    update_screen_shake(game);
+    
+    // Handle player attack
+    if (game->player.state == ATTACKING) {
+        // Check for enemies in attack range
+        for (int i = 0; i < game->current_level_data->num_enemies; i++) {
+            Entity* enemy = &game->current_level_data->enemies[i];
+            if (!enemy->active) continue;
+            
+            float dx = enemy->x - game->player.x;
+            float dy = enemy->y - game->player.y;
+            float distance = sqrt(dx * dx + dy * dy);
+            
+            if (distance <= PLAYER_ATTACK_RANGE) {
+                enemy->health -= game->player.attack_power;
+                game->score += 25; // Score for damaging enemy
+                
+                if (enemy->health <= 0) {
+                    // Create enhanced death effect for melee kills too
+                    create_enemy_death_effect(game->current_level_data, 
+                                            enemy->x + enemy->width/2, 
+                                            enemy->y + enemy->height/2, 
+                                            enemy->type);
+                    enemy->active = false;
+                    game->score += 100; // Bonus for defeating enemy
+                    printf("Enemy defeated! Score: %d\n", game->score);
+                }
+                
+                // Visual feedback - enemy flash or knockback could be added here
+                printf("Player attacks enemy! Enemy health: %.0f\n", enemy->health);
+            }
+        }
+        
+        // Reset attack state after one frame
+        game->player.state = MOVING;
+    }
+    
+    // Decrease attack cooldown
+    if (game->player.last_attack > 0) {
+        game->player.last_attack--;
+    }
+    
+    // Decrease shooting cooldown
+    if (game->player.last_shot > 0) {
+        game->player.last_shot--;
+    }
+    
     handle_collisions(game);
     
     // Check for collision with glucose items
@@ -401,8 +531,24 @@ void update_game(Game* game) {
             if (game->player.health > game->player.max_health) {
                 game->player.health = game->player.max_health;
             }
-            // Potentially add a sound effect for item collection here
-            // if (game->collect_sound) al_play_sample(game->collect_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+            
+            // Add score for collecting glucose
+            game->score += 50;
+            
+            // Create collection particle effect
+            create_particle_burst(game->current_level_data, 
+                                item->x + GLUCOSE_WIDTH/2, 
+                                item->y + GLUCOSE_HEIGHT/2, 
+                                al_map_rgb(255, 105, 180), 12);
+            
+            // Play collect sound if enabled
+            if (game->settings.sound_enabled && game->collect_sound) {
+                al_play_sample(game->collect_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
+            
+            // Visual feedback could be added here (particle effect, score popup)
+            printf("Glucose collected! Health: %.0f/%.0f, Score: %d\n", 
+                   game->player.health, game->player.max_health, game->score);
         }
     }
     
@@ -412,8 +558,12 @@ void update_game(Game* game) {
     }
     // Allow falling off bottom of screen for game over, or handle differently
     if (game->player.y > SCREEN_HEIGHT) { // Fell off bottom
-         game->player.health = 0;
-         game->state = GAME_OVER; // Or a specific "fell off" game over
+        // Play death sound if enabled
+        if (game->settings.sound_enabled && game->death_sound) {
+            al_play_sample(game->death_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        }
+        game->player.health = 0;
+        game->state = GAME_OVER; // Or a specific "fell off" game over
     } else if (game->player.y < 0 && game->player.dy < 0) { // Hit ceiling
         game->player.y = 0;
         game->player.dy = 0;
@@ -439,6 +589,38 @@ void update_game(Game* game) {
         game->player.y + game->player.height > portal->y) {
         game->state = LEVEL_COMPLETE;
         game->score += LEVEL_COMPLETE_SCORE_BONUS; // Bonus for completing level
+    }
+}
+
+// Screen shake effect functions
+void create_screen_shake(Game* game, float intensity, int duration) {
+    if (!game) return;
+    
+    // Only apply if new shake is stronger or current shake is ending
+    if (intensity > game->screen_shake.intensity || game->screen_shake.duration < 10) {
+        game->screen_shake.intensity = intensity;
+        game->screen_shake.duration = duration;
+    }
+}
+
+void update_screen_shake(Game* game) {
+    if (!game) return;
+    
+    if (game->screen_shake.duration > 0) {
+        // Calculate random offset based on intensity
+        float max_offset = game->screen_shake.intensity;
+        game->screen_shake.offset_x = ((rand() % 200) - 100) / 100.0f * max_offset;
+        game->screen_shake.offset_y = ((rand() % 200) - 100) / 100.0f * max_offset;
+        
+        // Gradually reduce intensity and duration
+        game->screen_shake.duration--;
+        game->screen_shake.intensity *= 0.95f; // Gradual fade
+        
+        if (game->screen_shake.duration <= 0) {
+            game->screen_shake.intensity = 0;
+            game->screen_shake.offset_x = 0;
+            game->screen_shake.offset_y = 0;
+        }
     }
 }
 
@@ -469,6 +651,8 @@ void cleanup_game(Game* game) {
     if (game->jump_sound) al_destroy_sample(game->jump_sound);
     if (game->hit_sound) al_destroy_sample(game->hit_sound);
     if (game->death_sound) al_destroy_sample(game->death_sound);
+    if (game->collect_sound) al_destroy_sample(game->collect_sound);
+    if (game->shoot_sound) al_destroy_sample(game->shoot_sound);
     if (game->music_instance) al_destroy_sample_instance(game->music_instance);
     
     if (game->font) al_destroy_font(game->font);
