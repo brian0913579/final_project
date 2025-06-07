@@ -28,8 +28,8 @@ void video_display(ALLEGRO_VIDEO *video) {
                           // the position of result image
                           0, 0,
                           // the width and height of result image
-                          al_get_display_width(screen),
-                          al_get_display_height(screen), 0);
+                          1280,720,
+                          0);
     img = al_load_bitmap("resources/sprites/star_0_0.png"); 
     int number_star=9; //星星累積數還要從其他地方引入
     for (int i=0;i<number_star;i++)
@@ -38,14 +38,14 @@ void video_display(ALLEGRO_VIDEO *video) {
                                 0, 0,// source start (top-left of image)
                                 al_get_bitmap_width(img),// original width
                                 al_get_bitmap_height(img),// original height
-                                880-i*30, 270,// destination position on screen
-                                30, 30,// scaled width and height
+                                1050-i*35, 250,// destination position on screen
+                                35, 35,// scaled width and height
                                 0// no special flags
                                 );
     }
     //輸出的時間還需要從其他地方引入
-    font = al_load_ttf_font("resources/font/13.ttf", 45, 0); // ANS: load font
-    al_draw_text(font, al_map_rgb(0,0,0), 845, 340, ALLEGRO_ALIGN_CENTRE,  "04:33.76"); // ANS: draw some text
+    font = al_load_ttf_font("resources/font/13.ttf", 55, 0); // ANS: load font
+    al_draw_text(font, al_map_rgb(0,0,0), 1008, 312, ALLEGRO_ALIGN_CENTRE,  "04:33.76"); // ANS: draw some text
     al_flip_display();
 }
 
@@ -54,7 +54,7 @@ void init_video(){
     al_init_video_addon();
     al_install_audio();
     timer = al_create_timer(1.0 / 60);
-    screen = al_create_display(1024, 760);
+    screen = al_create_display(1280, 720);
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
     filename = "resources/sprites/fail.ogv";
     video = al_open_video(filename);
