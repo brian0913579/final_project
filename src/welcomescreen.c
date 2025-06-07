@@ -31,7 +31,7 @@ void init_video()
     timer = al_create_timer(1.0 / 60);
     screen = al_create_display(1024, 760);
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
-    filename = "wellcomescreenshot.ogv";
+    filename = "resources/sprites/wellcomescreenshot.ogv";
     video = al_open_video(filename);
     queue = al_create_event_queue();
     ALLEGRO_EVENT_SOURCE *temp = al_get_video_event_source(video);
