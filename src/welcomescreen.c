@@ -18,8 +18,8 @@ void video_display(ALLEGRO_VIDEO *video)
                           al_get_bitmap_width(frame),
                           al_get_bitmap_height(frame),
                           0, 0,
-                          al_get_display_width(screen),
-                          al_get_display_height(screen), 0);
+                          1280,720,
+                          0);
     al_flip_display();
 }
 
@@ -29,7 +29,7 @@ void init_video()
     al_init_video_addon();
     al_install_audio();
     timer = al_create_timer(1.0 / 60);
-    screen = al_create_display(1024, 760);
+    screen = al_create_display(1280, 720);
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
     filename = "resources/sprites/wellcomescreenshot.ogv";
     video = al_open_video(filename);
