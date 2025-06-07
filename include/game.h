@@ -10,8 +10,8 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/keyboard.h> // Changed to keyboard.h based on directory listing
 
-#define SCREEN_WIDTH    800
-#define SCREEN_HEIGHT   600
+#define SCREEN_WIDTH    1280
+#define SCREEN_HEIGHT   720
 #define FPS            60.0
 #define PLATFORM_JUMP_TOLERANCE 8.0f // Pixels tolerance for standing on a platform, increased and made float
 #define PORTAL_WIDTH 50
@@ -107,6 +107,23 @@
 #define PLAYER_PROJECTILE_COOLDOWN 20    // Frames between shots (1/3 second at 60 FPS)
 #define PLAYER_PROJECTILE_RANGE 400.0f   // Maximum range for player projectiles
 
+// Advanced Jump Mechanics
+#define COYOTE_TIME_FRAMES 8             // Frames player can still jump after leaving ground
+#define JUMP_BUFFER_FRAMES 6             // Frames to buffer jump input before landing
+#define WALL_JUMP_FRAMES 12              // Frames to detect wall contact for wall jumping
+#define WALL_JUMP_HORIZONTAL_SPEED 7.0f  // Horizontal speed when wall jumping
+#define WALL_JUMP_VERTICAL_SPEED -8.0f   // Vertical speed when wall jumping (slightly less than normal jump)
+
+// Enhanced Combat System
+#define COMBO_WINDOW_FRAMES 60           // Frames within which combos can be chained (1 second)
+#define COMBO_DAMAGE_MULTIPLIER 1.5f     // Damage multiplier for combo attacks
+#define MAX_COMBO_COUNT 5                // Maximum combo chain length
+#define CRITICAL_HIT_CHANCE 0.15f        // 15% chance for critical hits
+#define CRITICAL_HIT_MULTIPLIER 2.0f     // Damage multiplier for critical hits
+#define KNOCKBACK_FORCE 8.0f            // Force applied to enemies when hit
+#define KNOCKBACK_DURATION 15            // Frames enemies are knocked back
+#define ATTACK_MOMENTUM_BOOST 2.0f       // Speed boost when attacking in movement direction
+
 // Glucose Item Constants
 #define GLUCOSE_WIDTH 20
 #define GLUCOSE_HEIGHT 20
@@ -130,6 +147,20 @@
 #define ENEMY_SHOOT_RANGE 250.0f       // Range for shooting behavior
 #define ENEMY_SHOOT_COOLDOWN 90        // Frames between shots (1.5 seconds at 60 FPS)
 #define ENEMY_BOSS_PHASE_HEALTH 0.5f   // Health percentage for boss phase change
+
+// Advanced AI Behavior Constants
+#define AI_FLANK_DISTANCE 150.0f       // Distance to maintain when flanking
+#define AI_COORDINATION_RANGE 300.0f   // Range for enemy coordination
+#define AI_PREDICTION_FRAMES 45        // Frames to predict player movement
+#define AI_TACTICAL_PAUSE_CHANCE 0.3f  // 30% chance to pause tactically
+#define AI_RETREAT_HEALTH_THRESHOLD 0.25f // Health % when enemies retreat
+#define AI_GROUP_ATTACK_MIN_ENEMIES 2  // Minimum enemies for group tactics
+#define AI_ADAPTIVE_DIFFICULTY_FACTOR 0.1f // How much AI adapts per player success
+#define AI_PATHFINDING_LOOKAHEAD 5     // Steps to look ahead for pathfinding
+#define AI_AGGRESSION_BASE 1.0f        // Base aggression multiplier
+#define AI_LEARNING_RATE 0.05f         // How fast AI adapts to player behavior
+#define AI_AMBUSH_WAIT_FRAMES 180      // Frames to wait before ambush (3 seconds)
+#define AI_SURROUND_ANGLE_OFFSET 90.0f // Degrees offset for surrounding player
 
 // Projectile System
 #define MAX_PROJECTILES 50             // Maximum projectiles on screen
@@ -202,7 +233,12 @@ typedef enum {
     BEHAVIOR_PATROL,    // Move back and forth
     BEHAVIOR_CHASE,     // Chase the player
     BEHAVIOR_SHOOT,     // Shoot projectiles
-    BEHAVIOR_BOSS       // Complex boss behavior
+    BEHAVIOR_BOSS,      // Complex boss behavior
+    BEHAVIOR_FLANK,     // Flank around the player
+    BEHAVIOR_COORDINATE, // Coordinate with other enemies
+    BEHAVIOR_AMBUSH,    // Wait and ambush player
+    BEHAVIOR_RETREAT,   // Retreat when low health
+    BEHAVIOR_SURROUND   // Surround the player
 } EntityBehavior;
 
 // Portal structure
@@ -261,6 +297,31 @@ typedef struct {
     float frame_timer;   // Animation timer
     bool is_on_ground;    // True if the entity is on a platform
     bool jump_requested;  // True if jump input was made
+    int coyote_time;      // Frames remaining for coyote time jump
+    int jump_buffer;      // Frames remaining for jump buffer
+    int wall_contact_left;  // Frames since touching left wall
+    int wall_contact_right; // Frames since touching right wall
+    
+    // Enhanced Combat System Fields
+    int combo_count;      // Current combo chain length
+    int combo_timer;      // Frames since last combo attack
+    float knockback_dx;   // Horizontal knockback velocity
+    float knockback_dy;   // Vertical knockback velocity
+    int knockback_timer;  // Frames remaining for knockback effect
+    
+    // Advanced AI Fields
+    float ai_aggression;  // AI aggression multiplier (1.0 = normal)
+    float ai_alertness;   // How aware this enemy is (0.0-1.0)
+    int ai_state_timer;   // Timer for AI state changes
+    float target_x, target_y; // AI target position
+    int coordination_id;  // ID for coordinating with other enemies
+    bool is_coordinating; // Whether this enemy is part of a group
+    float flank_angle;    // Angle for flanking maneuvers
+    int ambush_timer;     // Timer for ambush behavior
+    bool player_spotted;  // Whether player has been detected
+    float predicted_player_x, predicted_player_y; // Predicted player position
+    int retreat_timer;    // Timer for retreat behavior
+    EntityBehavior backup_behavior; // Behavior to return to after special actions
 } Entity;
 
 // Structure for game state
@@ -350,6 +411,15 @@ typedef struct {
     Menu settings_menu;
     GameSettings settings;
     ScreenShake screen_shake;    // Screen shake effect
+    
+    // Global AI State Tracking
+    float global_ai_difficulty;   // Dynamic difficulty adjustment (starts at 1.0)
+    int player_deaths;           // Track player deaths for AI adaptation
+    int player_successful_dodges; // Track player skill for AI learning
+    int enemies_killed_streak;   // Current kill streak for AI adaptation
+    float ai_coordination_timer; // Global timer for enemy coordination
+    bool ai_alert_mode;          // Whether all enemies are on high alert
+    int ai_alert_timer;          // Timer for alert mode duration
 } Game;
 
 // Function declarations for core game setup and cleanup, if not in game_logic.h
@@ -374,5 +444,20 @@ void update_particles(Level* level);
 // Screen shake effect function declarations
 void create_screen_shake(Game* game, float intensity, int duration);
 void update_screen_shake(Game* game);
+
+// Advanced AI system function declarations
+void init_ai_system(Game* game);
+void update_global_ai_state(Game* game);
+void predict_player_movement(Entity* enemy, Entity* player);
+bool check_line_of_sight(Entity* enemy, Entity* player, Level* level);
+void update_enemy_coordination(Game* game);
+void apply_flanking_behavior(Entity* enemy, Entity* player, Game* game);
+void apply_ambush_behavior(Entity* enemy, Entity* player, Game* game);
+void apply_retreat_behavior(Entity* enemy, Entity* player, Game* game);
+void apply_surround_behavior(Entity* enemy, Entity* player, Game* game, int enemy_index);
+void adapt_ai_difficulty(Game* game, bool player_success);
+float calculate_ai_aggression(Entity* enemy, Game* game);
+bool should_coordinate_attack(Game* game, int enemy_index);
+void trigger_ai_alert_mode(Game* game, int duration);
 
 #endif /* GAME_H */

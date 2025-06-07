@@ -154,7 +154,15 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
             case ALLEGRO_KEY_X:
                 if (game->state == PLAYING && game->player.last_attack <= 0) {
                     game->player.state = ATTACKING;
-                    game->player.last_attack = PLAYER_ATTACK_COOLDOWN;
+                    
+                    // Enhanced combat: reduce cooldown for combo attacks
+                    int cooldown = PLAYER_ATTACK_COOLDOWN;
+                    if (game->player.combo_count > 0 && game->player.combo_timer > 0) {
+                        cooldown = PLAYER_ATTACK_COOLDOWN * 0.7f; // 30% faster combo attacks
+                    }
+                    game->player.last_attack = cooldown;
+                    
+                    printf("Player initiates attack! Combo count: %d\n", game->player.combo_count);
                 }
                 break;
             case ALLEGRO_KEY_Q:

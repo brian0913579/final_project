@@ -187,6 +187,17 @@ bool init_game(Game* game) {
     game->player.frame_timer = 0;
     game->player.is_on_ground = false;
     game->player.jump_requested = false; // Initialize jump_requested
+    game->player.coyote_time = 0; // Initialize coyote time
+    game->player.jump_buffer = 0; // Initialize jump buffer
+    game->player.wall_contact_left = 0; // Initialize wall contact
+    game->player.wall_contact_right = 0; // Initialize wall contact
+    
+    // Initialize enhanced combat system
+    game->player.combo_count = 0;
+    game->player.combo_timer = 0;
+    game->player.knockback_dx = 0.0f;
+    game->player.knockback_dy = 0.0f;
+    game->player.knockback_timer = 0;
 
     game->state = WELCOME_SCREEN;
     game->running = true;
@@ -267,6 +278,17 @@ void reset_player_and_level(Game* game, int level_idx) {
     game->player.health = PLAYER_INITIAL_HEALTH;
     game->player.is_on_ground = false;
     game->player.jump_requested = false;
+    game->player.coyote_time = 0; // Reset coyote time
+    game->player.jump_buffer = 0; // Reset jump buffer
+    game->player.wall_contact_left = 0; // Reset wall contact
+    game->player.wall_contact_right = 0; // Reset wall contact
+    
+    // Reset enhanced combat system
+    game->player.combo_count = 0;
+    game->player.combo_timer = 0;
+    game->player.knockback_dx = 0.0f;
+    game->player.knockback_dy = 0.0f;
+    game->player.knockback_timer = 0;
     // Reset other player attributes as needed (e.g., score for the level if not global)
 
     // Ensure the level index is valid
@@ -340,17 +362,107 @@ void update_game(Game* game) {
         return;
     }
 
-    // Process jump request
-    if (game->player.jump_requested && game->player.is_on_ground) {
-        game->player.dy = JUMP_SPEED;
-        game->player.is_on_ground = false; // Prevent double jump in same frame
+    // Enhanced jump system with coyote time and jump buffering
+    
+    // Handle jump buffering - store jump input for a few frames
+    if (game->player.jump_requested) {
+        game->player.jump_buffer = JUMP_BUFFER_FRAMES;
+    }
+    
+    // Update coyote time - allows jumping shortly after leaving ground
+    if (game->player.is_on_ground) {
+        game->player.coyote_time = COYOTE_TIME_FRAMES;
+    } else if (game->player.coyote_time > 0) {
+        game->player.coyote_time--;
+    }
+    
+    // Process jump if we have jump buffer and can still jump
+    if (game->player.jump_buffer > 0) {
+        bool can_jump = false;
+        bool is_wall_jump = false;
         
-        // Play jump sound if enabled
-        if (game->settings.sound_enabled && game->jump_sound) {
-            al_play_sample(game->jump_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        // Normal jump (on ground or coyote time)
+        if (game->player.is_on_ground || game->player.coyote_time > 0) {
+            can_jump = true;
+        }
+        // Wall jump (touching wall and not on ground)
+        else if (!game->player.is_on_ground && 
+                (game->player.wall_contact_left > 0 || game->player.wall_contact_right > 0)) {
+            can_jump = true;
+            is_wall_jump = true;
+        }
+        
+        if (can_jump) {
+            if (is_wall_jump) {
+                // Wall jump: vertical boost + horizontal push away from wall
+                game->player.dy = WALL_JUMP_VERTICAL_SPEED;
+                
+                if (game->player.wall_contact_right > 0) {
+                    // Touching right wall, jump left
+                    game->player.dx = -WALL_JUMP_HORIZONTAL_SPEED;
+                    game->player.wall_contact_right = 0;
+                    printf("Wall jump left!\n");
+                } else if (game->player.wall_contact_left > 0) {
+                    // Touching left wall, jump right
+                    game->player.dx = WALL_JUMP_HORIZONTAL_SPEED;
+                    game->player.wall_contact_left = 0;
+                    printf("Wall jump right!\n");
+                }
+            } else {
+                // Normal jump
+                game->player.dy = JUMP_SPEED;
+                printf("Normal jump executed!\n");
+            }
+            
+            game->player.is_on_ground = false;
+            game->player.coyote_time = 0; // Consume coyote time
+            game->player.jump_buffer = 0; // Consume jump buffer
+            
+            // Play jump sound if enabled
+            if (game->settings.sound_enabled && game->jump_sound) {
+                al_play_sample(game->jump_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
         }
     }
-    game->player.jump_requested = false; // Consume the jump request
+    
+    // Decrease jump buffer over time
+    if (game->player.jump_buffer > 0) {
+        game->player.jump_buffer--;
+    }
+    
+    // Decrease wall contact timers over time
+    if (game->player.wall_contact_left > 0) {
+        game->player.wall_contact_left--;
+    }
+    if (game->player.wall_contact_right > 0) {
+        game->player.wall_contact_right--;
+    }
+    
+    // Update enhanced combat system timers
+    if (game->player.combo_timer > 0) {
+        game->player.combo_timer--;
+        if (game->player.combo_timer <= 0) {
+            game->player.combo_count = 0; // Reset combo when timer expires
+        }
+    }
+    
+    // Update knockback effects for player
+    if (game->player.knockback_timer > 0) {
+        game->player.x += game->player.knockback_dx;
+        game->player.y += game->player.knockback_dy;
+        game->player.knockback_timer--;
+        
+        // Reduce knockback force over time
+        game->player.knockback_dx *= 0.9f;
+        game->player.knockback_dy *= 0.9f;
+        
+        if (game->player.knockback_timer <= 0) {
+            game->player.knockback_dx = 0.0f;
+            game->player.knockback_dy = 0.0f;
+        }
+    }
+    
+    game->player.jump_requested = false; // Reset jump request flag
     
     game->player.x += game->player.dx;
     game->player.y += game->player.dy;
@@ -428,6 +540,8 @@ void update_game(Game* game) {
                             // Normal wall collision: stop and align
                             game->player.x = platform->x - game->player.width;
                             game->player.dx = 0;
+                            // Track wall contact for wall jumping
+                            game->player.wall_contact_right = WALL_JUMP_FRAMES;
                         }
                     }
                     // Moving left
@@ -447,6 +561,8 @@ void update_game(Game* game) {
                             // Normal wall collision: stop and align
                             game->player.x = platform->x + platform->width;
                             game->player.dx = 0;
+                            // Track wall contact for wall jumping
+                            game->player.wall_contact_left = WALL_JUMP_FRAMES;
                         }
                     }
                 } // End of horizontal collision check
@@ -470,8 +586,14 @@ void update_game(Game* game) {
     // Update screen shake
     update_screen_shake(game);
     
-    // Handle player attack
+    // Handle player attack with enhanced combat system
     if (game->player.state == ATTACKING) {
+        // Apply attack momentum - boost player speed when attacking in movement direction
+        if (game->player.dx != 0) {
+            float momentum_boost = (game->player.dx > 0) ? ATTACK_MOMENTUM_BOOST : -ATTACK_MOMENTUM_BOOST;
+            game->player.x += momentum_boost;
+        }
+        
         // Check for enemies in attack range
         for (int i = 0; i < game->current_level_data->num_enemies; i++) {
             Entity* enemy = &game->current_level_data->enemies[i];
@@ -482,8 +604,60 @@ void update_game(Game* game) {
             float distance = sqrt(dx * dx + dy * dy);
             
             if (distance <= PLAYER_ATTACK_RANGE) {
-                enemy->health -= game->player.attack_power;
-                game->score += 25; // Score for damaging enemy
+                // Calculate base damage
+                float base_damage = game->player.attack_power;
+                
+                // Apply combo multiplier
+                float combo_multiplier = 1.0f;
+                if (game->player.combo_count > 0) {
+                    combo_multiplier = 1.0f + (game->player.combo_count * 0.3f); // 30% per combo
+                    if (combo_multiplier > COMBO_DAMAGE_MULTIPLIER * 2) {
+                        combo_multiplier = COMBO_DAMAGE_MULTIPLIER * 2; // Cap at 3x damage
+                    }
+                }
+                
+                // Check for critical hit
+                bool is_critical = ((float)rand() / RAND_MAX) < CRITICAL_HIT_CHANCE;
+                float critical_multiplier = is_critical ? CRITICAL_HIT_MULTIPLIER : 1.0f;
+                
+                // Calculate final damage
+                float final_damage = base_damage * combo_multiplier * critical_multiplier;
+                
+                // Apply damage
+                enemy->health -= final_damage;
+                
+                // Update combo system
+                game->player.combo_count++;
+                if (game->player.combo_count > MAX_COMBO_COUNT) {
+                    game->player.combo_count = MAX_COMBO_COUNT;
+                }
+                game->player.combo_timer = COMBO_WINDOW_FRAMES;
+                
+                // Apply knockback to enemy
+                if (distance > 0) {
+                    float knockback_dx = (dx / distance) * KNOCKBACK_FORCE;
+                    float knockback_dy = (dy / distance) * KNOCKBACK_FORCE * 0.5f; // Less vertical knockback
+                    
+                    enemy->knockback_dx = knockback_dx;
+                    enemy->knockback_dy = knockback_dy;
+                    enemy->knockback_timer = KNOCKBACK_DURATION;
+                }
+                
+                // Enhanced visual feedback
+                create_particle_burst(game->current_level_data, 
+                                    enemy->x + enemy->width/2, enemy->y + enemy->height/2,
+                                    is_critical ? al_map_rgb(255, 255, 0) : al_map_rgb(255, 100, 100), 
+                                    is_critical ? 12 : 8);
+                
+                // Score calculation with bonuses
+                int score_bonus = 25; // Base score
+                if (game->player.combo_count > 1) {
+                    score_bonus += (game->player.combo_count - 1) * 10; // Combo bonus
+                }
+                if (is_critical) {
+                    score_bonus *= 2; // Critical hit bonus
+                }
+                game->score += score_bonus;
                 
                 if (enemy->health <= 0) {
                     // Create enhanced death effect for melee kills too
@@ -492,12 +666,23 @@ void update_game(Game* game) {
                                             enemy->y + enemy->height/2, 
                                             enemy->type);
                     enemy->active = false;
-                    game->score += 100; // Bonus for defeating enemy
-                    printf("Enemy defeated! Score: %d\n", game->score);
+                    game->score += 100 + (game->player.combo_count * 25); // Bonus for defeating enemy with combo
+                    printf("Enemy defeated%s! Score: %d\n", 
+                           is_critical ? " with CRITICAL HIT" : "", game->score);
                 }
                 
-                // Visual feedback - enemy flash or knockback could be added here
-                printf("Player attacks enemy! Enemy health: %.0f\n", enemy->health);
+                // Enhanced combat feedback
+                printf("Player attacks enemy%s%s! Damage: %.0f, Enemy health: %.0f\n", 
+                       game->player.combo_count > 1 ? " (COMBO x" : "",
+                       game->player.combo_count > 1 ? 
+                           (game->player.combo_count == 2 ? "2)" : 
+                            game->player.combo_count == 3 ? "3)" : 
+                            game->player.combo_count == 4 ? "4)" : "5+)") : "",
+                       final_damage, enemy->health);
+                
+                if (is_critical) {
+                    printf("CRITICAL HIT! %.1fx damage!\n", critical_multiplier);
+                }
             }
         }
         

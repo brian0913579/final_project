@@ -115,7 +115,7 @@ void init_level_content(Level* level, int level_number) {
             }
             for (int i = 16; i < level->num_platforms; i++) {
                 level->platforms[i] = (Platform){
-                    .x = 300.0f + (i-16) * 600.0f,
+                    .x = 500.0f + (i-16) * 600.0f,  // Moved from 300.0f to 500.0f to avoid spawn area
                     .y = SCREEN_HEIGHT/2.0f,
                     .width = 30.0f,
                     .height = 100.0f,
@@ -172,7 +172,18 @@ void init_level_content(Level* level, int level_number) {
                     .current_frame = 0,
                     .frame_timer = 0,
                     .is_on_ground = false,
-                    .jump_requested = false
+                    .jump_requested = false,
+                    .coyote_time = 0,
+                    .jump_buffer = 0,
+                    .wall_contact_left = 0,
+                    .wall_contact_right = 0,
+                    
+                    // Enhanced Combat System Fields
+                    .combo_count = 0,
+                    .combo_timer = 0,
+                    .knockback_dx = 0.0f,
+                    .knockback_dy = 0.0f,
+                    .knockback_timer = 0
                 };
             }
 
@@ -291,7 +302,18 @@ void init_level_content(Level* level, int level_number) {
                         .current_frame = 0,
                         .frame_timer = 0,
                         .is_on_ground = false,
-                        .jump_requested = false
+                        .jump_requested = false,
+                        .coyote_time = 0,
+                        .jump_buffer = 0,
+                        .wall_contact_left = 0,
+                        .wall_contact_right = 0,
+                        
+                        // Enhanced Combat System Fields
+                        .combo_count = 0,
+                        .combo_timer = 0,
+                        .knockback_dx = 0.0f,
+                        .knockback_dy = 0.0f,
+                        .knockback_timer = 0
                     };
                 }
             }
@@ -386,7 +408,18 @@ void init_level_content(Level* level, int level_number) {
                         .current_frame = 0,
                         .frame_timer = 0,
                         .is_on_ground = false,
-                        .jump_requested = false
+                        .jump_requested = false,
+                        .coyote_time = 0,
+                        .jump_buffer = 0,
+                        .wall_contact_left = 0,
+                        .wall_contact_right = 0,
+                        
+                        // Enhanced Combat System Fields
+                        .combo_count = 0,
+                        .combo_timer = 0,
+                        .knockback_dx = 0.0f,
+                        .knockback_dy = 0.0f,
+                        .knockback_timer = 0
                     };
                 }
             }

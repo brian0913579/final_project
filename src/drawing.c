@@ -298,6 +298,27 @@ void draw_game(Game* game) {
                                     player_screen_y - 8, 3.0f * cooldown_ratio, al_map_rgb(255, 0, 0));
             }
             
+            // Draw combo indicator
+            if (game->player.combo_count > 0 && game->player.combo_timer > 0) {
+                // Combo chain indicator - growing glow around player
+                float combo_intensity = (float)game->player.combo_count / MAX_COMBO_COUNT;
+                ALLEGRO_COLOR combo_color = al_map_rgba(255, 255, 0, 
+                                                      (unsigned char)(100 + combo_intensity * 155));
+                
+                for (int j = 0; j < game->player.combo_count && j < 5; j++) {
+                    al_draw_circle(player_screen_x + game->player.width/2, 
+                                 player_screen_y + game->player.height/2,
+                                 game->player.width/2 + 5 + j * 3, combo_color, 2.0f);
+                }
+                
+                // Combo counter text
+                char combo_text[16];
+                sprintf(combo_text, "x%d COMBO", game->player.combo_count);
+                al_draw_text(game->font, al_map_rgb(255, 255, 0), 
+                           player_screen_x + game->player.width/2, 
+                           player_screen_y - 25, ALLEGRO_ALIGN_CENTER, combo_text);
+            }
+            
             // Draw player with state-based coloring
             ALLEGRO_COLOR player_color = COLOR_PINKISH_RED;
             if (game->player.last_attack > 0 && ((int)game->player.last_attack % 6) < 3) {
