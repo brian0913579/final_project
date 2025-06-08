@@ -33,7 +33,7 @@ void video_display(ALLEGRO_VIDEO *video,int* idx_end) {
                            0);
     //星星累積數還要從其他地方引入
     int number_star=9;
-    img = al_load_bitmap("star_0_1.png"); 
+    img = al_load_bitmap("resources/sprites/star_0_1.png"); 
     for (int i=0;i<number_star;i++)
     {
         al_draw_scaled_bitmap(img,
@@ -47,7 +47,7 @@ void video_display(ALLEGRO_VIDEO *video,int* idx_end) {
     }
     int idx=*idx_end; 
     //初始設置為指向Menu (Menu=0, Exit=1) //方框左右移動當作selector
-    img_s = al_load_bitmap("button_1.png"); // ANS: load image
+    img_s = al_load_bitmap("resources/sprites/button_1.png"); // ANS: load image
     al_draw_scaled_bitmap(img_s,
                             0, 0,// source start (top-left of image)
                             al_get_bitmap_width(img_s),// original width
