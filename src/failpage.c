@@ -33,7 +33,7 @@ void video_display(ALLEGRO_VIDEO *video,int* idx_end) {
                            0);
     //星星累積數還要從其他地方引入
     int number_star=9;
-    img = al_load_bitmap("star_0_0.png"); 
+    img = al_load_bitmap("resources/sprites/star_0_0.png"); 
     for (int i=0;i<number_star;i++)
     {
         al_draw_scaled_bitmap(img,
@@ -47,7 +47,7 @@ void video_display(ALLEGRO_VIDEO *video,int* idx_end) {
     }
     int idx=*idx_end; 
     //初始設置為指向Menu (Menu=0, Exit=1) //方框左右移動當作selector
-    img_s = al_load_bitmap("button_0.png"); // ANS: load image
+    img_s = al_load_bitmap("resources/sprites/button_0.png"); // ANS: load image
     al_draw_scaled_bitmap(img_s,
                             0, 0,// source start (top-left of image)
                             al_get_bitmap_width(img_s),// original width
@@ -57,7 +57,7 @@ void video_display(ALLEGRO_VIDEO *video,int* idx_end) {
                             0// no special flags
                             );
     //輸出的時間還需要從其他地方引入
-    font = al_load_ttf_font("13.ttf", 55, 0); // ANS: load font
+    font = al_load_ttf_font("resources/13.ttf", 55, 0); // ANS: load font
     al_draw_text(font, al_map_rgb(0,0,0), 1008, 312, ALLEGRO_ALIGN_CENTRE,  "04:33.76"); // ANS: draw some text
     al_flip_display();
 }
@@ -69,7 +69,7 @@ void init_video(){
     timer = al_create_timer(1.0 / 60);
     screen = al_create_display(1280, 720);
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
-    filename = "fail.ogv";
+    filename = "resources/sprites/fail.ogv";
     video = al_open_video(filename);
     queue = al_create_event_queue();
     ALLEGRO_EVENT_SOURCE *temp = al_get_video_event_source(video);
