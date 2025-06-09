@@ -7,6 +7,15 @@
 #include <stdio.h>                   // For sprintf
 #include <math.h>                    // For sin in welcome screen pulse
 
+// Helper function to get level name
+static const char* get_level_name(int level) {
+    static const char* level_names[] = {"ONE", "TWO", "THREE"};
+    if (level >= 1 && level <= 3) {
+        return level_names[level - 1];
+    }
+    return "UNKNOWN";
+}
+
 // Original draw_menu function from main.c
 void draw_menu(Game* game, Menu* menu, const char* title) {
     al_clear_to_color(MENU_BACKGROUND_COLOR);
@@ -125,18 +134,19 @@ void draw_game(Game* game) {
             char level_stars_text[64];
             // Use current level progress for the stars (not yet finalized)
             int current_level_stars = calculate_stars(&game->current_level_progress);
-            sprintf(level_stars_text, "Level %d Stars Earned:", game->current_level + 1);
+            sprintf(level_stars_text, "Level %s Stars Earned:", get_level_name(game->current_level));
             al_draw_text(game->font, COLOR_WHITE,
                         SCREEN_WIDTH/2, SCREEN_HEIGHT/LEVELCOMPLETE_TEXT_Y_DIVISOR + 60, ALLEGRO_ALIGN_CENTRE, level_stars_text);
             
             // Draw visual stars for current level
-            draw_end_screen_stars(game, SCREEN_WIDTH/2, SCREEN_HEIGHT/LEVELCOMPLETE_TEXT_Y_DIVISOR + 100, current_level_stars, MAX_STARS_PER_LEVEL, game->current_level + 1);
+            draw_end_screen_stars(game, SCREEN_WIDTH/2, SCREEN_HEIGHT/LEVELCOMPLETE_TEXT_Y_DIVISOR + 100, current_level_stars, MAX_STARS_PER_LEVEL, game->current_level);
             
-            if (game->current_level < game->num_levels - 1) {
-                 al_draw_text(game->font, COLOR_LIGHT_GRAY,
+            // Check if there are more levels after current one
+            if (game->current_level < TOTAL_LEVELS) {
+                al_draw_text(game->font, COLOR_LIGHT_GRAY,
                             SCREEN_WIDTH/2, SCREEN_HEIGHT/LEVELCOMPLETE_TEXT_Y_DIVISOR + LEVELCOMPLETE_TEXT_SPACING_1 + 80, ALLEGRO_ALIGN_CENTRE, "Press N for Next Level");
             } else {
-                 al_draw_text(game->font, COLOR_LIGHT_GRAY,
+                al_draw_text(game->font, COLOR_LIGHT_GRAY,
                             SCREEN_WIDTH/2, SCREEN_HEIGHT/LEVELCOMPLETE_TEXT_Y_DIVISOR + LEVELCOMPLETE_TEXT_SPACING_1 + 80, ALLEGRO_ALIGN_CENTRE, "Press N for Victory Screen");
             }
             al_draw_text(game->font, COLOR_LIGHT_GRAY,
@@ -377,8 +387,9 @@ void draw_game(Game* game) {
             
             // HUD Text (Level and Total Stars)
             char level_text[64];
-            sprintf(level_text, "Level: %d  Total: %d/%d", 
-                   game->current_level, game->total_stars, MAX_STARS_PER_LEVEL * TOTAL_LEVELS);
+            const char* current_level_name = get_level_name(game->current_level);
+            sprintf(level_text, "Level: %s  Total: %d/%d", 
+                   current_level_name, game->total_stars, MAX_STARS_PER_LEVEL * TOTAL_LEVELS);
             al_draw_text(game->font, COLOR_WHITE, HUD_TEXT_X, HUD_TEXT_Y, ALLEGRO_ALIGN_LEFT, level_text);
             
             // Draw visual star display for current level progress (repositioned to top right)
