@@ -148,7 +148,7 @@ bool init_game(Game* game) {
         fprintf(stderr, "Warning: Failed to load shoot.wav\n");
     }
 
-    // Load star sprites for visual star display (level-specific sprites)
+    // Load star sprites for visual star display for all three levels
     for (int level = 0; level < 3; level++) {
         char empty_path[256];
         char filled_path[256];
@@ -223,7 +223,7 @@ bool init_game(Game* game) {
     // Initialize star system
     init_star_system(game);
     
-    game->current_level = INITIAL_LEVEL; // Start at level 1
+    game->current_level = 1; // Start at level ONE
 
     // Initialize screen shake
     game->screen_shake.intensity = 0;
@@ -237,7 +237,7 @@ bool init_game(Game* game) {
     init_levels(game); 
 
     // Now, reset player and the current level to its initial state (including glucose items)
-    reset_player_and_level(game, game->current_level); 
+    reset_player_and_level(game, 0); // Use index 0 for level ONE 
 
     al_start_timer(game->timer);
     return true;
@@ -258,14 +258,13 @@ void init_menus(Game* game) {
         game->main_menu.num_items = 0; // Prevent access if allocation failed
     }
 
-    game->level_menu.num_items = 5;
+    game->level_menu.num_items = 4;
     game->level_menu.items = malloc(sizeof(MenuItem) * game->level_menu.num_items);
     if(game->level_menu.items) {
-        game->level_menu.items[0] = (MenuItem){"Level 1: The Blood Stream", true, true};
-        game->level_menu.items[1] = (MenuItem){"Level 2: The Lymph Node", true, true}; // Initially enable for testing
-        game->level_menu.items[2] = (MenuItem){"Level 3: The Final Battle", true, true}; // Initially enable for testing
-        game->level_menu.items[3] = (MenuItem){"level ONE: Cellular Evolution", true, true}; // New level with multi-backgrounds
-        game->level_menu.items[4] = (MenuItem){"Back", true, true};
+        game->level_menu.items[0] = (MenuItem){"Level ONE: Cellular Evolution", true, true};
+        game->level_menu.items[1] = (MenuItem){"Level TWO: Blood Stream Navigation", true, true};
+        game->level_menu.items[2] = (MenuItem){"Level THREE: Final Cellular Challenge", true, true};
+        game->level_menu.items[3] = (MenuItem){"Back", true, true};
         game->level_menu.selected_index = 0;
     } else {
         fprintf(stderr, "Failed to allocate memory for level menu items!\n");
@@ -320,7 +319,9 @@ void reset_player_and_level(Game* game, int level_idx) {
         fprintf(stderr, "Invalid level index for reset: %d\n", level_idx);
         level_idx = 0; // Default to first level
     }
-    game->current_level = level_idx;
+    
+    // Set current level based on the index (convert to 1-based)
+    game->current_level = level_idx + 1;
     game->current_level_data = &game->levels[level_idx];
 
     // Reload or reset the content of the current level to its original state

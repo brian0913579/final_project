@@ -10,8 +10,8 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/keyboard.h> // Changed to keyboard.h based on directory listing
 
-#define SCREEN_WIDTH    4480
-#define SCREEN_HEIGHT   2239
+#define SCREEN_WIDTH    1280 
+#define SCREEN_HEIGHT   720
 #define FPS            60.0
 #define PLATFORM_JUMP_TOLERANCE 8.0f // Pixels tolerance for standing on a platform, increased and made float
 #define PORTAL_WIDTH 50
@@ -135,7 +135,7 @@
 // Game Progression
 #define INITIAL_LEVEL 1
 #define LEVEL_COMPLETE_SCORE_BONUS 1000
-#define TOTAL_LEVELS 4              // Total number of levels in the game
+#define TOTAL_LEVELS 3              // Total number of levels in the game
 #define MAX_STARS_PER_LEVEL 3       // Maximum stars per level
 
 // Hazards

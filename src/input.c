@@ -61,19 +61,7 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                         case MAIN_MENU:
                             switch (current_menu->selected_index) {
                                 case 0: // Start Game
-                                    // game->state = PLAYING; // State will be set by reset
-                                    // game->current_level = 1; // Handled by reset
-                                    // game->current_level_data = &game->levels[0]; // Handled by reset
-                                    // game->player.x = SCREEN_WIDTH / 4.0f;
-                                    // game->player.y = SCREEN_HEIGHT / 2.0f;
-                                    // game->player.dx = 0;
-                                    // game->player.dy = 0;
-                                    // game->player.health = game->player.max_health;
-                                    // game->player.is_on_ground = false;
-                                    // game->player.jump_requested = false; // Reset on new level
-                                    // game->score = 0; // Score should be reset here if it's per-game
-                                    // game->levels[0].scroll_x = 0; // Handled by reset
-                                    reset_player_and_level(game, INITIAL_LEVEL -1); // Reset for level 1 (index 0)
+                                    reset_player_and_level(game, 0); // Reset for level ONE (index 0)
                                     init_star_system(game); // Reset star system when starting a new game
                                     game->state = PLAYING;
                                     break;
@@ -86,17 +74,10 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                             if (current_menu->selected_index == current_menu->num_items - 1) {
                                 game->state = MAIN_MENU;
                             } else if (current_menu->items[current_menu->selected_index].enabled) {
-                                // game->current_level = current_menu->selected_index + 1; // Handled by reset
-                                // game->current_level_data = &game->levels[game->current_level - 1]; // Handled by reset
-                                // game->player.x = SCREEN_WIDTH / 4.0f;
-                                // game->player.y = SCREEN_HEIGHT / 2.0f;
-                                // game->player.dx = 0;
-                                // game->player.dy = 0;
-                                // game->player.health = game->player.max_health;
-                                // game->player.is_on_ground = false;
-                                // game->player.jump_requested = false; // Reset on level select
-                                // game->current_level_data->scroll_x = 0; // Handled by reset
-                                reset_player_and_level(game, current_menu->selected_index); // Pass level index
+                                // Level selection: 0=Level ONE, 1=Level TWO, 2=Level THREE
+                                int selected_level = current_menu->selected_index;
+                                game->current_level = selected_level + 1; // Convert to 1-based
+                                reset_player_and_level(game, selected_level); // Use 0-based index
                                 game->state = PLAYING;
                             }
                             break;
@@ -202,15 +183,15 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                 break;
             case ALLEGRO_KEY_N: 
                 if (game->state == LEVEL_COMPLETE) {
-                    // game->current_level is 0-indexed (e.g., 0 for Level 1, 1 for Level 2)
-                    // game->num_levels is the total count (e.g., 3)
-                    // To go to the next level, we need to check if current_level < max_level_index (num_levels - 1)
-                    if (game->current_level < game->num_levels - 1) {
-                        // Load the next level: current_level + 1
-                        reset_player_and_level(game, game->current_level + 1);
+                    // Check if there are more levels after current one
+                    if (game->current_level < TOTAL_LEVELS) {
+                        // Move to next level
+                        game->current_level++;
+                        int next_level_index = game->current_level - 1; // Convert to 0-based index
+                        reset_player_and_level(game, next_level_index);
                         game->state = PLAYING;
                     } else {
-                        // Player has completed the last level
+                        // All levels completed, go to victory screen
                         game->state = VICTORY;
                     }
                 }
@@ -244,7 +225,7 @@ void handle_input(Game* game, ALLEGRO_EVENT* event) {
                     //     enemy->behavior = BEHAVIOR_PATROL; // Reset behavior
                     //     enemy->active = true; // Ensure enemy is active
                     // }
-                    reset_player_and_level(game, game->current_level - 1); // Reset current level (current_level is 1-based)
+                    reset_player_and_level(game, 0); // Reset to level ONE (index 0)
                     game->state = PLAYING;
                 }
                 break;
