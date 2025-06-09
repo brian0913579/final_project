@@ -13,6 +13,8 @@ void draw_main_menu(Game* game);
 void draw_level_select(Game* game);
 void draw_settings_menu(Game* game);
 void draw_pause_screen(Game* game);
+void draw_star_display(Game* game, float x, float y, int stars_earned, int max_stars);
+void draw_end_screen_stars(Game* game, float center_x, float center_y, int stars_earned, int max_stars, int level);
 // Note: Specific drawing for GAME_OVER, VICTORY, LEVEL_COMPLETE are handled within draw_game
 
 #endif /* DRAWING_H */

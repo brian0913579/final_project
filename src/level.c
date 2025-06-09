@@ -18,6 +18,12 @@ void init_level(Level* level, const char* name, const char* description, float w
     level->num_projectiles = 0;   // Initialize num_projectiles
     level->num_particles = 0;     // Initialize num_particles
     level->background = NULL;
+    // Initialize multi-background fields
+    for (int i = 0; i < 4; i++) {
+        level->backgrounds[i] = NULL;
+    }
+    level->num_backgrounds = 0;
+    level->background_positions = NULL;
     level->scroll_x = 0;
     level->level_width = width;
     level->level_name = strdup(name);
@@ -51,7 +57,7 @@ void init_level(Level* level, const char* name, const char* description, float w
 
 // Original init_levels function from main.c
 void init_levels(Game* game) {
-    game->num_levels = 3;
+    game->num_levels = 4; // Increased to 4 levels
     game->levels = (Level*)malloc(sizeof(Level) * game->num_levels);
     if (!game->levels) {
         fprintf(stderr, "Failed to allocate memory for levels!\n");
@@ -69,16 +75,43 @@ void init_levels(Game* game) {
     init_level(&game->levels[2], "The Final Battle",
         "Face off against specialized killer cells", 3200, 3); // Pass id 3
     init_level_content(&game->levels[2], 3);
+    
+    // New level ONE with multi-background system
+    init_level(&game->levels[3], "level ONE",
+        "Journey through evolving cellular environments", 4800, 4); // Pass id 4, wider level
+    init_level_content(&game->levels[3], 4);
 
     game->current_level_data = &game->levels[0];
     
     char path[256];
-    for (int i = 0; i < game->num_levels; i++) {
+    // Load regular backgrounds for levels 1-3
+    for (int i = 0; i < 3; i++) {
         sprintf(path, "resources/sprites/background_%d.png", i + 1);
         game->levels[i].background = al_load_bitmap(path);
         if (!game->levels[i].background) {
             fprintf(stderr, "Failed to load background: %s\n", path);
             // Game can continue without background, or handle error more strictly
+        }
+    }
+    
+    // Load multi-backgrounds for level ONE (index 3)
+    Level* level_one = &game->levels[3];
+    level_one->num_backgrounds = 4;
+    level_one->background_positions = (float*)malloc(sizeof(float) * 4);
+    
+    // Set up background transition positions (each background covers 1200 pixels)
+    level_one->background_positions[0] = 0.0f;     // scene_11.png from 0-1200
+    level_one->background_positions[1] = 1200.0f;  // scene_12.png from 1200-2400
+    level_one->background_positions[2] = 2400.0f;  // scene_13.png from 2400-3600
+    level_one->background_positions[3] = 3600.0f;  // scene_14_1.png from 3600-4800
+    
+    // Load the scene backgrounds
+    const char* scene_files[] = {"scene_11.png", "scene_12.png", "scene_13.png", "scene_14_1.png"};
+    for (int i = 0; i < 4; i++) {
+        sprintf(path, "resources/sprites/%s", scene_files[i]);
+        level_one->backgrounds[i] = al_load_bitmap(path);
+        if (!level_one->backgrounds[i]) {
+            fprintf(stderr, "Failed to load scene background: %s\n", path);
         }
     }
 }
@@ -444,6 +477,40 @@ void init_level_content(Level* level, int level_number) {
             level->portal.y = SCREEN_HEIGHT - 40.0f - PORTAL_HEIGHT;
             level->portal.is_active = true;
             break;
+            
+        case 4: // level ONE - Multi-background transitioning level (clean, no obstacles)
+            // Just a simple ground platform for the player to walk on
+            level->num_platforms = 1;
+            level->platforms = malloc(sizeof(Platform) * level->num_platforms);
+            if (!level->platforms) { 
+                fprintf(stderr, "Failed to allocate platforms for level ONE\n"); 
+                return; 
+            }
+            
+            // Single long ground platform across the entire level
+            level->platforms[0] = (Platform){
+                .x = 0.0f,
+                .y = SCREEN_HEIGHT - 40.0f,
+                .width = 4800.0f, // Full level width
+                .height = 40.0f,
+                .color = al_map_rgb(139, 69, 19), // Brown ground
+                .is_deadly = false
+            };
+            
+            // No enemies - just background viewing
+            level->num_enemies = 0;
+            level->enemies = NULL;
+            
+            // No glucose items - just pure background experience
+            level->num_glucose_items = 0;
+            level->glucose_items = NULL;
+            
+            level->portal.width = PORTAL_WIDTH;
+            level->portal.height = PORTAL_HEIGHT;
+            level->portal.x = level->level_width - PORTAL_WIDTH - 20.0f;
+            level->portal.y = SCREEN_HEIGHT - 40.0f - PORTAL_HEIGHT; // Align with ground platform
+            level->portal.is_active = true;
+            break;
     }
 }
 
@@ -455,6 +522,15 @@ void cleanup_level(Level* level) {
     if (level->projectiles) free(level->projectiles);     // Free projectiles
     if (level->particles) free(level->particles);         // Free particles
     if (level->background) al_destroy_bitmap(level->background);
+    
+    // Cleanup multi-backgrounds
+    for (int i = 0; i < 4; i++) {
+        if (level->backgrounds[i]) {
+            al_destroy_bitmap(level->backgrounds[i]);
+        }
+    }
+    if (level->background_positions) free(level->background_positions);
+    
     if (level->level_name) free(level->level_name);
     if (level->level_description) free(level->level_description);
     // Set pointers to NULL after freeing to prevent double free issues
@@ -464,6 +540,14 @@ void cleanup_level(Level* level) {
     level->projectiles = NULL;   // Set projectiles to NULL
     level->particles = NULL;     // Set particles to NULL
     level->background = NULL;
+    
+    // Reset multi-background fields
+    for (int i = 0; i < 4; i++) {
+        level->backgrounds[i] = NULL;
+    }
+    level->background_positions = NULL;
+    level->num_backgrounds = 0;
+    
     level->level_name = NULL;
     level->level_description = NULL;
 }

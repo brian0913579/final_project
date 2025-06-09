@@ -1,4 +1,5 @@
 #include "../include/game.h"
+#include "../include/game_logic.h"  // For star system functions
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -170,15 +171,17 @@ void check_projectile_collisions(Level* level, Game* game) {
                     
                     // Enemy takes damage
                     enemy->health -= proj->damage;
-                    game->score += 15; // Score for projectile hit
                     
                     // Check if enemy is defeated
                     if (enemy->health <= 0) {
                         // Create spectacular death effect
                         create_enemy_death_effect(level, enemy->x + enemy->width/2, enemy->y + enemy->height/2, enemy->type);
                         enemy->active = false;
-                        game->score += 150; // Bonus for defeating enemy with projectile
-                        printf("Enemy defeated by player projectile! Score: %d\n", game->score);
+                        
+                        // Update star progress when enemy is defeated
+                        update_stars_on_enemy_kill(game, enemy);
+                        
+                        printf("Enemy defeated by player projectile! Stars progress updated.\n");
                     }
                     
                     // Destroy projectile

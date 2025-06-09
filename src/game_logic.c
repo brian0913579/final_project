@@ -148,6 +148,24 @@ bool init_game(Game* game) {
         fprintf(stderr, "Warning: Failed to load shoot.wav\n");
     }
 
+    // Load star sprites for visual star display (level-specific sprites)
+    for (int level = 0; level < 3; level++) {
+        char empty_path[256];
+        char filled_path[256];
+        snprintf(empty_path, sizeof(empty_path), "resources/sprites/star_%d_0.png", level + 1);
+        snprintf(filled_path, sizeof(filled_path), "resources/sprites/star_%d_1.png", level + 1);
+        
+        game->star_empty[level] = al_load_bitmap(empty_path);
+        game->star_filled[level] = al_load_bitmap(filled_path);
+        
+        if (!game->star_empty[level]) {
+            fprintf(stderr, "Warning: Failed to load %s\n", empty_path);
+        }
+        if (!game->star_filled[level]) {
+            fprintf(stderr, "Warning: Failed to load %s\n", filled_path);
+        }
+    }
+
     game->player.x = SCREEN_WIDTH * PLAYER_INITIAL_X_FACTOR;
     game->player.y = SCREEN_HEIGHT * PLAYER_INITIAL_Y_FACTOR;
     game->player.width = PLAYER_WIDTH;
@@ -201,7 +219,10 @@ bool init_game(Game* game) {
 
     game->state = WELCOME_SCREEN;
     game->running = true;
-    game->score = 0;
+    
+    // Initialize star system
+    init_star_system(game);
+    
     game->current_level = INITIAL_LEVEL; // Start at level 1
 
     // Initialize screen shake
@@ -237,13 +258,14 @@ void init_menus(Game* game) {
         game->main_menu.num_items = 0; // Prevent access if allocation failed
     }
 
-    game->level_menu.num_items = 4;
+    game->level_menu.num_items = 5;
     game->level_menu.items = malloc(sizeof(MenuItem) * game->level_menu.num_items);
     if(game->level_menu.items) {
         game->level_menu.items[0] = (MenuItem){"Level 1: The Blood Stream", true, true};
         game->level_menu.items[1] = (MenuItem){"Level 2: The Lymph Node", true, true}; // Initially enable for testing
         game->level_menu.items[2] = (MenuItem){"Level 3: The Final Battle", true, true}; // Initially enable for testing
-        game->level_menu.items[3] = (MenuItem){"Back", true, true};
+        game->level_menu.items[3] = (MenuItem){"level ONE: Cellular Evolution", true, true}; // New level with multi-backgrounds
+        game->level_menu.items[4] = (MenuItem){"Back", true, true};
         game->level_menu.selected_index = 0;
     } else {
         fprintf(stderr, "Failed to allocate memory for level menu items!\n");
@@ -289,7 +311,9 @@ void reset_player_and_level(Game* game, int level_idx) {
     game->player.knockback_dx = 0.0f;
     game->player.knockback_dy = 0.0f;
     game->player.knockback_timer = 0;
-    // Reset other player attributes as needed (e.g., score for the level if not global)
+    
+    // Reset star progress for the level
+    reset_current_level_progress(game);
 
     // Ensure the level index is valid
     if (level_idx < 0 || level_idx >= game->num_levels) {
@@ -649,16 +673,6 @@ void update_game(Game* game) {
                                     is_critical ? al_map_rgb(255, 255, 0) : al_map_rgb(255, 100, 100), 
                                     is_critical ? 12 : 8);
                 
-                // Score calculation with bonuses
-                int score_bonus = 25; // Base score
-                if (game->player.combo_count > 1) {
-                    score_bonus += (game->player.combo_count - 1) * 10; // Combo bonus
-                }
-                if (is_critical) {
-                    score_bonus *= 2; // Critical hit bonus
-                }
-                game->score += score_bonus;
-                
                 if (enemy->health <= 0) {
                     // Create enhanced death effect for melee kills too
                     create_enemy_death_effect(game->current_level_data, 
@@ -666,9 +680,12 @@ void update_game(Game* game) {
                                             enemy->y + enemy->height/2, 
                                             enemy->type);
                     enemy->active = false;
-                    game->score += 100 + (game->player.combo_count * 25); // Bonus for defeating enemy with combo
-                    printf("Enemy defeated%s! Score: %d\n", 
-                           is_critical ? " with CRITICAL HIT" : "", game->score);
+                    
+                    // Update star progress when enemy is defeated
+                    update_stars_on_enemy_kill(game, enemy);
+                    
+                    printf("Enemy defeated%s! Stars progress updated.\n", 
+                           is_critical ? " with CRITICAL HIT" : "");
                 }
                 
                 // Enhanced combat feedback
@@ -717,9 +734,6 @@ void update_game(Game* game) {
                 game->player.health = game->player.max_health;
             }
             
-            // Add score for collecting glucose
-            game->score += 50;
-            
             // Create collection particle effect
             create_particle_burst(game->current_level_data, 
                                 item->x + GLUCOSE_WIDTH/2, 
@@ -732,8 +746,8 @@ void update_game(Game* game) {
             }
             
             // Visual feedback could be added here (particle effect, score popup)
-            printf("Glucose collected! Health: %.0f/%.0f, Score: %d\n", 
-                   game->player.health, game->player.max_health, game->score);
+            printf("Glucose collected! Health: %.0f/%.0f\n", 
+                   game->player.health, game->player.max_health);
         }
     }
     
@@ -773,7 +787,9 @@ void update_game(Game* game) {
         game->player.y < portal->y + portal->height &&
         game->player.y + game->player.height > portal->y) {
         game->state = LEVEL_COMPLETE;
-        game->score += LEVEL_COMPLETE_SCORE_BONUS; // Bonus for completing level
+        
+        // Finalize stars for completed level
+        finalize_level_stars(game);
     }
 }
 
@@ -842,6 +858,13 @@ void cleanup_game(Game* game) {
     
     if (game->font) al_destroy_font(game->font);
     if (game->title_font) al_destroy_font(game->title_font);
+    
+    // Clean up star sprites
+    for (int i = 0; i < 3; i++) {
+        if (game->star_empty[i]) al_destroy_bitmap(game->star_empty[i]);
+        if (game->star_filled[i]) al_destroy_bitmap(game->star_filled[i]);
+    }
+    
     // Allegro addons are shutdown by al_uninstall_system() implicitly if initialized
     // but specific resource destruction is good practice.
 
@@ -855,4 +878,109 @@ void cleanup_game(Game* game) {
 
     // Consider al_shutdown_primitives_addon(), al_shutdown_font_addon(), etc.
     // if not relying on al_uninstall_system(). For now, al_uninstall_system() in main is fine.
+}
+
+// Star System Implementation
+
+// Initialize the star system
+void init_star_system(Game* game) {
+    // Initialize all level stars to 0
+    for (int i = 0; i < TOTAL_LEVELS; i++) {
+        game->level_stars[i].killed_normal_enemy = false;
+        game->level_stars[i].killed_boss = false;
+        game->level_stars[i].killed_all_enemies = false;
+        game->level_stars[i].stars_earned = 0;
+    }
+    
+    // Initialize current level progress
+    reset_current_level_progress(game);
+    
+    game->total_stars = 0;
+    
+    // Initialize AI state for star-based system
+    game->ai_state.last_stars_check = 0;
+}
+
+// Reset progress tracking for current level
+void reset_current_level_progress(Game* game) {
+    game->current_level_progress.killed_normal_enemy = false;
+    game->current_level_progress.killed_boss = false;
+    game->current_level_progress.killed_all_enemies = false;
+    game->current_level_progress.stars_earned = 0;
+}
+
+// Update star progress when an enemy is killed
+void update_stars_on_enemy_kill(Game* game, Entity* enemy) {
+    if (!enemy || !game) return;
+    
+    // Check if this is a boss (has boss behavior)
+    bool is_boss = (enemy->behavior == BEHAVIOR_BOSS);
+    
+    if (is_boss) {
+        game->current_level_progress.killed_boss = true;
+        printf("Boss defeated! Star progress updated.\n");
+    } else {
+        game->current_level_progress.killed_normal_enemy = true;
+        printf("Normal enemy defeated! Star progress updated.\n");
+    }
+    
+    // Check if all enemies are now defeated
+    bool all_enemies_dead = true;
+    for (int i = 0; i < game->current_level_data->num_enemies; i++) {
+        if (game->current_level_data->enemies[i].active) {
+            all_enemies_dead = false;
+            break;
+        }
+    }
+    
+    if (all_enemies_dead) {
+        game->current_level_progress.killed_all_enemies = true;
+        printf("All enemies defeated! Perfect clear!\n");
+    }
+    
+    // Calculate current stars for this level using the helper function
+    int stars = calculate_stars(&game->current_level_progress);
+    game->current_level_progress.stars_earned = stars;
+    
+    printf("Current level stars: %d/3\n", stars);
+}
+
+// Finalize stars when level is completed
+void finalize_level_stars(Game* game) {
+    if (game->current_level < 1 || game->current_level > TOTAL_LEVELS) {
+        printf("Warning: Invalid level number for star finalization: %d\n", game->current_level);
+        return;
+    }
+    
+    int level_index = game->current_level - 1; // Convert to 0-based index
+    
+    // Copy current progress to level stars
+    game->level_stars[level_index] = game->current_level_progress;
+    
+    // Update total stars
+    game->total_stars = calculate_total_stars(game);
+    
+    printf("Level %d completed with %d stars! Total stars: %d/%d\n", 
+           game->current_level, 
+           game->level_stars[level_index].stars_earned,
+           game->total_stars,
+           TOTAL_LEVELS * MAX_STARS_PER_LEVEL);
+}
+
+// Calculate stars earned for a level based on progress
+int calculate_stars(const LevelStars* progress) {
+    int stars = 0;
+    if (progress->killed_normal_enemy) stars++;
+    if (progress->killed_boss) stars++;
+    if (progress->killed_all_enemies) stars++;
+    return stars;
+}
+
+// Calculate total stars earned across all levels
+int calculate_total_stars(Game* game) {
+    int total = 0;
+    for (int i = 0; i < TOTAL_LEVELS; i++) {
+        total += game->level_stars[i].stars_earned;
+    }
+    return total;
 }

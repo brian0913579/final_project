@@ -115,60 +115,92 @@ void update_enemy(Entity* enemy, Game* game) {
             
         case BEHAVIOR_BOSS:
             {
-                // Complex boss behavior with multiple phases
+                // Complex boss behavior with multiple phases and special abilities
                 float dx_boss = game->player.x - enemy->x;
                 float dy_boss = game->player.y - enemy->y;
                 float distance_to_player = sqrt(dx_boss * dx_boss + dy_boss * dy_boss);
                 float health_percentage = enemy->health / enemy->max_health;
                 
                 if (health_percentage > ENEMY_BOSS_PHASE_HEALTH) {
-                    // Phase 1: Aggressive chase with occasional pauses
+                    // Phase 1: Aggressive chase with occasional pauses and special attacks
                     if (enemy->frame_timer <= 0) {
-                        // Chase phase
-                        if (distance_to_player > 0) {
-                            enemy->dx = (dx_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 1.0f);
-                            enemy->dy = (dy_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 1.0f);
-                        }
-                        enemy->x += enemy->dx;
-                        enemy->y += enemy->dy;
-                        
-                        enemy->frame_timer = 120; // Chase for 2 seconds
-                    } else if (enemy->frame_timer == 60) {
-                        // Brief pause in the middle
-                        enemy->dx = 0;
-                        enemy->dy = 0;
-                    }
-                } else {
-                    // Phase 2: Desperate behavior - faster movement and shooting
-                    if (distance_to_player > 100.0f) {
-                        // Fast approach
+                        // Chase phase with enhanced speed
                         if (distance_to_player > 0) {
                             enemy->dx = (dx_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 2.0f);
                             enemy->dy = (dy_boss / distance_to_player) * (ENEMY_CHASE_SPEED + 2.0f);
                         }
                         enemy->x += enemy->dx;
                         enemy->y += enemy->dy;
+                        
+                        enemy->frame_timer = 90; // Chase for 1.5 seconds
+                    } else if (enemy->frame_timer == 45) {
+                        // Brief pause with area attack
+                        enemy->dx = 0;
+                        enemy->dy = 0;
+                        
+                        // Boss special: triple shot spread
+                        if (enemy->last_attack <= 0) {
+                            for (int shot = 0; shot < 3; shot++) {
+                                float angle_offset = (shot - 1) * 0.3f; // -0.3, 0, 0.3 radians
+                                float shot_target_x = game->player.x + cos(angle_offset) * 100.0f;
+                                float shot_target_y = game->player.y + sin(angle_offset) * 100.0f;
+                                
+                                create_projectile(game->current_level_data, 
+                                                enemy->x + enemy->width/2, 
+                                                enemy->y + enemy->height/2,
+                                                shot_target_x, shot_target_y,
+                                                enemy->type);
+                            }
+                            if (game->settings.sound_enabled && game->shoot_sound) {
+                                al_play_sample(game->shoot_sound, 0.8, 0.0, 0.8, ALLEGRO_PLAYMODE_ONCE, NULL);
+                            }
+                            enemy->last_attack = ENEMY_SHOOT_COOLDOWN;
+                            printf("Boss triple shot attack!\n");
+                        }
+                    }
+                } else {
+                    // Phase 2: Desperate behavior - enhanced abilities and faster movement
+                    if (distance_to_player > 120.0f) {
+                        // Very fast approach with prediction
+                        float pred_x, pred_y;
+                        predict_player_movement(game, 30, &pred_x, &pred_y);
+                        
+                        float pred_dx = pred_x - enemy->x;
+                        float pred_dy = pred_y - enemy->y;
+                        float pred_distance = sqrt(pred_dx * pred_dx + pred_dy * pred_dy);
+                        
+                        if (pred_distance > 0) {
+                            enemy->dx = (pred_dx / pred_distance) * (ENEMY_CHASE_SPEED + 3.0f);
+                            enemy->dy = (pred_dy / pred_distance) * (ENEMY_CHASE_SPEED + 3.0f);
+                        }
+                        enemy->x += enemy->dx;
+                        enemy->y += enemy->dy;
                     } else {
-                        // Close combat - circular movement
-                        float angle = enemy->frame_timer * 0.1f;
-                        enemy->dx = cos(angle) * 3.0f;
-                        enemy->dy = sin(angle) * 2.0f;
+                        // Close combat - erratic movement pattern
+                        float angle = enemy->frame_timer * 0.15f;
+                        enemy->dx = cos(angle) * 4.0f + cos(angle * 2.3f) * 2.0f; // Complex pattern
+                        enemy->dy = sin(angle) * 3.0f + sin(angle * 1.7f) * 1.5f;
                         enemy->x += enemy->dx;
                         enemy->y += enemy->dy;
                     }
                     
-                    // Rapid fire in phase 2
-                    if (enemy->last_attack <= 0 && distance_to_player <= ENEMY_SHOOT_RANGE) {
-                        create_projectile(game->current_level_data, 
-                                        enemy->x + enemy->width/2, 
-                                        enemy->y + enemy->height/2,
-                                        game->player.x + game->player.width/2, 
-                                        game->player.y + game->player.height/2,
-                                        enemy->type);
+                    // Enhanced rapid fire in phase 2
+                    if (enemy->last_attack <= 0 && distance_to_player <= ENEMY_SHOOT_RANGE * 1.5f) {
+                        // Boss special: burst fire
+                        for (int burst = 0; burst < 2; burst++) {
+                            create_projectile(game->current_level_data, 
+                                            enemy->x + enemy->width/2, 
+                                            enemy->y + enemy->height/2,
+                                            game->player.x + game->player.width/2 + (burst * 20 - 10), 
+                                            game->player.y + game->player.height/2,
+                                            enemy->type);
+                        }
                         // Play enemy shooting sound with higher pitch for rapid fire
-                        al_play_sample(game->shoot_sound, 0.7, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, NULL);
-                        enemy->last_attack = ENEMY_SHOOT_COOLDOWN / 2; // Faster shooting
-                        printf("Boss rapid fire!\n"); // Debug output
+                        if (game->settings.sound_enabled && game->shoot_sound) {
+                            al_play_sample(game->shoot_sound, 0.7, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, NULL);
+                        }
+                        enemy->last_attack = ENEMY_SHOOT_COOLDOWN / 3; // Much faster shooting
+                        printf("Boss burst fire!\n");
                     }
                 }
                 
@@ -178,6 +210,21 @@ void update_enemy(Entity* enemy, Game* game) {
             }
             break;
         case BEHAVIOR_NONE:
+            break;
+        case BEHAVIOR_FLANK:
+            apply_flanking_behavior(enemy, &game->player, game);
+            break;
+        case BEHAVIOR_COORDINATE:
+            execute_coordinate_behavior(game, enemy);
+            break;
+        case BEHAVIOR_AMBUSH:
+            execute_ambush_behavior(game, enemy);
+            break;
+        case BEHAVIOR_RETREAT:
+            execute_retreat_behavior(game, enemy);
+            break;
+        case BEHAVIOR_SURROUND:
+            execute_surround_behavior(game, enemy);
             break;
     }
 }
@@ -258,7 +305,7 @@ bool has_line_of_sight(Game* game, float x1, float y1, float x2, float y2) {
 }
 
 // Predict where the player will be based on their current velocity
-void predict_player_position(Game* game, float prediction_time, float* pred_x, float* pred_y) {
+void predict_player_movement(Game* game, float prediction_time, float* pred_x, float* pred_y) {
     *pred_x = game->player.x + game->player.dx * prediction_time;
     *pred_y = game->player.y + game->player.dy * prediction_time;
     
@@ -357,8 +404,8 @@ void update_ai_coordination(Game* game) {
 void adapt_difficulty(Game* game) {
     if (game->ai_state.adaptation_timer > 0) return; // Don't adapt too frequently
     
-    // Increase difficulty if player is doing well
-    if (game->combo_count > 5 || game->score > game->ai_state.last_score_check + 1000) {
+    // Increase difficulty if player is doing well (earning stars or high combos)
+    if (game->combo_count > 5 || game->total_stars > game->ai_state.last_stars_check + 2) {
         game->ai_state.difficulty_multiplier += AI_DIFFICULTY_STEP;
         if (game->ai_state.difficulty_multiplier > AI_MAX_DIFFICULTY) {
             game->ai_state.difficulty_multiplier = AI_MAX_DIFFICULTY;
@@ -372,7 +419,7 @@ void adapt_difficulty(Game* game) {
         }
     }
     
-    game->ai_state.last_score_check = game->score;
+    game->ai_state.last_stars_check = game->total_stars;
     game->ai_state.adaptation_timer = AI_ADAPTATION_RATE;
 }
 
@@ -401,185 +448,102 @@ void execute_flank_behavior(Game* game, Entity* enemy) {
     enemy->ai_timer++;
 }
 
-// Execute coordinated group behavior
-void execute_coordinate_behavior(Game* game, Entity* enemy) {
-    // Find other coordinating enemies
-    int group_count = 0;
-    float group_center_x = 0, group_center_y = 0;
+// Apply flanking behavior - implementation matching the declared signature
+void apply_flanking_behavior(Entity* enemy, Entity* player, Game* game) {
+    float target_x, target_y;
+    calculate_flank_position(game, enemy, &target_x, &target_y);
     
-    for (int i = 0; i < game->current_level_data->num_enemies; i++) {
-        Entity* other = &game->current_level_data->enemies[i];
-        if (other->active && other->coordination_id == enemy->coordination_id) {
-            group_center_x += other->x;
-            group_center_y += other->y;
-            group_count++;
-        }
-    }
-    
-    if (group_count > 0) {
-        group_center_x /= group_count;
-        group_center_y /= group_count;
-        
-        // Coordinate attack on player
-        float pred_x, pred_y;
-        predict_player_position(game, AI_PREDICTION_TIME, &pred_x, &pred_y);
-        
-        float dx = pred_x - enemy->x;
-        float dy = pred_y - enemy->y;
-        float distance = sqrt(dx * dx + dy * dy);
-        
-        if (distance > 0) {
-            float speed = ENEMY_CHASE_SPEED * game->ai_state.difficulty_multiplier * AI_COORDINATE_SPEED_MULT;
-            enemy->dx = (dx / distance) * speed;
-            enemy->dy = (dy / distance) * speed;
-            enemy->x += enemy->dx;
-            enemy->y += enemy->dy;
-        }
-    }
-    
-    // Return to normal behavior after coordination time
-    if (enemy->ai_timer <= 0) {
-        enemy->behavior = BEHAVIOR_CHASE;
-    } else {
-        enemy->ai_timer--;
-    }
-}
-
-// Execute ambush behavior
-void execute_ambush_behavior(Game* game, Entity* enemy) {
-    if (enemy->ai_timer <= 0) {
-        // Wait for player to get closer
-        enemy->dx = 0;
-        enemy->dy = 0;
-        
-        float dx = game->player.x - enemy->x;
-        float dy = game->player.y - enemy->y;
-        float distance = sqrt(dx * dx + dy * dy);
-        
-        if (distance <= AI_AMBUSH_TRIGGER_RANGE) {
-            // Spring the ambush!
-            enemy->ai_timer = AI_AMBUSH_DURATION;
-            enemy->aggression_level += 0.3f; // Increase aggression for ambush
-        }
-    } else {
-        // Execute ambush attack
-        float pred_x, pred_y;
-        predict_player_position(game, AI_PREDICTION_TIME * 0.5f, &pred_x, &pred_y);
-        
-        float dx = pred_x - enemy->x;
-        float dy = pred_y - enemy->y;
-        float distance = sqrt(dx * dx + dy * dy);
-        
-        if (distance > 0) {
-            float speed = ENEMY_CHASE_SPEED * AI_AMBUSH_SPEED_MULT * game->ai_state.difficulty_multiplier;
-            enemy->dx = (dx / distance) * speed;
-            enemy->dy = (dy / distance) * speed;
-            enemy->x += enemy->dx;
-            enemy->y += enemy->dy;
-        }
-        
-        enemy->ai_timer--;
-        if (enemy->ai_timer <= 0) {
-            enemy->behavior = BEHAVIOR_CHASE;
-            enemy->aggression_level -= 0.3f; // Return to normal aggression
-        }
-    }
-}
-
-// Execute retreat behavior
-void execute_retreat_behavior(Game* game, Entity* enemy) {
-    // Move away from player
-    float dx = enemy->x - game->player.x;
-    float dy = enemy->y - game->player.y;
+    // Move towards flanking position
+    float dx = target_x - enemy->x;
+    float dy = target_y - enemy->y;
     float distance = sqrt(dx * dx + dy * dy);
     
-    if (distance > 0) {
-        float speed = ENEMY_CHASE_SPEED * AI_RETREAT_SPEED_MULT;
+    if (distance > AI_FLANK_MIN_DISTANCE) {
+        float speed = ENEMY_CHASE_SPEED * game->ai_state.difficulty_multiplier;
         enemy->dx = (dx / distance) * speed;
         enemy->dy = (dy / distance) * speed;
         enemy->x += enemy->dx;
         enemy->y += enemy->dy;
+    } else {
+        // In position, switch to coordinated attack
+        enemy->behavior = BEHAVIOR_COORDINATE;
+        enemy->ai_timer = AI_COORDINATE_DURATION;
     }
     
-    // Try to find cover or higher ground
-    // Look for platforms to retreat to
-    for (int i = 0; i < game->current_level_data->num_platforms; i++) {
-        Platform* platform = &game->current_level_data->platforms[i];
-        float platform_center_x = platform->x + platform->width / 2;
-        float platform_center_y = platform->y + platform->height / 2;
-        
-        // Check if platform is away from player
-        float platform_to_player_dx = game->player.x - platform_center_x;
-        float platform_to_player_dy = game->player.y - platform_center_y;
-        float platform_to_player_dist = sqrt(platform_to_player_dx * platform_to_player_dx + 
-                                           platform_to_player_dy * platform_to_player_dy);
-        
-        if (platform_to_player_dist > AI_RETREAT_DISTANCE) {
-            // Move towards this platform
-            float to_platform_dx = platform_center_x - enemy->x;
-            float to_platform_dy = platform_center_y - enemy->y;
-            float to_platform_dist = sqrt(to_platform_dx * to_platform_dx + to_platform_dy * to_platform_dy);
-            
-            if (to_platform_dist > 20.0f) { // If not already at platform
-                enemy->dx = (to_platform_dx / to_platform_dist) * ENEMY_CHASE_SPEED;
-                enemy->dy = (to_platform_dy / to_platform_dist) * ENEMY_CHASE_SPEED;
-                enemy->x += enemy->dx;
-                enemy->y += enemy->dy;
-                break;
-            }
-        }
-    }
-    
-    // Return to normal behavior after retreating far enough
-    float retreat_dx = game->player.x - enemy->x;
-    float retreat_dy = game->player.y - enemy->y;
-    float retreat_distance = sqrt(retreat_dx * retreat_dx + retreat_dy * retreat_dy);
-    
-    if (retreat_distance > AI_RETREAT_DISTANCE * 1.5f || enemy->health > enemy->max_health * 0.6f) {
-        enemy->behavior = BEHAVIOR_PATROL;
-    }
+    enemy->ai_timer++;
 }
 
-// Execute surround behavior
-void execute_surround_behavior(Game* game, Entity* enemy) {
-    // Calculate position to surround player
-    float player_center_x = game->player.x + game->player.width / 2;
-    float player_center_y = game->player.y + game->player.height / 2;
-    
-    // Use enemy index to determine surround position
-    int enemy_index = 0;
-    for (int i = 0; i < game->current_level_data->num_enemies; i++) {
-        if (&game->current_level_data->enemies[i] == enemy) {
-            enemy_index = i;
-            break;
-        }
-    }
-    
-    float surround_angle = (enemy_index * 2.0f * 3.14159f) / game->current_level_data->num_enemies;
-    float surround_x = player_center_x + cos(surround_angle) * AI_SURROUND_DISTANCE - enemy->width / 2;
-    float surround_y = player_center_y + sin(surround_angle) * AI_SURROUND_DISTANCE - enemy->height / 2;
-    
-    // Move towards surround position
-    float dx = surround_x - enemy->x;
-    float dy = surround_y - enemy->y;
+// Stub implementations for missing AI behavior functions
+void execute_coordinate_behavior(Game* game, Entity* enemy) {
+    // Basic coordination behavior - move towards player with slight flanking
+    float dx = game->player.x - enemy->x;
+    float dy = game->player.y - enemy->y;
     float distance = sqrt(dx * dx + dy * dy);
     
-    if (distance > 20.0f) {
+    if (distance > 0) {
         enemy->dx = (dx / distance) * ENEMY_CHASE_SPEED;
         enemy->dy = (dy / distance) * ENEMY_CHASE_SPEED;
         enemy->x += enemy->dx;
         enemy->y += enemy->dy;
+    }
+}
+
+void execute_ambush_behavior(Game* game, Entity* enemy) {
+    // Basic ambush behavior - wait then rush player
+    if (enemy->ai_timer > 0) {
+        enemy->ai_timer--;
+        // Wait in position
+        enemy->dx = 0;
+        enemy->dy = 0;
     } else {
-        // In position, close in slowly
-        dx = player_center_x - (enemy->x + enemy->width / 2);
-        dy = player_center_y - (enemy->y + enemy->height / 2);
-        distance = sqrt(dx * dx + dy * dy);
+        // Rush towards player
+        float dx = game->player.x - enemy->x;
+        float dy = game->player.y - enemy->y;
+        float distance = sqrt(dx * dx + dy * dy);
         
-        if (distance > 50.0f) {
-            enemy->dx = (dx / distance) * ENEMY_CHASE_SPEED * 0.5f;
-            enemy->dy = (dy / distance) * ENEMY_CHASE_SPEED * 0.5f;
+        if (distance > 0) {
+            enemy->dx = (dx / distance) * (ENEMY_CHASE_SPEED * 1.5f);
+            enemy->dy = (dy / distance) * (ENEMY_CHASE_SPEED * 1.5f);
             enemy->x += enemy->dx;
             enemy->y += enemy->dy;
         }
     }
+}
+
+void execute_retreat_behavior(Game* game, Entity* enemy) {
+    // Basic retreat behavior - move away from player
+    float dx = game->player.x - enemy->x;
+    float dy = game->player.y - enemy->y;
+    float distance = sqrt(dx * dx + dy * dy);
+    
+    if (distance > 0) {
+        // Move away from player
+        enemy->dx = -(dx / distance) * ENEMY_CHASE_SPEED;
+        enemy->dy = -(dy / distance) * ENEMY_CHASE_SPEED;
+        enemy->x += enemy->dx;
+        enemy->y += enemy->dy;
+    }
+}
+
+void execute_surround_behavior(Game* game, Entity* enemy) {
+    // Basic surround behavior - circle around player
+    float dx = game->player.x - enemy->x;
+    float dy = game->player.y - enemy->y;
+    float distance = sqrt(dx * dx + dy * dy);
+    
+    if (distance > AI_FLANK_DISTANCE) {
+        // Move closer
+        if (distance > 0) {
+            enemy->dx = (dx / distance) * ENEMY_CHASE_SPEED;
+            enemy->dy = (dy / distance) * ENEMY_CHASE_SPEED;
+        }
+    } else {
+        // Circle around player
+        float angle = atan2(dy, dx) + (AI_SURROUND_ANGLE_OFFSET * 3.14159f / 180.0f);
+        enemy->dx = cos(angle) * ENEMY_PATROL_SPEED;
+        enemy->dy = sin(angle) * ENEMY_PATROL_SPEED;
+    }
+    
+    enemy->x += enemy->dx;
+    enemy->y += enemy->dy;
 }

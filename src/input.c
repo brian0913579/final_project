@@ -74,7 +74,7 @@ void handle_menu_input(Game* game, ALLEGRO_EVENT* event) {
                                     // game->score = 0; // Score should be reset here if it's per-game
                                     // game->levels[0].scroll_x = 0; // Handled by reset
                                     reset_player_and_level(game, INITIAL_LEVEL -1); // Reset for level 1 (index 0)
-                                    game->score = 0; // Reset global score when starting a new game
+                                    init_star_system(game); // Reset star system when starting a new game
                                     game->state = PLAYING;
                                     break;
                                 case 1: game->state = LEVEL_SELECT; break;

@@ -1,0 +1,2606 @@
+Initializing levels... TOTAL_LEVELS=4
+Successfully loaded background 0: scene_11.png
+Successfully loaded background 1: scene_12.png
+Successfully loaded background 2: scene_13.png
+Successfully loaded background 3: scene_14_1.png
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=0.0
+Drawing bg 0 at position 0.0 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1200.0 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=3.3
+Drawing bg 0 at position -3.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1196.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=8.3
+Drawing bg 0 at position -8.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1191.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=13.3
+Drawing bg 0 at position -13.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1186.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=18.3
+Drawing bg 0 at position -18.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1181.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=23.3
+Drawing bg 0 at position -23.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1176.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=28.3
+Drawing bg 0 at position -28.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1171.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=33.3
+Drawing bg 0 at position -33.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1166.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=38.3
+Drawing bg 0 at position -38.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1161.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=43.3
+Drawing bg 0 at position -43.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1156.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=48.3
+Drawing bg 0 at position -48.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1151.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=53.3
+Drawing bg 0 at position -53.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1146.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=58.3
+Drawing bg 0 at position -58.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1141.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=63.3
+Drawing bg 0 at position -63.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1136.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=68.3
+Drawing bg 0 at position -68.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1131.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=73.3
+Drawing bg 0 at position -73.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1126.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=78.3
+Drawing bg 0 at position -78.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1121.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=83.3
+Drawing bg 0 at position -83.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1116.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=88.3
+Drawing bg 0 at position -88.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1111.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=93.3
+Drawing bg 0 at position -93.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1106.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=98.3
+Drawing bg 0 at position -98.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1101.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=103.3
+Drawing bg 0 at position -103.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1096.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=108.3
+Drawing bg 0 at position -108.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1091.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=113.3
+Drawing bg 0 at position -113.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1086.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=118.3
+Drawing bg 0 at position -118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1081.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=123.3
+Drawing bg 0 at position -123.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1076.7 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=128.3
+Drawing bg 0 at position -128.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1071.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=133.3
+Drawing bg 0 at position -133.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1066.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=138.3
+Drawing bg 0 at position -138.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1061.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=143.3
+Drawing bg 0 at position -143.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1056.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=148.3
+Drawing bg 0 at position -148.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1051.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=153.3
+Drawing bg 0 at position -153.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1046.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=158.3
+Drawing bg 0 at position -158.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1041.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=163.3
+Drawing bg 0 at position -163.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1036.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=168.3
+Drawing bg 0 at position -168.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1031.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=173.3
+Drawing bg 0 at position -173.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1026.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=178.3
+Drawing bg 0 at position -178.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1021.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=183.3
+Drawing bg 0 at position -183.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1016.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=188.3
+Drawing bg 0 at position -188.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1011.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=193.3
+Drawing bg 0 at position -193.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1006.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=198.3
+Drawing bg 0 at position -198.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1001.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=203.3
+Drawing bg 0 at position -203.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 996.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=208.3
+Drawing bg 0 at position -208.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 991.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=213.3
+Drawing bg 0 at position -213.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 986.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=218.3
+Drawing bg 0 at position -218.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 981.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=223.3
+Drawing bg 0 at position -223.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 976.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=228.3
+Drawing bg 0 at position -228.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 971.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=233.3
+Drawing bg 0 at position -233.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 966.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=238.3
+Drawing bg 0 at position -238.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 961.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=243.3
+Drawing bg 0 at position -243.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 956.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=248.3
+Drawing bg 0 at position -248.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 951.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=253.3
+Drawing bg 0 at position -253.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 946.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=258.3
+Drawing bg 0 at position -258.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 941.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=263.3
+Drawing bg 0 at position -263.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 936.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=268.3
+Drawing bg 0 at position -268.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 931.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=273.3
+Drawing bg 0 at position -273.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 926.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=278.3
+Drawing bg 0 at position -278.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 921.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=283.3
+Drawing bg 0 at position -283.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 916.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=288.3
+Drawing bg 0 at position -288.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 911.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=293.3
+Drawing bg 0 at position -293.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 906.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=298.3
+Drawing bg 0 at position -298.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 901.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=303.3
+Drawing bg 0 at position -303.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 896.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=308.3
+Drawing bg 0 at position -308.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 891.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=313.3
+Drawing bg 0 at position -313.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 886.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=318.3
+Drawing bg 0 at position -318.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 881.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=323.3
+Drawing bg 0 at position -323.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 876.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=328.3
+Drawing bg 0 at position -328.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 871.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=333.3
+Drawing bg 0 at position -333.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 866.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=338.3
+Drawing bg 0 at position -338.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 861.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=343.3
+Drawing bg 0 at position -343.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 856.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=348.3
+Drawing bg 0 at position -348.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 851.7 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=353.3
+Drawing bg 0 at position -353.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 846.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=358.3
+Drawing bg 0 at position -358.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 841.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=363.3
+Drawing bg 0 at position -363.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 836.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=368.3
+Drawing bg 0 at position -368.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 831.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=373.3
+Drawing bg 0 at position -373.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 826.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=378.3
+Drawing bg 0 at position -378.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 821.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=383.3
+Drawing bg 0 at position -383.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 816.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=388.3
+Drawing bg 0 at position -388.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 811.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=393.3
+Drawing bg 0 at position -393.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 806.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=398.3
+Drawing bg 0 at position -398.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 801.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=403.3
+Drawing bg 0 at position -403.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 796.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=408.3
+Drawing bg 0 at position -408.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 791.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=413.3
+Drawing bg 0 at position -413.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 786.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=418.3
+Drawing bg 0 at position -418.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 781.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=423.3
+Drawing bg 0 at position -423.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 776.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=428.3
+Drawing bg 0 at position -428.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 771.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=433.3
+Drawing bg 0 at position -433.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 766.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=438.3
+Drawing bg 0 at position -438.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 761.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=443.3
+Drawing bg 0 at position -443.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 756.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=448.3
+Drawing bg 0 at position -448.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 751.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=453.3
+Drawing bg 0 at position -453.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 746.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=458.3
+Drawing bg 0 at position -458.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 741.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=463.3
+Drawing bg 0 at position -463.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 736.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=468.3
+Drawing bg 0 at position -468.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 731.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=473.3
+Drawing bg 0 at position -473.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 726.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=478.3
+Drawing bg 0 at position -478.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 721.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=483.3
+Drawing bg 0 at position -483.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 716.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=488.3
+Drawing bg 0 at position -488.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 711.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=493.3
+Drawing bg 0 at position -493.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 706.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=498.3
+Drawing bg 0 at position -498.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 701.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=503.3
+Drawing bg 0 at position -503.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 696.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=508.3
+Drawing bg 0 at position -508.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 691.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=513.3
+Drawing bg 0 at position -513.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 686.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=518.3
+Drawing bg 0 at position -518.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 681.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=523.3
+Drawing bg 0 at position -523.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 676.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=528.3
+Drawing bg 0 at position -528.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 671.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=533.3
+Drawing bg 0 at position -533.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 666.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=538.3
+Drawing bg 0 at position -538.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 661.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=543.3
+Drawing bg 0 at position -543.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 656.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=548.3
+Drawing bg 0 at position -548.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 651.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=553.3
+Drawing bg 0 at position -553.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 646.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=558.3
+Drawing bg 0 at position -558.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 641.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=563.3
+Drawing bg 0 at position -563.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 636.7 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=568.3
+Drawing bg 0 at position -568.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 631.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=573.3
+Drawing bg 0 at position -573.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 626.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=578.3
+Drawing bg 0 at position -578.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 621.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=583.3
+Drawing bg 0 at position -583.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 616.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=588.3
+Drawing bg 0 at position -588.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 611.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=593.3
+Drawing bg 0 at position -593.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 606.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=598.3
+Drawing bg 0 at position -598.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 601.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=603.3
+Drawing bg 0 at position -603.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 596.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=608.3
+Drawing bg 0 at position -608.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 591.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=613.3
+Drawing bg 0 at position -613.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 586.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=618.3
+Drawing bg 0 at position -618.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 581.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=623.3
+Drawing bg 0 at position -623.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 576.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=628.3
+Drawing bg 0 at position -628.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 571.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=633.3
+Drawing bg 0 at position -633.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 566.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=638.3
+Drawing bg 0 at position -638.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 561.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=643.3
+Drawing bg 0 at position -643.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 556.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=648.3
+Drawing bg 0 at position -648.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 551.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=653.3
+Drawing bg 0 at position -653.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 546.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=658.3
+Drawing bg 0 at position -658.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 541.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=663.3
+Drawing bg 0 at position -663.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 536.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=668.3
+Drawing bg 0 at position -668.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 531.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=673.3
+Drawing bg 0 at position -673.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 526.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=678.3
+Drawing bg 0 at position -678.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 521.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=683.3
+Drawing bg 0 at position -683.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 516.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=688.3
+Drawing bg 0 at position -688.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 511.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=693.3
+Drawing bg 0 at position -693.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 506.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=698.3
+Drawing bg 0 at position -698.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 501.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=703.3
+Drawing bg 0 at position -703.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 496.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=708.3
+Drawing bg 0 at position -708.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 491.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=713.3
+Drawing bg 0 at position -713.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 486.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=718.3
+Drawing bg 0 at position -718.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 481.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=723.3
+Drawing bg 0 at position -723.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 476.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=728.3
+Drawing bg 0 at position -728.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 471.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=733.3
+Drawing bg 0 at position -733.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 466.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=738.3
+Drawing bg 0 at position -738.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 461.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=743.3
+Drawing bg 0 at position -743.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 456.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=748.3
+Drawing bg 0 at position -748.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 451.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=753.3
+Drawing bg 0 at position -753.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 446.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=758.3
+Drawing bg 0 at position -758.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 441.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=763.3
+Drawing bg 0 at position -763.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 436.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=768.3
+Drawing bg 0 at position -768.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 431.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=773.3
+Drawing bg 0 at position -773.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 426.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=778.3
+Drawing bg 0 at position -778.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 421.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=783.3
+Drawing bg 0 at position -783.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 416.7 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=788.3
+Drawing bg 0 at position -788.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 411.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=793.3
+Drawing bg 0 at position -793.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 406.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=798.3
+Drawing bg 0 at position -798.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 401.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=803.3
+Drawing bg 0 at position -803.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 396.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=808.3
+Drawing bg 0 at position -808.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 391.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=813.3
+Drawing bg 0 at position -813.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 386.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=818.3
+Drawing bg 0 at position -818.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 381.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=823.3
+Drawing bg 0 at position -823.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 376.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=828.3
+Drawing bg 0 at position -828.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 371.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=833.3
+Drawing bg 0 at position -833.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 366.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=838.3
+Drawing bg 0 at position -838.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 361.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=843.3
+Drawing bg 0 at position -843.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 356.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=848.3
+Drawing bg 0 at position -848.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 351.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=853.3
+Drawing bg 0 at position -853.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 346.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=858.3
+Drawing bg 0 at position -858.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 341.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=863.3
+Drawing bg 0 at position -863.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 336.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=868.3
+Drawing bg 0 at position -868.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 331.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=873.3
+Drawing bg 0 at position -873.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 326.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=878.3
+Drawing bg 0 at position -878.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 321.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=883.3
+Drawing bg 0 at position -883.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 316.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=888.3
+Drawing bg 0 at position -888.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 311.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=893.3
+Drawing bg 0 at position -893.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 306.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=898.3
+Drawing bg 0 at position -898.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 301.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=903.3
+Drawing bg 0 at position -903.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 296.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=908.3
+Drawing bg 0 at position -908.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 291.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=913.3
+Drawing bg 0 at position -913.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 286.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=918.3
+Drawing bg 0 at position -918.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 281.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=923.3
+Drawing bg 0 at position -923.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 276.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=928.3
+Drawing bg 0 at position -928.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 271.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=933.3
+Drawing bg 0 at position -933.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 266.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=938.3
+Drawing bg 0 at position -938.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 261.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=943.3
+Drawing bg 0 at position -943.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 256.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=948.3
+Drawing bg 0 at position -948.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 251.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=953.3
+Drawing bg 0 at position -953.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 246.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=958.3
+Drawing bg 0 at position -958.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 241.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=963.3
+Drawing bg 0 at position -963.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 236.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=968.3
+Drawing bg 0 at position -968.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 231.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=973.3
+Drawing bg 0 at position -973.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 226.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=978.3
+Drawing bg 0 at position -978.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 221.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=983.3
+Drawing bg 0 at position -983.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 216.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=988.3
+Drawing bg 0 at position -988.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 211.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=993.3
+Drawing bg 0 at position -993.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 206.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=998.3
+Drawing bg 0 at position -998.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 201.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1003.3
+Drawing bg 0 at position -1003.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 196.7 (bg_start=1200.0, bg_end=2400.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1008.3
+Drawing bg 0 at position -1008.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 191.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1013.3
+Drawing bg 0 at position -1013.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 186.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1018.3
+Drawing bg 0 at position -1018.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 181.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1023.3
+Drawing bg 0 at position -1023.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 176.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1028.3
+Drawing bg 0 at position -1028.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 171.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1033.3
+Drawing bg 0 at position -1033.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 166.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1038.3
+Drawing bg 0 at position -1038.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 161.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1043.3
+Drawing bg 0 at position -1043.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 156.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1048.3
+Drawing bg 0 at position -1048.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 151.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1053.3
+Drawing bg 0 at position -1053.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 146.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1058.3
+Drawing bg 0 at position -1058.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 141.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1063.3
+Drawing bg 0 at position -1063.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 136.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1068.3
+Drawing bg 0 at position -1068.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 131.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1073.3
+Drawing bg 0 at position -1073.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 126.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1078.3
+Drawing bg 0 at position -1078.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 121.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1083.3
+Drawing bg 0 at position -1083.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 116.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1088.3
+Drawing bg 0 at position -1088.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 111.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1093.3
+Drawing bg 0 at position -1093.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 106.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1098.3
+Drawing bg 0 at position -1098.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 101.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1103.3
+Drawing bg 0 at position -1103.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 96.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1108.3
+Drawing bg 0 at position -1108.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 91.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1113.3
+Drawing bg 0 at position -1113.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 86.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1118.3
+Drawing bg 0 at position -1118.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 81.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing multi-backgrounds: num=4, scroll_x=1123.3
+Drawing bg 0 at position -1123.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 76.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1276.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1128.3
+Drawing bg 0 at position -1128.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 71.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1271.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1133.3
+Drawing bg 0 at position -1133.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 66.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1266.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1138.3
+Drawing bg 0 at position -1138.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 61.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1261.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1143.3
+Drawing bg 0 at position -1143.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 56.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1256.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1148.3
+Drawing bg 0 at position -1148.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 51.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1251.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1153.3
+Drawing bg 0 at position -1153.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 46.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1246.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1158.3
+Drawing bg 0 at position -1158.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 41.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1241.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1163.3
+Drawing bg 0 at position -1163.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 36.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1236.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1168.3
+Drawing bg 0 at position -1168.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 31.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1231.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1173.3
+Drawing bg 0 at position -1173.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 26.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1226.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1178.3
+Drawing bg 0 at position -1178.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 21.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1221.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1183.3
+Drawing bg 0 at position -1183.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 16.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1216.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1188.3
+Drawing bg 0 at position -1188.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 11.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1211.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1193.3
+Drawing bg 0 at position -1193.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 6.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1206.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1198.3
+Drawing bg 0 at position -1198.3 (bg_start=0.0, bg_end=1200.0)
+Drawing bg 1 at position 1.7 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1201.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1203.3
+Drawing bg 1 at position -3.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1196.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1208.3
+Drawing bg 1 at position -8.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1191.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1213.3
+Drawing bg 1 at position -13.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1186.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1218.3
+Drawing bg 1 at position -18.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1181.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1228.3
+Drawing bg 1 at position -28.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1171.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1233.3
+Drawing bg 1 at position -33.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1166.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1238.3
+Drawing bg 1 at position -38.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1161.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1243.3
+Drawing bg 1 at position -43.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1156.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1248.3
+Drawing bg 1 at position -48.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1151.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1253.3
+Drawing bg 1 at position -53.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1146.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1258.3
+Drawing bg 1 at position -58.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1263.3
+Drawing bg 1 at position -63.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1268.3
+Drawing bg 1 at position -68.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1131.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1273.3
+Drawing bg 1 at position -73.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1278.3
+Drawing bg 1 at position -78.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1283.3
+Drawing bg 1 at position -83.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1288.3
+Drawing bg 1 at position -88.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1293.3
+Drawing bg 1 at position -93.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1298.3
+Drawing bg 1 at position -98.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1303.3
+Drawing bg 1 at position -103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1096.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1308.3
+Drawing bg 1 at position -108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1091.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1313.3
+Drawing bg 1 at position -113.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1086.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1308.3
+Drawing bg 1 at position -108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1091.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1303.3
+Drawing bg 1 at position -103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1096.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1298.3
+Drawing bg 1 at position -98.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1293.3
+Drawing bg 1 at position -93.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1288.3
+Drawing bg 1 at position -88.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1283.3
+Drawing bg 1 at position -83.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1278.3
+Drawing bg 1 at position -78.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1273.3
+Drawing bg 1 at position -73.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1268.3
+Drawing bg 1 at position -68.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1131.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1263.3
+Drawing bg 1 at position -63.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1258.3
+Drawing bg 1 at position -58.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1253.3
+Drawing bg 1 at position -53.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1146.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1248.3
+Drawing bg 1 at position -48.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1151.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1243.3
+Drawing bg 1 at position -43.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1156.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1238.3
+Drawing bg 1 at position -38.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1161.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1233.3
+Drawing bg 1 at position -33.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1166.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1228.3
+Drawing bg 1 at position -28.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1171.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1223.3
+Drawing bg 1 at position -23.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1228.3
+Drawing bg 1 at position -28.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1171.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1233.3
+Drawing bg 1 at position -33.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1166.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1238.3
+Drawing bg 1 at position -38.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1161.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1243.3
+Drawing bg 1 at position -43.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1156.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1248.3
+Drawing bg 1 at position -48.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1151.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1253.3
+Drawing bg 1 at position -53.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1146.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1258.3
+Drawing bg 1 at position -58.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1263.3
+Drawing bg 1 at position -63.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1268.3
+Drawing bg 1 at position -68.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1131.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1273.3
+Drawing bg 1 at position -73.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1278.3
+Drawing bg 1 at position -78.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1283.3
+Drawing bg 1 at position -83.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1288.3
+Drawing bg 1 at position -88.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1293.3
+Drawing bg 1 at position -93.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1298.3
+Drawing bg 1 at position -98.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1303.3
+Drawing bg 1 at position -103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1096.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1308.3
+Drawing bg 1 at position -108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1091.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1313.3
+Drawing bg 1 at position -113.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1086.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1318.3
+Drawing bg 1 at position -118.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1081.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1323.3
+Drawing bg 1 at position -123.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1076.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1328.3
+Drawing bg 1 at position -128.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1071.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1333.3
+Drawing bg 1 at position -133.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1066.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1338.3
+Drawing bg 1 at position -138.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1061.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1343.3
+Drawing bg 1 at position -143.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1056.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1348.3
+Drawing bg 1 at position -148.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1051.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1353.3
+Drawing bg 1 at position -153.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1046.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1358.3
+Drawing bg 1 at position -158.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1041.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1363.3
+Drawing bg 1 at position -163.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1036.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1368.3
+Drawing bg 1 at position -168.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1031.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1373.3
+Drawing bg 1 at position -173.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1026.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1378.3
+Drawing bg 1 at position -178.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1021.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1383.3
+Drawing bg 1 at position -183.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1016.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1388.3
+Drawing bg 1 at position -188.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1011.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1393.3
+Drawing bg 1 at position -193.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1006.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1398.3
+Drawing bg 1 at position -198.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1001.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1403.3
+Drawing bg 1 at position -203.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 996.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1408.3
+Drawing bg 1 at position -208.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 991.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1413.3
+Drawing bg 1 at position -213.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 986.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1423.3
+Drawing bg 1 at position -223.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 976.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1428.3
+Drawing bg 1 at position -228.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 971.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1433.3
+Drawing bg 1 at position -233.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 966.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1438.3
+Drawing bg 1 at position -238.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 961.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1443.3
+Drawing bg 1 at position -243.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 956.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1448.3
+Drawing bg 1 at position -248.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 951.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1453.3
+Drawing bg 1 at position -253.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 946.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1458.3
+Drawing bg 1 at position -258.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 941.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1463.3
+Drawing bg 1 at position -263.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 936.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1468.3
+Drawing bg 1 at position -268.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 931.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1473.3
+Drawing bg 1 at position -273.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 926.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1478.3
+Drawing bg 1 at position -278.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 921.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1483.3
+Drawing bg 1 at position -283.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 916.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1478.3
+Drawing bg 1 at position -278.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 921.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1473.3
+Drawing bg 1 at position -273.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 926.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1468.3
+Drawing bg 1 at position -268.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 931.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1463.3
+Drawing bg 1 at position -263.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 936.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1458.3
+Drawing bg 1 at position -258.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 941.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1453.3
+Drawing bg 1 at position -253.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 946.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1448.3
+Drawing bg 1 at position -248.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 951.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1443.3
+Drawing bg 1 at position -243.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 956.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1438.3
+Drawing bg 1 at position -238.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 961.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1433.3
+Drawing bg 1 at position -233.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 966.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1428.3
+Drawing bg 1 at position -228.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 971.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1423.3
+Drawing bg 1 at position -223.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 976.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1418.3
+Drawing bg 1 at position -218.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 981.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1423.3
+Drawing bg 1 at position -223.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 976.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1428.3
+Drawing bg 1 at position -228.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 971.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1433.3
+Drawing bg 1 at position -233.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 966.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1438.3
+Drawing bg 1 at position -238.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 961.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1443.3
+Drawing bg 1 at position -243.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 956.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1448.3
+Drawing bg 1 at position -248.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 951.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1453.3
+Drawing bg 1 at position -253.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 946.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1458.3
+Drawing bg 1 at position -258.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 941.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1463.3
+Drawing bg 1 at position -263.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 936.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1468.3
+Drawing bg 1 at position -268.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 931.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1473.3
+Drawing bg 1 at position -273.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 926.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1478.3
+Drawing bg 1 at position -278.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 921.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1483.3
+Drawing bg 1 at position -283.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 916.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1488.3
+Drawing bg 1 at position -288.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 911.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1493.3
+Drawing bg 1 at position -293.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 906.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1498.3
+Drawing bg 1 at position -298.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 901.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1503.3
+Drawing bg 1 at position -303.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 896.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1508.3
+Drawing bg 1 at position -308.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 891.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1513.3
+Drawing bg 1 at position -313.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 886.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1518.3
+Drawing bg 1 at position -318.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 881.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1523.3
+Drawing bg 1 at position -323.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 876.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1528.3
+Drawing bg 1 at position -328.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 871.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1533.3
+Drawing bg 1 at position -333.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 866.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1538.3
+Drawing bg 1 at position -338.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 861.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1543.3
+Drawing bg 1 at position -343.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 856.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1548.3
+Drawing bg 1 at position -348.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 851.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1553.3
+Drawing bg 1 at position -353.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 846.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1558.3
+Drawing bg 1 at position -358.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 841.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1563.3
+Drawing bg 1 at position -363.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 836.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1568.3
+Drawing bg 1 at position -368.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 831.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1573.3
+Drawing bg 1 at position -373.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 826.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1578.3
+Drawing bg 1 at position -378.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 821.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1583.3
+Drawing bg 1 at position -383.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 816.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1588.3
+Drawing bg 1 at position -388.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 811.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1593.3
+Drawing bg 1 at position -393.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 806.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1598.3
+Drawing bg 1 at position -398.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 801.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1603.3
+Drawing bg 1 at position -403.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 796.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1608.3
+Drawing bg 1 at position -408.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 791.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1613.3
+Drawing bg 1 at position -413.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 786.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1618.3
+Drawing bg 1 at position -418.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 781.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1623.3
+Drawing bg 1 at position -423.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 776.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1628.3
+Drawing bg 1 at position -428.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 771.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1633.3
+Drawing bg 1 at position -433.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 766.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1638.3
+Drawing bg 1 at position -438.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 761.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1633.3
+Drawing bg 1 at position -433.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 766.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1628.3
+Drawing bg 1 at position -428.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 771.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1623.3
+Drawing bg 1 at position -423.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 776.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1628.3
+Drawing bg 1 at position -428.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 771.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1633.3
+Drawing bg 1 at position -433.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 766.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1638.3
+Drawing bg 1 at position -438.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 761.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1643.3
+Drawing bg 1 at position -443.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 756.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1648.3
+Drawing bg 1 at position -448.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 751.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1653.3
+Drawing bg 1 at position -453.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 746.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1658.3
+Drawing bg 1 at position -458.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 741.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1663.3
+Drawing bg 1 at position -463.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 736.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1668.3
+Drawing bg 1 at position -468.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 731.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1673.3
+Drawing bg 1 at position -473.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 726.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1678.3
+Drawing bg 1 at position -478.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 721.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1683.3
+Drawing bg 1 at position -483.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 716.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1688.3
+Drawing bg 1 at position -488.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 711.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1693.3
+Drawing bg 1 at position -493.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 706.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1698.3
+Drawing bg 1 at position -498.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 701.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1703.3
+Drawing bg 1 at position -503.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 696.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1708.3
+Drawing bg 1 at position -508.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 691.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1713.3
+Drawing bg 1 at position -513.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 686.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1718.3
+Drawing bg 1 at position -518.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 681.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1723.3
+Drawing bg 1 at position -523.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 676.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1728.3
+Drawing bg 1 at position -528.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 671.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1733.3
+Drawing bg 1 at position -533.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 666.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1738.3
+Drawing bg 1 at position -538.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 661.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1743.3
+Drawing bg 1 at position -543.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 656.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1748.3
+Drawing bg 1 at position -548.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 651.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1753.3
+Drawing bg 1 at position -553.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 646.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1758.3
+Drawing bg 1 at position -558.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 641.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1763.3
+Drawing bg 1 at position -563.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 636.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1768.3
+Drawing bg 1 at position -568.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 631.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1773.3
+Drawing bg 1 at position -573.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 626.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1778.3
+Drawing bg 1 at position -578.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 621.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1783.3
+Drawing bg 1 at position -583.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 616.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1788.3
+Drawing bg 1 at position -588.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 611.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1793.3
+Drawing bg 1 at position -593.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 606.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1798.3
+Drawing bg 1 at position -598.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 601.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1803.3
+Drawing bg 1 at position -603.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 596.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1808.3
+Drawing bg 1 at position -608.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 591.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1813.3
+Drawing bg 1 at position -613.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 586.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1818.3
+Drawing bg 1 at position -618.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 581.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1823.3
+Drawing bg 1 at position -623.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 576.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1828.3
+Drawing bg 1 at position -628.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 571.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1833.3
+Drawing bg 1 at position -633.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 566.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1838.3
+Drawing bg 1 at position -638.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 561.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1843.3
+Drawing bg 1 at position -643.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 556.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1848.3
+Drawing bg 1 at position -648.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 551.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1853.3
+Drawing bg 1 at position -653.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 546.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1858.3
+Drawing bg 1 at position -658.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 541.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1863.3
+Drawing bg 1 at position -663.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 536.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1868.3
+Drawing bg 1 at position -668.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 531.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1873.3
+Drawing bg 1 at position -673.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 526.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1878.3
+Drawing bg 1 at position -678.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 521.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=1883.3
+Drawing bg 1 at position -683.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 516.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1888.3
+Drawing bg 1 at position -688.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 511.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1893.3
+Drawing bg 1 at position -693.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 506.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1898.3
+Drawing bg 1 at position -698.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 501.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1903.3
+Drawing bg 1 at position -703.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 496.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1908.3
+Drawing bg 1 at position -708.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 491.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1913.3
+Drawing bg 1 at position -713.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 486.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1918.3
+Drawing bg 1 at position -718.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 481.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1923.3
+Drawing bg 1 at position -723.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 476.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1928.3
+Drawing bg 1 at position -728.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 471.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1933.3
+Drawing bg 1 at position -733.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 466.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1938.3
+Drawing bg 1 at position -738.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 461.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1943.3
+Drawing bg 1 at position -743.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 456.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1948.3
+Drawing bg 1 at position -748.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 451.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1953.3
+Drawing bg 1 at position -753.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 446.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1958.3
+Drawing bg 1 at position -758.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 441.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1963.3
+Drawing bg 1 at position -763.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 436.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1968.3
+Drawing bg 1 at position -768.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 431.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1973.3
+Drawing bg 1 at position -773.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 426.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1978.3
+Drawing bg 1 at position -778.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 421.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1983.3
+Drawing bg 1 at position -783.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 416.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1988.3
+Drawing bg 1 at position -788.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 411.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1993.3
+Drawing bg 1 at position -793.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 406.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=1998.3
+Drawing bg 1 at position -798.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 401.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2003.3
+Drawing bg 1 at position -803.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 396.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2008.3
+Drawing bg 1 at position -808.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 391.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2013.3
+Drawing bg 1 at position -813.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 386.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2018.3
+Drawing bg 1 at position -818.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 381.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2023.3
+Drawing bg 1 at position -823.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 376.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2028.3
+Drawing bg 1 at position -828.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 371.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2033.3
+Drawing bg 1 at position -833.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 366.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2038.3
+Drawing bg 1 at position -838.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 361.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2043.3
+Drawing bg 1 at position -843.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 356.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2048.3
+Drawing bg 1 at position -848.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 351.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2053.3
+Drawing bg 1 at position -853.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 346.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2058.3
+Drawing bg 1 at position -858.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 341.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2063.3
+Drawing bg 1 at position -863.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 336.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2068.3
+Drawing bg 1 at position -868.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 331.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2073.3
+Drawing bg 1 at position -873.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 326.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2078.3
+Drawing bg 1 at position -878.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 321.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2083.3
+Drawing bg 1 at position -883.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 316.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2088.3
+Drawing bg 1 at position -888.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 311.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2093.3
+Drawing bg 1 at position -893.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 306.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2098.3
+Drawing bg 1 at position -898.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 301.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2103.3
+Drawing bg 1 at position -903.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 296.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2108.3
+Drawing bg 1 at position -908.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 291.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2113.3
+Drawing bg 1 at position -913.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 286.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2118.3
+Drawing bg 1 at position -918.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 281.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2123.3
+Drawing bg 1 at position -923.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 276.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2128.3
+Drawing bg 1 at position -928.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 271.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2133.3
+Drawing bg 1 at position -933.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 266.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=2138.3
+Drawing bg 1 at position -938.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 261.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2143.3
+Drawing bg 1 at position -943.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 256.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2148.3
+Drawing bg 1 at position -948.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 251.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2153.3
+Drawing bg 1 at position -953.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 246.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2158.3
+Drawing bg 1 at position -958.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 241.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2163.3
+Drawing bg 1 at position -963.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 236.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2168.3
+Drawing bg 1 at position -968.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 231.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2173.3
+Drawing bg 1 at position -973.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 226.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2178.3
+Drawing bg 1 at position -978.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 221.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2183.3
+Drawing bg 1 at position -983.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 216.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2188.3
+Drawing bg 1 at position -988.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 211.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2193.3
+Drawing bg 1 at position -993.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 206.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2198.3
+Drawing bg 1 at position -998.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 201.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2203.3
+Drawing bg 1 at position -1003.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 196.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2208.3
+Drawing bg 1 at position -1008.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 191.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2213.3
+Drawing bg 1 at position -1013.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 186.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2218.3
+Drawing bg 1 at position -1018.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 181.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2223.3
+Drawing bg 1 at position -1023.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 176.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2228.3
+Drawing bg 1 at position -1028.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 171.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2233.3
+Drawing bg 1 at position -1033.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 166.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2238.3
+Drawing bg 1 at position -1038.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 161.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2243.3
+Drawing bg 1 at position -1043.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 156.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2248.3
+Drawing bg 1 at position -1048.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 151.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2253.3
+Drawing bg 1 at position -1053.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 146.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2258.3
+Drawing bg 1 at position -1058.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2263.3
+Drawing bg 1 at position -1063.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2268.3
+Drawing bg 1 at position -1068.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 131.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2273.3
+Drawing bg 1 at position -1073.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2278.3
+Drawing bg 1 at position -1078.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2283.3
+Drawing bg 1 at position -1083.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2288.3
+Drawing bg 1 at position -1088.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2293.3
+Drawing bg 1 at position -1093.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2298.3
+Drawing bg 1 at position -1098.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2303.3
+Drawing bg 1 at position -1103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 96.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2308.3
+Drawing bg 1 at position -1108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 91.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2313.3
+Drawing bg 1 at position -1113.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 86.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2318.3
+Drawing bg 1 at position -1118.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 81.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2323.3
+Drawing bg 1 at position -1123.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 76.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1276.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2328.3
+Drawing bg 1 at position -1128.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 71.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1271.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2323.3
+Drawing bg 1 at position -1123.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 76.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1276.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2318.3
+Drawing bg 1 at position -1118.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 81.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2313.3
+Drawing bg 1 at position -1113.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 86.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2308.3
+Drawing bg 1 at position -1108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 91.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2303.3
+Drawing bg 1 at position -1103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 96.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2298.3
+Drawing bg 1 at position -1098.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2293.3
+Drawing bg 1 at position -1093.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2288.3
+Drawing bg 1 at position -1088.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2283.3
+Drawing bg 1 at position -1083.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2278.3
+Drawing bg 1 at position -1078.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2273.3
+Drawing bg 1 at position -1073.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2268.3
+Drawing bg 1 at position -1068.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 131.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2263.3
+Drawing bg 1 at position -1063.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2258.3
+Drawing bg 1 at position -1058.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2253.3
+Drawing bg 1 at position -1053.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 146.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2258.3
+Drawing bg 1 at position -1058.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 141.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2263.3
+Drawing bg 1 at position -1063.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 136.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2268.3
+Drawing bg 1 at position -1068.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 131.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2273.3
+Drawing bg 1 at position -1073.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 126.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2278.3
+Drawing bg 1 at position -1078.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 121.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2283.3
+Drawing bg 1 at position -1083.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 116.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2288.3
+Drawing bg 1 at position -1088.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 111.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2293.3
+Drawing bg 1 at position -1093.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 106.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2298.3
+Drawing bg 1 at position -1098.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 101.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2303.3
+Drawing bg 1 at position -1103.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 96.7 (bg_start=2400.0, bg_end=3600.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=2308.3
+Drawing bg 1 at position -1108.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 91.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2313.3
+Drawing bg 1 at position -1113.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 86.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2318.3
+Drawing bg 1 at position -1118.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 81.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing multi-backgrounds: num=4, scroll_x=2323.3
+Drawing bg 1 at position -1123.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 76.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1276.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2328.3
+Drawing bg 1 at position -1128.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 71.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1271.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2333.3
+Drawing bg 1 at position -1133.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 66.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1266.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2338.3
+Drawing bg 1 at position -1138.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 61.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1261.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2343.3
+Drawing bg 1 at position -1143.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 56.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1256.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2348.3
+Drawing bg 1 at position -1148.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 51.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1251.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2353.3
+Drawing bg 1 at position -1153.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 46.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1246.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2358.3
+Drawing bg 1 at position -1158.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 41.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1241.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2363.3
+Drawing bg 1 at position -1163.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 36.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1236.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2368.3
+Drawing bg 1 at position -1168.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 31.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1231.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2373.3
+Drawing bg 1 at position -1173.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 26.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1226.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2378.3
+Drawing bg 1 at position -1178.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 21.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1221.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2383.3
+Drawing bg 1 at position -1183.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 16.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1216.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2388.3
+Drawing bg 1 at position -1188.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 11.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1211.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2393.3
+Drawing bg 1 at position -1193.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 6.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1206.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2398.3
+Drawing bg 1 at position -1198.3 (bg_start=1200.0, bg_end=2400.0)
+Drawing bg 2 at position 1.7 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1201.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2403.3
+Drawing bg 2 at position -3.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1196.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2408.3
+Drawing bg 2 at position -8.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1191.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2413.3
+Drawing bg 2 at position -13.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1186.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2418.3
+Drawing bg 2 at position -18.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1181.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2423.3
+Drawing bg 2 at position -23.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1176.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2428.3
+Drawing bg 2 at position -28.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1171.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2433.3
+Drawing bg 2 at position -33.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1166.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2438.3
+Drawing bg 2 at position -38.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1161.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2443.3
+Drawing bg 2 at position -43.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1156.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2448.3
+Drawing bg 2 at position -48.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1151.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2453.3
+Drawing bg 2 at position -53.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1146.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2458.3
+Drawing bg 2 at position -58.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1141.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2463.3
+Drawing bg 2 at position -63.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1136.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2468.3
+Drawing bg 2 at position -68.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1131.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2473.3
+Drawing bg 2 at position -73.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1126.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2478.3
+Drawing bg 2 at position -78.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1121.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2483.3
+Drawing bg 2 at position -83.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1116.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2488.3
+Drawing bg 2 at position -88.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1111.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2493.3
+Drawing bg 2 at position -93.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1106.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2498.3
+Drawing bg 2 at position -98.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1101.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2503.3
+Drawing bg 2 at position -103.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1096.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2508.3
+Drawing bg 2 at position -108.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1091.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2513.3
+Drawing bg 2 at position -113.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1086.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2518.3
+Drawing bg 2 at position -118.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1081.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2523.3
+Drawing bg 2 at position -123.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1076.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2528.3
+Drawing bg 2 at position -128.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1071.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2533.3
+Drawing bg 2 at position -133.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1066.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2538.3
+Drawing bg 2 at position -138.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1061.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2543.3
+Drawing bg 2 at position -143.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1056.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2548.3
+Drawing bg 2 at position -148.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1051.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2553.3
+Drawing bg 2 at position -153.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1046.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2558.3
+Drawing bg 2 at position -158.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1041.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2563.3
+Drawing bg 2 at position -163.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1036.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2568.3
+Drawing bg 2 at position -168.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1031.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2573.3
+Drawing bg 2 at position -173.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1026.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2578.3
+Drawing bg 2 at position -178.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1021.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2583.3
+Drawing bg 2 at position -183.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1016.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2588.3
+Drawing bg 2 at position -188.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1011.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2593.3
+Drawing bg 2 at position -193.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1006.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2598.3
+Drawing bg 2 at position -198.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1001.7 (bg_start=3600.0, bg_end=4800.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=2603.3
+Drawing bg 2 at position -203.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 996.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2608.3
+Drawing bg 2 at position -208.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 991.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2613.3
+Drawing bg 2 at position -213.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 986.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2618.3
+Drawing bg 2 at position -218.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 981.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2623.3
+Drawing bg 2 at position -223.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 976.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2628.3
+Drawing bg 2 at position -228.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 971.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2633.3
+Drawing bg 2 at position -233.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 966.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2638.3
+Drawing bg 2 at position -238.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 961.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2643.3
+Drawing bg 2 at position -243.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 956.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2643.3
+Drawing bg 2 at position -243.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 956.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2643.3
+Drawing bg 2 at position -243.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 956.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2643.3
+Drawing bg 2 at position -243.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 956.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2638.3
+Drawing bg 2 at position -238.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 961.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2633.3
+Drawing bg 2 at position -233.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 966.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2628.3
+Drawing bg 2 at position -228.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 971.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2623.3
+Drawing bg 2 at position -223.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 976.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2618.3
+Drawing bg 2 at position -218.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 981.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2613.3
+Drawing bg 2 at position -213.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 986.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2608.3
+Drawing bg 2 at position -208.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 991.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2603.3
+Drawing bg 2 at position -203.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 996.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2598.3
+Drawing bg 2 at position -198.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1001.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2593.3
+Drawing bg 2 at position -193.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1006.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2588.3
+Drawing bg 2 at position -188.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1011.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2583.3
+Drawing bg 2 at position -183.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1016.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2578.3
+Drawing bg 2 at position -178.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1021.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2573.3
+Drawing bg 2 at position -173.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1026.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2568.3
+Drawing bg 2 at position -168.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1031.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2563.3
+Drawing bg 2 at position -163.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1036.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2558.3
+Drawing bg 2 at position -158.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1041.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2563.3
+Drawing bg 2 at position -163.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1036.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2568.3
+Drawing bg 2 at position -168.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1031.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2573.3
+Drawing bg 2 at position -173.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1026.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2578.3
+Drawing bg 2 at position -178.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1021.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2583.3
+Drawing bg 2 at position -183.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1016.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2588.3
+Drawing bg 2 at position -188.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1011.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2593.3
+Drawing bg 2 at position -193.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1006.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2598.3
+Drawing bg 2 at position -198.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 1001.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2603.3
+Drawing bg 2 at position -203.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 996.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2608.3
+Drawing bg 2 at position -208.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 991.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2613.3
+Drawing bg 2 at position -213.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 986.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2618.3
+Drawing bg 2 at position -218.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 981.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2623.3
+Drawing bg 2 at position -223.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 976.7 (bg_start=3600.0, bg_end=4800.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=2628.3
+Drawing bg 2 at position -228.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 971.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2633.3
+Drawing bg 2 at position -233.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 966.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2638.3
+Drawing bg 2 at position -238.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 961.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2643.3
+Drawing bg 2 at position -243.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 956.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2648.3
+Drawing bg 2 at position -248.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 951.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2653.3
+Drawing bg 2 at position -253.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 946.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2658.3
+Drawing bg 2 at position -258.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 941.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2663.3
+Drawing bg 2 at position -263.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 936.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2668.3
+Drawing bg 2 at position -268.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 931.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2673.3
+Drawing bg 2 at position -273.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 926.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2678.3
+Drawing bg 2 at position -278.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 921.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2683.3
+Drawing bg 2 at position -283.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 916.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2688.3
+Drawing bg 2 at position -288.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 911.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2693.3
+Drawing bg 2 at position -293.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 906.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2698.3
+Drawing bg 2 at position -298.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 901.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2703.3
+Drawing bg 2 at position -303.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 896.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2708.3
+Drawing bg 2 at position -308.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 891.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2713.3
+Drawing bg 2 at position -313.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 886.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2718.3
+Drawing bg 2 at position -318.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 881.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2723.3
+Drawing bg 2 at position -323.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 876.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2728.3
+Drawing bg 2 at position -328.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 871.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2733.3
+Drawing bg 2 at position -333.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 866.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2738.3
+Drawing bg 2 at position -338.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 861.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2743.3
+Drawing bg 2 at position -343.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 856.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2748.3
+Drawing bg 2 at position -348.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 851.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2753.3
+Drawing bg 2 at position -353.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 846.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2758.3
+Drawing bg 2 at position -358.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 841.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2763.3
+Drawing bg 2 at position -363.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 836.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2768.3
+Drawing bg 2 at position -368.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 831.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2773.3
+Drawing bg 2 at position -373.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 826.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2778.3
+Drawing bg 2 at position -378.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 821.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2783.3
+Drawing bg 2 at position -383.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 816.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2788.3
+Drawing bg 2 at position -388.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 811.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2793.3
+Drawing bg 2 at position -393.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 806.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2798.3
+Drawing bg 2 at position -398.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 801.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2803.3
+Drawing bg 2 at position -403.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 796.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2808.3
+Drawing bg 2 at position -408.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 791.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2813.3
+Drawing bg 2 at position -413.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 786.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2818.3
+Drawing bg 2 at position -418.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 781.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2823.3
+Drawing bg 2 at position -423.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 776.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2828.3
+Drawing bg 2 at position -428.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 771.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2833.3
+Drawing bg 2 at position -433.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 766.7 (bg_start=3600.0, bg_end=4800.0)
+Normal jump executed!
+Drawing multi-backgrounds: num=4, scroll_x=2838.3
+Drawing bg 2 at position -438.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 761.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2843.3
+Drawing bg 2 at position -443.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 756.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2848.3
+Drawing bg 2 at position -448.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 751.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2853.3
+Drawing bg 2 at position -453.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 746.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2858.3
+Drawing bg 2 at position -458.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 741.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2863.3
+Drawing bg 2 at position -463.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 736.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2868.3
+Drawing bg 2 at position -468.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 731.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2873.3
+Drawing bg 2 at position -473.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 726.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2878.3
+Drawing bg 2 at position -478.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 721.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2883.3
+Drawing bg 2 at position -483.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 716.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2888.3
+Drawing bg 2 at position -488.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 711.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2893.3
+Drawing bg 2 at position -493.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 706.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2898.3
+Drawing bg 2 at position -498.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 701.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)
+Drawing multi-backgrounds: num=4, scroll_x=2903.3
+Drawing bg 2 at position -503.3 (bg_start=2400.0, bg_end=3600.0)
+Drawing bg 3 at position 696.7 (bg_start=3600.0, bg_end=4800.0)

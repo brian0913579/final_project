@@ -12,4 +12,12 @@ void cleanup_menus(Game* game);
 void cleanup_game(Game* game);
 void reset_player_and_level(Game* game, int level_idx); // Declaration for reset function
 
+// Star system functions
+void init_star_system(Game* game);
+void reset_current_level_progress(Game* game);
+void update_stars_on_enemy_kill(Game* game, Entity* enemy);
+void finalize_level_stars(Game* game);
+int calculate_stars(const LevelStars* progress);
+int calculate_total_stars(Game* game);
+
 #endif /* GAME_LOGIC_H */

@@ -10,8 +10,8 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/keyboard.h> // Changed to keyboard.h based on directory listing
 
-#define SCREEN_WIDTH    1280
-#define SCREEN_HEIGHT   720
+#define SCREEN_WIDTH    4480
+#define SCREEN_HEIGHT   2239
 #define FPS            60.0
 #define PLATFORM_JUMP_TOLERANCE 8.0f // Pixels tolerance for standing on a platform, increased and made float
 #define PORTAL_WIDTH 50
@@ -92,8 +92,8 @@
 #define PLAYER_INITIAL_Y_FACTOR (1.0f / 2.0f)
 #define PLAYER_WIDTH 30
 #define PLAYER_HEIGHT 30
-#define PLAYER_INITIAL_HEALTH 100
-#define PLAYER_INITIAL_MAX_HEALTH 100
+#define PLAYER_INITIAL_HEALTH 99999
+#define PLAYER_INITIAL_MAX_HEALTH 99999
 #define PLAYER_INITIAL_ATTACK_POWER 10
 #define PLAYER_ATTACK_SPEED 0.5f // Attacks per second (lower is faster if used as a cooldown)
 #define PLAYER_INVINCIBILITY_FRAMES 30 // Frames of invincibility after taking damage
@@ -135,6 +135,8 @@
 // Game Progression
 #define INITIAL_LEVEL 1
 #define LEVEL_COMPLETE_SCORE_BONUS 1000
+#define TOTAL_LEVELS 4              // Total number of levels in the game
+#define MAX_STARS_PER_LEVEL 3       // Maximum stars per level
 
 // Hazards
 #define DEADLY_PLATFORM_DAMAGE 10
@@ -161,6 +163,24 @@
 #define AI_LEARNING_RATE 0.05f         // How fast AI adapts to player behavior
 #define AI_AMBUSH_WAIT_FRAMES 180      // Frames to wait before ambush (3 seconds)
 #define AI_SURROUND_ANGLE_OFFSET 90.0f // Degrees offset for surrounding player
+#define AI_FLANK_ANGLE 45.0f           // Angle for flanking behavior
+#define AI_AMBUSH_RANGE 200.0f         // Range for ambush detection
+#define AI_AMBUSH_TRIGGER_RANGE 100.0f // Range to trigger ambush
+#define AI_RETREAT_DISTANCE 150.0f     // Distance for retreat behavior
+#define AI_RETREAT_PANIC_TIME 300      // Frames for panic retreat
+#define AI_COORDINATION_UPDATE_RATE 30 // Frames between coordination updates
+#define AI_PREDICTION_TIME 30.0f       // Time for movement prediction
+#define AI_COORDINATE_DURATION 120     // Duration for coordination behavior
+#define AI_AMBUSH_DURATION 60          // Duration for ambush behavior
+#define AI_ADAPTATION_RATE 300         // Frames between AI adaptations
+#define AI_DIFFICULTY_STEP 0.1f        // How much difficulty changes
+#define AI_MAX_DIFFICULTY 2.0f         // Maximum difficulty multiplier
+#define AI_MIN_DIFFICULTY 0.5f         // Minimum difficulty multiplier
+#define AI_FLANK_MIN_DISTANCE 100.0f   // Minimum distance for flanking
+#define AI_COORDINATE_SPEED_MULT 1.2f  // Speed multiplier for coordination
+#define AI_AMBUSH_SPEED_MULT 1.5f      // Speed multiplier for ambush
+#define AI_RETREAT_SPEED_MULT 1.3f     // Speed multiplier for retreat
+#define AI_SURROUND_DISTANCE 120.0f    // Distance for surrounding behavior
 
 // Projectile System
 #define MAX_PROJECTILES 50             // Maximum projectiles on screen
@@ -312,6 +332,7 @@ typedef struct {
     // Advanced AI Fields
     float ai_aggression;  // AI aggression multiplier (1.0 = normal)
     float ai_alertness;   // How aware this enemy is (0.0-1.0)
+    float aggression_level; // Current aggression level for AI
     int ai_state_timer;   // Timer for AI state changes
     float target_x, target_y; // AI target position
     int coordination_id;  // ID for coordinating with other enemies
@@ -322,6 +343,8 @@ typedef struct {
     float predicted_player_x, predicted_player_y; // Predicted player position
     int retreat_timer;    // Timer for retreat behavior
     EntityBehavior backup_behavior; // Behavior to return to after special actions
+    int ai_timer;         // General purpose AI timer
+    int last_damage_time; // Time since last damage taken
 } Entity;
 
 // Structure for game state
@@ -362,8 +385,13 @@ typedef struct {
     int num_projectiles;   // Active projectile count
     int num_particles;     // Active particle count
     ALLEGRO_BITMAP* background;
+    // Multi-background support for level transitions
+    ALLEGRO_BITMAP* backgrounds[4];  // Array of up to 4 backgrounds
+    int num_backgrounds;             // Number of backgrounds used
+    float* background_positions;     // X positions where each background starts
     float scroll_x;
     float level_width;
+    float level_height;   // Height of the level
     char* level_name;
     char* level_description;
     Portal portal;
@@ -376,6 +404,25 @@ typedef struct {
     bool sound_enabled;
     bool music_enabled;
 } GameSettings;
+
+// Level star progress tracking
+typedef struct {
+    bool killed_normal_enemy;  // Player killed at least one normal enemy
+    bool killed_boss;          // Player killed the boss
+    bool killed_all_enemies;   // Player killed all enemies in the level
+    int stars_earned;          // Number of stars earned (0-3)
+} LevelStars;
+
+// AI global state tracking
+typedef struct {
+    int coordination_timer;     // Timer for coordination updates
+    int active_coordinators;    // Number of coordinating enemies
+    float player_last_x;        // Last known player position
+    float player_last_y;
+    int adaptation_timer;       // Timer for AI adaptation
+    float difficulty_multiplier; // Dynamic difficulty multiplier
+    int last_stars_check;       // Last checked star count for adaptation
+} AIGlobalState;
 
 // Screen shake effect
 typedef struct {
@@ -403,6 +450,10 @@ typedef struct {
     ALLEGRO_SAMPLE* collect_sound;
     ALLEGRO_SAMPLE* shoot_sound;
     ALLEGRO_SAMPLE_INSTANCE* music_instance;
+    
+    // Star sprites for visual star display
+    ALLEGRO_BITMAP* star_empty[3];   // Empty star sprites for each level
+    ALLEGRO_BITMAP* star_filled[3];  // Filled star sprites for each level
     bool running;
     int score;
     int current_level;
@@ -411,6 +462,17 @@ typedef struct {
     Menu settings_menu;
     GameSettings settings;
     ScreenShake screen_shake;    // Screen shake effect
+    
+    // Star system tracking
+    LevelStars current_level_progress;  // Progress for current level
+    LevelStars level_stars[TOTAL_LEVELS];  // Stars earned for each level
+    int total_stars;                    // Total stars earned across all levels
+    
+    // AI global state
+    AIGlobalState ai_state;             // Global AI state tracking
+    
+    // Player progression tracking
+    int combo_count;                    // Player's current combo count
     
     // Global AI State Tracking
     float global_ai_difficulty;   // Dynamic difficulty adjustment (starts at 1.0)
@@ -448,13 +510,17 @@ void update_screen_shake(Game* game);
 // Advanced AI system function declarations
 void init_ai_system(Game* game);
 void update_global_ai_state(Game* game);
-void predict_player_movement(Entity* enemy, Entity* player);
+void predict_player_movement(Game* game, float prediction_time, float* pred_x, float* pred_y);
 bool check_line_of_sight(Entity* enemy, Entity* player, Level* level);
 void update_enemy_coordination(Game* game);
 void apply_flanking_behavior(Entity* enemy, Entity* player, Game* game);
 void apply_ambush_behavior(Entity* enemy, Entity* player, Game* game);
 void apply_retreat_behavior(Entity* enemy, Entity* player, Game* game);
 void apply_surround_behavior(Entity* enemy, Entity* player, Game* game, int enemy_index);
+void execute_coordinate_behavior(Game* game, Entity* enemy);
+void execute_ambush_behavior(Game* game, Entity* enemy);
+void execute_retreat_behavior(Game* game, Entity* enemy);
+void execute_surround_behavior(Game* game, Entity* enemy);
 void adapt_ai_difficulty(Game* game, bool player_success);
 float calculate_ai_aggression(Entity* enemy, Game* game);
 bool should_coordinate_attack(Game* game, int enemy_index);
